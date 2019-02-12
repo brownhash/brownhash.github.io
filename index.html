@@ -18,7 +18,15 @@
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <style>
+    #bodyb{
+      background: url() no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+</style>
     <style>
       #dp{
         border-radius:50%;
@@ -29,7 +37,7 @@
     </style>
 
     </head>
-    <body>
+    <body id="bodyb">
       <div class="uk-card uk-card-secondary uk-card-body">
         <div id="divdp" style="padding-bottom:20px">
           <center>
@@ -234,5 +242,67 @@
 </table>
     </div>
     </center>
+
+    <!-- weather div -->
+    <div style="width:100%; padding-top:15%">
+      <center>
+        <h1><div id="temp" style="font-size:109px"></div><div id="minutely"></div></h1>
+        <h1><div id="location"></div></h1>
+      </center>
+    </div>
+    <!-- weather div -->
+
+
+<!-- bootstrap scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- bootstrap scripts -->
+
+<!-- weather scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+function weather() {
+
+var location = document.getElementById("location");
+var apiKey = 'f536d4c3330c0a1391370d1443cee848';
+var url = 'https://api.forecast.io/forecast/';
+
+navigator.geolocation.getCurrentPosition(success, error);
+
+function success(position) {
+  latitude = (position.coords.latitude).toFixed(2);
+  longitude = (position.coords.longitude).toFixed(2);
+
+
+  location.innerHTML = 'Weather at Lat: '+latitude+' Lon: '+longitude;
+
+   $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
+    $('#temp').html((((data.currently.temperature-32)*5)/9).toFixed(2) + '° C');
+    $('#minutely').html(data.minutely.summary);
+  });
+}
+
+function error() {
+  location.innerHTML = "Unable to retrieve your location";
+}
+
+function gomap(){
+  latnom = parseInt(lattitude);
+  latdeg = (latitude*100)%100;
+  lonnom = parseInt(longitude);
+  londeg = (longitude*100)%100;
+
+  alert("Hello! I am an alert box!!");
+
+}
+
+location.innerHTML = "Locating...";
+}
+
+weather();
+</script>
+<!-- weather scripts -->
+<!-- https://www.google.com/maps/place/27°36'00.0"N+77°36'00.0"E/ -->
 </body>
 </html>
