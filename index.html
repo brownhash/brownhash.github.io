@@ -1,364 +1,178 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    Harshit Sharma
-    </title>
-    <link rel="icon" type="image/png" href="https://s3.ap-south-1.amazonaws.com/version-weather/vricon.png">
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
-    <!-- UIkit CSS -->
+	<head>
+		<title>
+			Portfolio
+		</title>
+		<style type="text/css">
+			body{
+				background-color: #ededed;
+			}
+			#text{
+				/* font-family: 'Red Hat Text', sans-serif; */
+				/* font-family: 'Oswald', sans-serif; */
+				font-family: 'Source Code Pro', monospace;
+				font-size: 16px;
+				/* text-shadow: 2px 3px #cfcfcf; */
+			}
+			#profile-image{
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				border-width: 5px;
+				border-color: #000000
+				box-shadow: 10px 10px 5px #ccc;
+				-moz-box-shadow: 10px 10px 5px #ccc;
+				-webkit-box-shadow: 10px 10px 5px #ccc;
+				-khtml-box-shadow: 10px 10px 5px #ccc;
+			}
+			#git-icon{
+				position:fixed; top: 10; right: 10;
+            	z-index: 2
+			}
+			#key{
+				color:#c91212;
+				font-size: 18px ;
+				font-weight: 700;
+			}
+			#sub-key{
+				color:#0833cc;
+			}
+			#sub-key-2{
+				color:#c309ed;
+			}
+			#value{
+				color:#2e2e2e;
+			}
+			#switch-box{
+				position:fixed; top: 10; left: 10;
+            	z-index: 2;
+			}
+			#switch{
+				
+            	width: 80px;
+            	height: 30px;
+			}
+		</style>
+		<!-- site-icon -->
+		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
 
-    <!-- UIkit JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
-    <!-- UIkit JS -->
+		<!-- importing fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+	</head>
+	<body onload="mouseChange()" id="body">
 
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-    <!-- Google fonts -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-    #bodyb{
-      background: url() no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-</style>
-    <style>
-      #dp{
-        border-radius:50%;
-      }
-      #divdp{
-        width:100%;
-      }
-    </style>
+		<div id="switch-box" >
+			<button id="switch" onclick="show_markdown()">Markdown</button>
+		</div>
+		
+		<div id="head-box-markdown" style="margin-top: 5%">
+			<p id="text">
+				{<br> 
+					&emsp;<font id="key">Name:</font> <b id="value">'Harshit Sharma'</b>,<br><br>
 
-    </head>
-    <body id="bodyb">
-      <div class="uk-card uk-card-secondary uk-card-body">
-        <div id="divdp" style="padding-bottom:20px">
-          <center>
-            <img src="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/pro_dp.jpg" id="dp" width="15%" height="15%">
-          </center>
-        </div>
+					&emsp;<font id="key">Experience:</font> {<br>
+						&emsp;&emsp;<font id="sub-key">Devops Intern:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019 - Present'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. '</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-        <div id="divdp" >
-          <center>
-            <h3 style="font-family: 'Staatliches', cursive;" class="uk-card-title">Harshit Sharma</h3>
-          </center>
+						&emsp;&emsp;<font id="sub-key">Devops Intern:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018 - Feb 2019'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger.'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-        </div>
-      </div>
-      <div style="padding-top:20px; padding-bottom:20px">
-        <center>
-        <a href="https://github.com/sharma1612harshit" target="_blank" ><img src="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/github.png" width="50px" height="50px"></a>
-        <a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank" ><img src="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/linked.png" width="50px" height="50px"></a>
+					&emsp;&emsp;}<br><br>
 
-        <div class="uk-inline">
-          <img src="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/phone.png" width="50px" height="50px">
-          <div uk-drop>
-            <div class="uk-card uk-card-body uk-card-default">+91-8193085864</br>+91-8384839808</div>
-          </div>
-        </div>
-        <div class="uk-inline">
-          <img src="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/mail.png" width="50px" height="50px">
-          <div uk-drop>
-            <div class="uk-card uk-card-body uk-card-default">sharma1612harshit@gmail.com</div>
-          </div>
-        </div>
+					&emsp;<font id="key">Skills:</font> {<br>
+						&emsp;&emsp;<font id="sub-key">Programming Languages:</font> <b id="value">['Python', 'GoLang', 'Java', 'JavaScript', 'HTML', 'CSS', 'C', 'php',]</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Databases:</font> <b id="value">['MySQL', 'MongoDB']</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Cloud Platforms:</font> <b id="value">['Amazon Web Services', 'Google Cloud Platform', 'Open Stack']</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Virtualization Platforms:</font> <b id="value">['Docker', 'Vagrant', 'VMware']</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Web Frameworks:</font> <b id="value">['Django', 'Flask']</b>,<br>
+						&emsp;&emsp;<font id="sub-key">CI/CD Tools:</font> <b id="value">'Jenkins'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Infrastructure Automation Tools:</font> <b id="value">['Ansible', 'Terraform']</b>,<br>
+					&emsp;&emsp;}<br><br>
 
-      </center>
+					&emsp;<font id="key">Projects:</font> {<br>
 
-      </div>
-      <center><hr width="85%"></center>
-      <center><div style="padding-bottom:20px">
-        <a class="uk-button uk-button-secondary" href="#skills">Skills</a>
-        <a class="uk-button uk-button-secondary" href="#edu">Education</a>
-        <a class="uk-button uk-button-secondary" href="#workexp">Work-Experience</a>
-        <a class="uk-button uk-button-secondary" href="#opensource">Open Source Contributions</a>
-        <a class="uk-button uk-button-secondary" href="#projects">Projects</a>
-        <a class="uk-button uk-button-secondary" href="#certi">Certifications</a>
-        <a class="uk-button uk-button-secondary" href="https://github.com/sharma1612harshit/other/raw/master/Harshit%20Sharma%20Resume.pdf">Resume</a>
+						&emsp;&emsp;<font id="sub-key">AWS RI Utilization:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'August 2019'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-      </div></center>
-      <center><hr width="85%"></center>
-      <center>
+						&emsp;&emsp;<font id="sub-key">Git Management Tools:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Consists of tools that help managing the configuration and commits within a local git repository.'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-      <div class="uk-card uk-card-default uk-card-body" id="skills" style="width:85%; margin-bottom:50px">
-        <h3 class="uk-card-title">Skills</h3>
-        <hr width="100%">
-	<button class="uk-button uk-button-default">Python</button>
-	<button class="uk-button uk-button-default">Golang</button>
-        <button class="uk-button uk-button-default">Java</button>
-        <button class="uk-button uk-button-default">Java Script</button>
-        <button class="uk-button uk-button-default">Android</button>
-        <button class="uk-button uk-button-default">C Language</button>
-        <button class="uk-button uk-button-default">php</button>
-        <button class="uk-button uk-button-default">CSS</button>
-        <button class="uk-button uk-button-default">AWS</button>
-        <button class="uk-button uk-button-default">Google Cloud</button>
-        <button class="uk-button uk-button-default">Mysql</button>
-        <button class="uk-button uk-button-default">Mongo DB</button>
-        <button class="uk-button uk-button-default">Docker</button>
-	<button class="uk-button uk-button-default">Django</button>
-        <button class="uk-button uk-button-default">Flask</button>
-        <button class="uk-button uk-button-default">Vagrant</button>
-        <button class="uk-button uk-button-default">VMware</button>
-        <button class="uk-button uk-button-default">Devops</button>
-        <button class="uk-button uk-button-default">Jenkins</button>
-        <button class="uk-button uk-button-default">ANsible</button>
-      </div>
-      <div class="uk-card uk-card-default uk-card-body" id="edu" style="width:85%; margin-bottom:50px">
-        <h3 class="uk-card-title">Education</h3>
-        <hr width="100%">
-        <table class="uk-table uk-table-divider">
-    <thead>
-        <tr>
-            <th>Grade / Degree</th>
-            <th>Institution</th>
-            <th>Year of passing</th>
-            <th>% / CGPA</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>B.Tech CSE (Specialization in Cloud Computing and Virtualization)</td>
-            <td>GLA University, Mathura</td>
-            <td>2020</td>
-            <td>7.07</td>
-        </tr>
-        <tr>
-            <td>Intermediate</td>
-            <td>DMA-1, Meerut</td>
-            <td>2016</td>
-            <td>82.4</td>
-        </tr>
-        <tr>
-            <td>High School</td>
-            <td>DMA-1, Meerut</td>
-            <td>2014</td>
-            <td>9.8</td>
-        </tr>
-    </tbody>
-</table>
-      </div>
-      <div class="uk-card uk-card-default uk-card-body" id="workexp" style="width:85%; margin-bottom:50px">
-        <h3 class="uk-card-title">Work Experience</h3>
-        <hr width="100%">
-        <table class="uk-table uk-table-divider">
-    <thead>
-        <tr>
-            <th>Company</th>
-            <th>Post</th>
-            <th>Duration</th>
-            <th>Location</th>
-        </tr>
-    </thead>
-    <tbody>
-	<tr>
-            <td>Rivigo Labs</td>
-            <td>Devops Intern</td>
-            <td>June 2019 - Present</td>
-            <td>Gurugram, Haryana</td>
-        </tr>
-        <tr>
-            <td>Rivigo Labs</td>
-            <td>Devops Intern</td>
-            <td>Dec 2018 - Feb 2019</td>
-            <td>Gurugram, Haryana</td>
-        </tr>
-    </tbody>
-</table>
-      </div>
+						&emsp;&emsp;<font id="sub-key">DevHops:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'April 2019'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/DevHops" target="_blank">https://github.com/sharma1612harshit/DevHops</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-<div class="uk-card uk-card-default uk-card-body" id="opensource" style="width:85%; margin-bottom:50px">
-      <h3 class="uk-card-title">Open Source Contributions</h3>
-      <hr width="100%">
-      <table class="uk-table uk-table-divider">
-  <thead>
-      <tr>
-          <th>Contribution</th>
-          <th>Subject</th>
-          <th>Status</th>
-          <th>Links / Resources</th>
-      </tr>
-  </thead>
-  <tbody>
-	<tr>
-          <td>Solved the issue of daily scheduling in Oncall</td>
-          <td>Add Daily-round-robin Scheduler</td>
-          <td>Pull Request Raised</td>
-          <td><a href="https://github.com/rivigo-labs/oncall/tree/daily-round-robin-scheduler">Github Link</a></td>
-      </tr>
-      <tr>
-          <td>Merged Pull Request in Linkedin/Oncall</td>
-          <td>Add Teams Messenger</td>
-          <td>Merged</td>
-          <td><a href="https://github.com/linkedin/oncall/pull/239/commits/60c0aaab7880da870e80a761e00cf9e82f2b5cf5" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
+						&emsp;&emsp;<font id="sub-key">MS-Teams Dependency in Oncall:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Feb 2019'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/oncall" target="_blank">https://github.com/sharma1612harshit/oncall</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-    </div>
-    <div class="uk-card uk-card-default uk-card-body" id="projects" style="width:85%; margin-bottom:50px">
-      <h3 class="uk-card-title">Projects</h3>
-      <hr width="100%">
-      <table class="uk-table uk-table-divider">
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Technologies Used</th>
-          <th>Duration</th>
-          <th>Links / Resources</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>DevHops</td>
-          <td>Python, Flask</td>
-          <td>1 Months</td>
-          <td><a href="https://github.com/sharma1612harshit/DevHops" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-      <tr>
-          <td>Oncall modified for MS-Teams support</td>
-          <td>Python, Flask, YAML, MySql</td>
-          <td>2 Months</td>
-          <td><a href="https://github.com/sharma1612harshit/oncall" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-      <tr>
-          <td>Deployment of Private Cloud</td>
-          <td>Openstack</td>
-          <td>3 Months</td>
-          <td><a href="https://github.com/sharma1612harshit/miniproject/" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-      <tr>
-          <td>Version - An interorganization tech portal</td>
-          <td>PHP, MySql, CSS, Bootstrap, UI Kit, JavaScript, LAMP</td>
-          <td>10 Months</td>
-          <td><a href="https://github.com/sharma1612harshit/version/" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-    <tr>
-          <td>Version Weather- A simple location based temperature report</td>
-          <td>JavaScript, HTML, CSS, BootStrap</td>
-          <td>1 Months</td>
-      <td><a href="#weather" title="Link">Link</a></br><a href="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/weather.html" title="Github Link" target="_blank">Github Link</a></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-    <div class="uk-card uk-card-default uk-card-body" id="certi" style="width:85%; margin-bottom:50px">
-      <h3 class="uk-card-title" >Certifications</h3>
-      <hr width="100%">
-      <table class="uk-table uk-table-divider">
-  <thead>
-      <tr>
-          <th>Technology</th>
-          <th>Issuing Authority</th>
-          <th>Link to certificate</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Android & Core Java</td>
-          <td>HPES</td>
-          <td><a href="https://drive.google.com/open?id=1N0Rl_gK-tecBxcgQSYoJvl-5HCcGJdwA" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
-      <tr>
-          <td>Core Java</td>
-          <td>NIIT</td>
-          <td><a href="https://drive.google.com/open?id=1gDo7-F8I8LrvZ9cTSA7aYRSpGpPnGPeF" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
-      <tr>
-          <td>JAVA SE7 Workforce</td>
-          <td>Oracle</td>
-          <td><a href="https://drive.google.com/open?id=1K9vGKmosNukXuV5lYZzAuV1l71Bv5zY6" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
-      <tr>
-          <td>Python3</td>
-          <td>Udemy</td>
-          <td><a href="https://drive.google.com/open?id=1IjbkuXTQHRxin5_buPIFAB_JRCQldcSc" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
-      <tr>
-          <td>Jenkins</td>
-          <td>Linux Academy</td>
-          <td><a href="https://drive.google.com/open?id=1FX67yKU2eArAAf50-kB_Qc4O56psQl34" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
-      <tr>
-          <td>Ansible</td>
-          <td>Red Hat</td>
-          <td><a href="https://drive.google.com/open?id=1l9QsnzviuoCs7r73yl7TwUOhH2qUIji9" title="Certificate Link" target="_blank">View Certificate</a></td>
-      </tr>
+						&emsp;&emsp;<font id="sub-key">Web Application Deployed on Private Cloud:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
 
-  </tbody>
-</table>
-    </div>
-    </center>
+					&emsp;&emsp;}<br><br>
 
-    <!-- weather div -->
-</hr width="85%">
-    <div style="width:100%; padding-top:15%" id="weather">
-      <center>
-        <h1><div id="temp" style="font-size:109px"></div><div id="minutely"></div></h1>
-        <h1><div id="location"></div></h1>
-      </center>
-    </div>
-    <!-- weather div -->
+					&emsp;<font id="key">Achievements and Certifications:</font> {<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'IBM Gurukool'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'HPES Core Java & Android'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Oracle Java SE& Workforce'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'NIIT Core Java'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Python3'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'RedHat Ansible'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Linux Academy Jenkins'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Golang'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Full Stack Developer'</b>,<br>
+					&emsp;&emsp;}<br><br>
 
+					&emsp;<font id="key">Contact:</font> {<br>
+						&emsp;&emsp;<font id="sub-key">Email:</font> <b id="value">'sharma1612harshit@gmail.com'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Linkedin:</font> <b id="value">'<a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">https://www.linkedin.com/in/sharma1612harshit/</a>'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Github:</font> <b id="value">'<a href="https://www.github.com/sharma1612harshit" target="_blank">https://www.github.com/sharma1612harshit/</a>'</b>,<br>
+						&emsp;&emsp;<font id="sub-key">Phone:</font> <b id="value">'+91-8193085864'</b>,<br>
+					&emsp;&emsp;}<br><br>
+				}
+			</p>
+		</div>
 
-<!-- bootstrap scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- bootstrap scripts -->
+		<div id="git-icon">
+			<a href="https://www.github.com/sharma1612harshit" title="My github profile" target="_blank"><img width="70px" src="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/GitHub-Logo.png?raw=true" title="My github profile" alt="Github profile"></a>
+		</div>
+		
+		<script>
+			function mouseChange() {
+  				document.getElementById("body").style.cursor = "progress";
+			}
+		</script>
 
-<!-- weather scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-function weather() {
-
-var location = document.getElementById("location");
-var apiKey = 'f536d4c3330c0a1391370d1443cee848';
-var url = 'https://api.forecast.io/forecast/';
-
-navigator.geolocation.getCurrentPosition(success, error);
-
-function success(position) {
-  latitude = (position.coords.latitude).toFixed(2);
-  longitude = (position.coords.longitude).toFixed(2);
-
-
-  location.innerHTML = 'Weather at Lat: '+latitude+' Lon: '+longitude;
-
-   $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
-    $('#temp').html((((data.currently.temperature-32)*5)/9).toFixed(2) + '° C');
-    $('#minutely').html(data.minutely.summary);
-  });
-}
-
-function error() {
-  location.innerHTML = "Unable to retrieve your location";
-}
-
-function gomap(){
-  latnom = parseInt(lattitude);
-  latdeg = (latitude*100)%100;
-  lonnom = parseInt(longitude);
-  londeg = (longitude*100)%100;
-
-  alert("Hello! I am an alert box!!");
-
-}
-
-location.innerHTML = "Locating...";
-}
-
-weather();
-</script>
-<!-- weather scripts -->
-<!-- https://www.google.com/maps/place/27°36'00.0"N+77°36'00.0"E/ -->
-</body>
+		<script>
+			function show_markdown() {
+			  var x = document.getElementById("head-box-markdown");
+			 
+			  if (x.style.display === "none") {
+			    x.style.display = "block";
+			  } else {
+			    x.style.display = "none";
+			  }
+			}
+	</body>
 </html>
