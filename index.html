@@ -6,6 +6,7 @@
 		<style type="text/css">
 			body{
 				background-color: #ededed;
+				cursor: wait;
 			}
 			#text{
 				/* font-family: 'Red Hat Text', sans-serif; */
@@ -46,16 +47,18 @@
 			#switch-box{
 				position:fixed; top: 10; left: 10;
             	z-index: 2;
+            	cursor: wait;
 			}
 			#switch{
-				
             	width: 80px;
             	height: 30px;
+            	cursor: pointer;
 			}
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			
+
 		</style>
+
 		<!-- site-icon -->
 		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
 
@@ -64,12 +67,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 	</head>
-	<body onload="mouseChange()" id="body">
+	<body onload="init()" id="body">
 
 		<div id="switch-box" >
-			<button id="switch" onclick="show_markdown()">Markdown</button>
+			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button>
 		</div>
-		
+		<div id="head-box-ui" style="margin-top:5%">
+			UI mode will be available soon.
+		</div>
 		<div id="head-box-markdown" style="margin-top: 5%">
 			<p id="text">
 				{<br> 
@@ -161,21 +166,36 @@
 			<a href="https://www.github.com/sharma1612harshit" title="My github profile" target="_blank"><img width="70px" src="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/GitHub-Logo.png?raw=true" title="My github profile" alt="Github profile"></a>
 		</div>
 		
-		<script>
-			function mouseChange() {
-  				document.getElementById("body").style.cursor = "progress";
-			}
-		</script>
+		
 
 		<script>
+
+			function init() {
+			  var x = document.getElementById("head-box-ui");
+			  x.style.display = "none";
+			}
+
 			function show_markdown() {
-			var x = document.getElementById("head-box-markdown");
+			  var x = document.getElementById("head-box-markdown");
+			  var y = document.getElementById("head-box-ui");
+
 			  if (x.style.display === "none") {
+			  	y.style.display = "none";
 			    x.style.display = "block";
-			  } else {
-			    x.style.display = "none";
 			  }
 			}
+
+			function show_ui() {
+			  var y = document.getElementById("head-box-ui");
+			  var x = document.getElementById("head-box-markdown");
+			  if (y.style.display === "none") {
+			  	x.style.display = "none";
+			    y.style.display = "block";
+			  }
+			}
+
+			
 		</script>
+
 	</body>
 </html>
