@@ -7,6 +7,8 @@
 			body{
 				background-color: #ededed;
 				cursor: wait;
+				font-family: 'Source Code Pro', monospace;
+				font-size: 16px;
 			}
 			#text{
 				/* font-family: 'Red Hat Text', sans-serif; */
@@ -48,12 +50,17 @@
 				position:fixed; top: 10; left: 10;
             	z-index: 2;
             	cursor: wait;
+            	width:50%;
+            	height:5%;
 			}
 			#switch{
-            	width: 80px;
-            	height: 30px;
+            	width: 30%;
+            	height: 100%;
             	cursor: pointer;
 			}
+			#head-box-markdown{
+				width:85%;
+				align-content: left			}
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -75,6 +82,7 @@
 		<div id="head-box-ui" style="margin-top:5%">
 			UI mode will be available soon.
 		</div>
+
 		<div id="head-box-markdown" style="margin-top: 5%">
 			<p id="text">
 				{<br> 
