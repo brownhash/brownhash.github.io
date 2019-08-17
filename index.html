@@ -5,32 +5,30 @@
 		</title>
 		<style type="text/css">
 			body{
-				background-color: #ededed;
+				background-color: #ffffff;
 				cursor: wait;
 				font-family: 'Source Code Pro', monospace;
 				font-size: 16px;
+			}
+			#profile-image{
+				border-radius: 2%;
+				border-width: 5px;
+				border-color: #000000;
+				box-shadow: 5px 5px 5px #dedede;
+				-moz-box-shadow: 5px 5px 5px #dedede;
+				-webkit-box-shadow: 5px 5px 5px #dedede;
+				-khtml-box-shadow: 5px 5px 5px #dedede;
 			}
 			#text{
 				font-family: 'Source Code Pro', monospace;
 				font-size: 16px;
 			}
-			#profile-image{
-				width: 250px;
-				height: 250px;
-				border-radius: 50%;
-				border-width: 5px;
-				border-color: #000000
-				box-shadow: 10px 10px 5px #ccc;
-				-moz-box-shadow: 10px 10px 5px #ccc;
-				-webkit-box-shadow: 10px 10px 5px #ccc;
-				-khtml-box-shadow: 10px 10px 5px #ccc;
-			}
 			#git-box{
 				position:fixed; top: 10; right: 10;
-            			z-index: 2;
-            			cursor: wait;
-            			width:50%;
-            			height:40px;
+            	z-index: 2;
+            	cursor: wait;
+            	width:50%;
+            	height:40px;
 			}
 			#git-icon{
 				font-size: 20px;
@@ -52,26 +50,82 @@
 			}
 			#switch-box{
 				position:fixed; top: 10; left: 10;
-            			z-index: 2;
-            			cursor: wait;
-            			width:50%;
-            			height:40px;
+            	z-index: 2;
+            	cursor: wait;
+            	width:50%;
+            	height:40px;
 			}
 			#switch{
 				font-size: 20px;
-            			width: 30%;
-            			height: 100%;
-            			cursor: pointer;
+            	width: 30%;
+            	height: 100%;
+            	cursor: pointer;
 			}
 			#head-box-markdown{
 				width:85%;
 				align-content: left		
 				clear: left;	
 			}
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			#ui-card{
+				width: 95%;
+				padding: 20px;
+				background-color: #f7f7f7;
+				border-radius: 0%;
+				border-width: 5px;
+				border-color: #000000;
+				box-shadow: 5px 5px 5px #dedede;
+				-moz-box-shadow: 5px 5px 5px #dedede;
+				-webkit-box-shadow: 5px 5px 5px #dedede;
+				-khtml-box-shadow: 5px 5px 5px #dedede;
+			}
+			#info-box{
+				width: 95%;
+				padding: 20px;
+				background-color: #787878;
+				border-radius: 0%;
+				border-width: 5px;
+				border-color: #000000;
+				box-shadow: 5px 5px 5px #dedede;
+				-moz-box-shadow: 5px 5px 5px #dedede;
+				-webkit-box-shadow: 5px 5px 5px #dedede;
+				-khtml-box-shadow: 5px 5px 5px #dedede;
+			}
+			#ui-card-small{
+				height: 100%;
+				padding: 20px;
+				background-color: #f7f7f7;
+				border-radius: 0%;
+				border-width: 5px;
+				border-color: #000000;
+			}
+			#button-div{
+				width: 100px;
+				height: 30px;
+				padding: 10px;
+				background-color: #f7f7f7;
+				border-radius: 2%;
+				border-width: 5px;
+				border-color: #000000;
+				box-shadow: 5px 5px 5px #dedede;
+				-moz-box-shadow: 5px 5px 5px #dedede;
+				-webkit-box-shadow: 5px 5px 5px #dedede;
+				-khtml-box-shadow: 5px 5px 5px #dedede;
+			}
+			#heading{
+				color: #2e2e2e;
+			}
+			#content{
+				color: #ffffff;
+			}
+			A:link { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
+			A:visited { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
+			A:active { COLOR: #ffffff; TEXT-DECORATION: none }
+			A:hover { COLOR: #ffea00; TEXT-DECORATION: none; font-weight: none }
 
 		</style>
+
+		<!-- scaling -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<!-- site-icon -->
 		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
@@ -83,19 +137,95 @@
 	</head>
 	<body onload="init()" id="body">
 
-		<div id="switch-box" >
-			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button>
+		<div id="switch-box" align="left">
+			<!--
+			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button> -->
+			<table border="0px">
+				<tr>
+					<td>
+						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
+							UI
+						</div>
+					</td>
+					<td>
+						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
+							Markdown
+						</div>
+					</td>
+				</tr>
+			</table>		
 		</div>
-
+		<!--
 		<div id="git-box" align="right">
 			<div id="git-icon" align="right">
 				<a href="https://www.github.com/sharma1612harshit" title="My github profile" target="_blank"><img width="130px" src="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/GitHub-Logo.png?raw=true" title="My github profile" alt="Github profile"></a>
 			</div>
-		</div>
+		</div> -->
 
 		<div id="head-box-ui" style="margin-top:7%">
-			UI mode will be available soon.
+			<div id="ui-card">
+				Personal Info:
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					Name: Harshit Sharma<br>
+					Contact: +918193085864<br>
+					Email: <a href="mailto:sharma1612harshit@gmail.com">sharma1612harshit@gmail.com</a><br>
+					Linkedin: <a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">https://www.linkedin.com/in/sharma1612harshit/</a><br>
+					Github: <a href="https://www.github.com/sharma1612harshit/" target="_blank">https://www.github.com/sharma1612harshit/</a>
+				</p>
+			</div>
+
+			<div id="ui-card" style="margin-top: 20px">
+				Experience:
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					<b>Devops Intern</b><br>
+					Comapny: Rivigo Labs, Gurugram, Haryana<br>
+					Date: July 2019 - Present<br>
+					Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. <br>
+				</p>
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					<b>Devops Intern</b><br>
+					Comapny: Rivigo Labs, Gurugram, Haryana<br>
+					Date: Dec 2018 - Feb 2019<br>
+					Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger. <br>
+				</p>
+			</div>
+			<div id="ui-card" style="margin-top: 20px">
+				Education:
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					<b>B.Tech</b><br>
+					Institute: GLA University, Mathura<br>
+					Passing Out Year: 2020<br>
+					Stream: Computer Science with Specialisation in Cloud Computing and Virtualisation<br>
+					Percentage/CGPA: 7.1
+				</p>
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					<b>Intermediate</b><br>
+					Institute: Dayawati Modi Academy - 1, Meerut<br>
+					Passing Out Year: 2016<br>
+					Stream: PCM<br>
+					Percentage/CGPA: 82.4
+				</p>
+			</div>
+			<div id="info-box" width="95%">
+				<p id="content">
+					<b>High School</b><br>
+					Institute: Dayawati Modi Academy - 1, Meerut<br>
+					Passing Out Year: 2014<br>
+					Percentage/CGPA: 9.8
+				</p>
+			</div>
 		</div>
+		
 
 		<div id="head-box-markdown" style="margin-top: 7%">
 			<p id="text">
@@ -115,6 +245,29 @@
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018 - Feb 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger.'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
+
+					&emsp;&emsp;}<br><br>
+
+					&emsp;<font id="key">Education:</font> {<br>
+						&emsp;&emsp;<font id="sub-key">B.Tech:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'GLA University, Mathura'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2020</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Stream:</font> <b id="value">'Computer Science with specialisation in Cloud Computing and Virtualisation'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">7.1</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
+
+						&emsp;&emsp;<font id="sub-key">Intermediate:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'Dayawati Modi Academy - 1, Meerut'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2016</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Stream:</font> <b id="value">'PCM'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">82.4</b>,<br>
+						&emsp;&emsp;&emsp;},<br>
+
+						&emsp;&emsp;<font id="sub-key">High School:</font> {<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'Dayawati Modi Academy - 1, Meerut'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2014</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">9.8</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 					&emsp;&emsp;}<br><br>
@@ -191,7 +344,7 @@
 		<script>
 
 			function init() {
-			  var x = document.getElementById("head-box-ui");
+			  var x = document.getElementById("head-box-markdown");
 			  x.style.display = "none";
 			}
 
