@@ -49,10 +49,10 @@
 				color:#2e2e2e;
 			}
 			#switch-box{
-				position:fixed; top: 10; left: 10;
+				position:fixed; 
             	z-index: 2;
             	cursor: wait;
-            	width:50%;
+            	width:95%;
             	height:40px;
 			}
 			#switch{
@@ -102,20 +102,18 @@
 				width: 100px;
 				height: 30px;
 				padding: 10px;
-				background-color: #f7f7f7;
+				background-color: #787878;
 				border-radius: 2%;
-				border-width: 5px;
-				border-color: #000000;
-				box-shadow: 5px 5px 5px #dedede;
-				-moz-box-shadow: 5px 5px 5px #dedede;
-				-webkit-box-shadow: 5px 5px 5px #dedede;
-				-khtml-box-shadow: 5px 5px 5px #dedede;
+				
 			}
 			#heading{
 				color: #2e2e2e;
 			}
 			#content{
 				color: #ffffff;
+			}
+			#mark-link{
+				color: #000000;
 			}
 			A:link { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
 			A:visited { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
@@ -137,18 +135,18 @@
 	</head>
 	<body onload="init()" id="body">
 
-		<div id="switch-box" align="left">
+		<div id="switch-box" align="right">
 			<!--
 			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button> -->
 			<table border="0px">
 				<tr>
 					<td>
-						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
+						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#787878';">
 							UI
 						</div>
 					</td>
 					<td>
-						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
+						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#787878';">
 							Markdown
 						</div>
 					</td>
@@ -161,8 +159,7 @@
 				<a href="https://www.github.com/sharma1612harshit" title="My github profile" target="_blank"><img width="130px" src="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/GitHub-Logo.png?raw=true" title="My github profile" alt="Github profile"></a>
 			</div>
 		</div> -->
-
-		<div id="head-box-ui" style="margin-top:7%">
+		<div id="head-box-ui" style="margin-top: 0px">
 			<div id="ui-card">
 				Personal Info:
 			</div>
@@ -227,7 +224,7 @@
 		</div>
 		
 
-		<div id="head-box-markdown" style="margin-top: 7%">
+		<div id="head-box-markdown" style="margin-top: 0px">
 			<p id="text">
 				{<br> 
 					&emsp;<font id="key">Name:</font> <b id="value">'Harshit Sharma'</b>,<br><br>
@@ -237,14 +234,14 @@
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019 - Present'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. '</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 						&emsp;&emsp;<font id="sub-key">Devops Intern:</font> {<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018 - Feb 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger.'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 					&emsp;&emsp;}<br><br>
@@ -287,25 +284,25 @@
 						&emsp;&emsp;<font id="sub-key">AWS RI Utilization:</font> {<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'August 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 						&emsp;&emsp;<font id="sub-key">Git Management Tools:</font> {<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Consists of tools that help managing the configuration and commits within a local git repository.'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 						&emsp;&emsp;<font id="sub-key">DevHops:</font> {<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'April 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/DevHops" target="_blank">https://github.com/sharma1612harshit/DevHops</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/DevHops" target="_blank">https://github.com/sharma1612harshit/DevHops</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 						&emsp;&emsp;<font id="sub-key">MS-Teams Dependency in Oncall:</font> {<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Feb 2019'</b>,<br>
 							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a href="https://github.com/sharma1612harshit/oncall" target="_blank">https://github.com/sharma1612harshit/oncall</a>'</b>,<br>
+							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/oncall" target="_blank">https://github.com/sharma1612harshit/oncall</a>'</b>,<br>
 						&emsp;&emsp;&emsp;},<br>
 
 						&emsp;&emsp;<font id="sub-key">Web Application Deployed on Private Cloud:</font> {<br>
