@@ -134,6 +134,9 @@
 
 		<!-- scaling -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<!-- Particle js -->
+		<link rel="stylesheet" href="css/particle.css" />
 
 		<!-- site-icon -->
 		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
@@ -144,6 +147,18 @@
 		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 	</head>
 	<body onload="init()" id="body">
+
+	<div>
+      <div id="particle-js">
+        <script type="text/javascript">
+          particlesJS.load(
+            "particle-js",
+            "config/particles.json",
+            function() {}
+          );
+        </script>
+      </div>
+    </div>
 
 		<div id="switch-box" align="right">
 			<!--
