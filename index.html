@@ -67,6 +67,7 @@
 				clear: left;	
 			}
 			#ui-card{
+				background-image: linear-gradient(#e3e3e3, white);
 				width: 95%;
 				padding: 20px;
 				background-color: #f7f7f7;
@@ -86,10 +87,23 @@
 				border-width: 5px;
 				border-color: #000000;
 			}
+			#ui-card-rev{
+				background-image: linear-gradient(#ffffff, #e3e3e3);
+				width: 95%;
+				padding: 20px;
+				background-color: #f7f7f7;
+				border-radius: 0%;
+				border-width: 5px;
+				border-color: #000000;
+				box-shadow: 5px 5px 5px #dedede;
+				-moz-box-shadow: 5px 5px 5px #dedede;
+				-webkit-box-shadow: 5px 5px 5px #dedede;
+				-khtml-box-shadow: 5px 5px 5px #dedede;
+			}
 			#info-box{
 				width: 95%;
 				padding: 20px;
-				background-color: #787878;
+				background-color: #363636;
 				border-radius: 0%;
 				border-width: 5px;
 				border-color: #000000;
@@ -107,13 +121,16 @@
 				border-color: #000000;
 			}
 			#button-div{
+				background-color: #ffffff;
+				opacity: 60%;
 				width: 100px;
 				height: 30px;
 				padding: 10px;
-				background-color: #f7f7f7;
+				background-color: transparent;
 				border-radius: 0%;
 				border-style: solid;
 				border-width: 1px;
+				border-color: #d11919;
 				
 			}
 			#heading{
@@ -151,13 +168,13 @@
 			<table border="0px">
 				<tr>
 					<td>
-						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
-							UI
+						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffffff';" onmouseout="this.style.background='transparent';">
+							<font color="#d11919">UI</font>
 						</div>
 					</td>
 					<td>
-						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffea00';" onmouseout="this.style.background='#f7f7f7';">
-							Markdown
+						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffffff';" onmouseout="this.style.background='transparent';">
+							<font color="#d11919">Markdown</font>
 						</div>
 					</td>
 				</tr>
@@ -170,7 +187,7 @@
 			</div>
 		</div> -->
 		<div id="head-box-ui">
-			<div id="ui-card">
+			<div id="ui-card-rev">
 			</div>
 			<div id="ui-card">
 				Personal Info:
@@ -422,9 +439,6 @@
 				}
 			</p>
 		</div>
-
-		
-		
 		
 
 		<script>
