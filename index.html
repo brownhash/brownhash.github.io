@@ -3,6 +3,24 @@
 		<title>
 			Portfolio
 		</title>
+
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+
+		<!-- UIkit JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
+
+		<!-- site-icon -->
+		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
+
+		<!-- importing fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
 		<style type="text/css">
 			body{
 				background-color: #ffffff;
@@ -124,28 +142,16 @@
 				color: #2e2e2e;
 			}
 			#content{
-				color: #ffffff;
+				color: #000000;
 			}
 			#mark-link{
 				color: #000000;
 			}
-			A:link { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
-			A:visited { COLOR: #ffffff; TEXT-DECORATION: none; font-weight: normal }
-			A:active { COLOR: #ffffff; TEXT-DECORATION: none }
+			A:link { COLOR: #000000; TEXT-DECORATION: none; font-weight: normal }
+			A:visited { COLOR: #000000; TEXT-DECORATION: none; font-weight: normal }
+			A:active { COLOR: #ffea00; TEXT-DECORATION: none }
 			A:hover { COLOR: #ffea00; TEXT-DECORATION: none; font-weight: none }
-
 		</style>
-
-		<!-- scaling -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-		<!-- site-icon -->
-		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
-
-		<!-- importing fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 	</head>
 	<body onload="init()" id="body">
 
@@ -155,14 +161,10 @@
 			<table border="0px">
 				<tr>
 					<td>
-						<div id="button-div" onclick="show_ui()" onmouseover="this.style.background='#ffffff';" onmouseout="this.style.background='transparent';">
-							<font color="#d11919">UI</font>
-						</div>
+						<button onclick="show_ui()" class="uk-button uk-button-secondary"><span class="uk-margin-small-right" uk-icon="image"></span>UI</button>
 					</td>
 					<td>
-						<div id="button-div" onclick="show_markdown()" onmouseover="this.style.background='#ffffff';" onmouseout="this.style.background='transparent';">
-							<font color="#d11919">Markdown</font>
-						</div>
+						<button onclick="show_markdown()" class="uk-button uk-button-secondary"><span class="uk-margin-small-right" uk-icon="code"></span>Markdown</button>
 					</td>
 				</tr>
 			</table>		
@@ -174,75 +176,83 @@
 			</div>
 		</div> -->
 		<div id="head-box-ui">
-			<div id="ui-card">
-			</div>
-			<div id="ui-card">
-				Personal Info:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
+			<div>
+		        <div class="uk-card uk-card-secondary uk-card-body">
+		            <h3 class="uk-card-title">Personal Info:</h3>
+		        </div>
+		    </div>
+			<div>
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
 					Name: Harshit Sharma<br>
 					Contact: +918193085864<br>
 					Email: <a href="mailto:sharma1612harshit@gmail.com">sharma1612harshit@gmail.com</a><br>
 					Linkedin: <a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">@sharma1612harshit</a><br>
 					Github: <a href="https://www.github.com/sharma1612harshit/" target="_blank">@sharma1612harshit</a>
 				</p>
-			</div>
+		        </div>
+		    </div>
 
-			<div id="ui-card" style="margin-top: 20px">
-				Experience:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>Devops Intern</b><br>
-					Comapny: Rivigo Labs, Gurugram, Haryana<br>
-					Date: July 2019 - Present<br>
-					Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. <br>
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>Devops Intern</b><br>
-					Comapny: Rivigo Labs, Gurugram, Haryana<br>
-					Date: Dec 2018 - Feb 2019<br>
-					Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger. <br>
-				</p>
-			</div>
-			<div id="ui-card" style="margin-top: 20px">
-				Education:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>B.Tech</b><br>
-					Institute: GLA University, Mathura<br>
-					Passing Out Year: 2020<br>
-					Stream: Computer Science with Specialisation in Cloud Computing and Virtualisation<br>
-					Percentage/CGPA: 7.1
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>Intermediate</b><br>
-					Institute: Dayawati Modi Academy - 1, Meerut<br>
-					Passing Out Year: 2016<br>
-					Stream: PCM<br>
-					Percentage/CGPA: 82.4
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>High School</b><br>
-					Institute: Dayawati Modi Academy - 1, Meerut<br>
-					Passing Out Year: 2014<br>
-					Percentage/CGPA: 9.8
-				</p>
-			</div>
+		    <div>
+		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
+		            <h3 class="uk-card-title">Experience:</h3>
+		        </div>
+		    </div>
+			<div>
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
+						<b>Devops Intern</b><br>
+						Comapny: Rivigo Labs, Gurugram, Haryana<br>
+						Date: July 2019 - Present<br>
+						Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. <br>
+					</p>
+					<p id="content">
+						<b>Devops Intern</b><br>
+						Comapny: Rivigo Labs, Gurugram, Haryana<br>
+						Date: Dec 2018 - Feb 2019<br>
+						Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger. <br>
+					</p>
+		        </div>
+		    </div>
 
-			<div id="ui-card" style="margin-top: 20px">
-				Skills:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
+		    <div>
+		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
+		            <h3 class="uk-card-title">Education:</h3>
+		        </div>
+		    </div>
+			<div>
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
+						<b>B.Tech</b><br>
+						Institute: GLA University, Mathura<br>
+						Passing Out Year: 2020<br>
+						Stream: Computer Science with Specialisation in Cloud Computing and Virtualisation<br>
+						Percentage/CGPA: 7.1
+					</p>
+					<p id="content">
+						<b>Intermediate</b><br>
+						Institute: Dayawati Modi Academy - 1, Meerut<br>
+						Passing Out Year: 2016<br>
+						Stream: PCM<br>
+						Percentage/CGPA: 82.4
+					</p>
+					<p id="content">
+						<b>High School</b><br>
+						Institute: Dayawati Modi Academy - 1, Meerut<br>
+						Passing Out Year: 2014<br>
+						Percentage/CGPA: 9.8
+					</p>
+		        </div>
+		    </div>
+
+			<div>
+		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
+		            <h3 class="uk-card-title">Skills:</h3>
+		        </div>
+		    </div>
+		    <div>
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
 					Programming Languages: Python, GoLang, JAVA, JavaScript, HTML, CSS, C, php<br>
 					Databases: MySQL, Mongo DB<br>
 					Cloud Platforms: Amazon Web Services, Google Cloud Platform<br>
@@ -251,68 +261,68 @@
 					CI/CD Tools: Jenkins<br>
 					Infrastructure Automation Tools: Ansible, Terraform<br>
 				</p>
-			</div>
+		        </div>
+		    </div>
 
-			<div id="ui-card" style="margin-top: 20px">
-				Projects:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>AWS Ri Utilisation</b><br>
-					Date: August 2019<br>
-					Info: Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances<br>
-					Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">Go</a> <br>
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>Git Management Tools</b><br>
-					Date: July 2019<br>
-					Info: Consists of tools that help managing the configuration and commits within a local git repository.<br>
-					Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">Go</a> <br>
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>DevHops</b><br>
-					Date: April 2019<br>
-					Info: DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask.<br>
-					Github Link: <a href="https://github.com/sharma1612harshit/DevHops" target="_blank">Go</a> <br>
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>MS-Teams Dependency in Oncall</b><br>
-					Date: Feb 2019<br>
-					Info: Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON.<br>
-					Github Link: <a href="https://github.com/sharma1612harshit/oncall" target="_blank">Go</a> <br>
-				</p>
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					<b>Web Application Deployed on Private Cloud</b><br>
-					Date: Dev 2018<br>
-					Info: Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.<br>
-				</p>
-			</div>
-
-			<div id="ui-card" style="margin-top: 20px">
-				Achievements and Certifications:
-			</div>
-			<div id="info-box" width="95%">
-				<p id="content">
-					IBM Gurukool<br>
-					HPES Core Java & Android<br>
-					Oracle Java SE7 Workforce<br>
-					NIIT Core Java<br>
-					Udemy Python3<br>
-					RedHat Ansible<br>
-					Linux Academy Jenkins<br>
-					Udemy Golang<br>
-					Udemy Full Stack Developer<br>
-				</p>
-			</div>
-		</div>
+			<div>
+		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
+		            <h3 class="uk-card-title">Projects:</h3>
+		        </div>
+		    </div>
+		    <div>
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
+						<b>AWS Ri Utilisation</b><br>
+						Date: August 2019<br>
+						Info: Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances<br>
+						Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">Go</a> <br>
+					</p>
+					<p id="content">
+						<b>Git Management Tools</b><br>
+						Date: July 2019<br>
+						Info: Consists of tools that help managing the configuration and commits within a local git repository.<br>
+						Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">Go</a> <br>
+					</p>
+					<p id="content">
+						<b>DevHops</b><br>
+						Date: April 2019<br>
+						Info: DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask.<br>
+						Github Link: <a href="https://github.com/sharma1612harshit/DevHops" target="_blank">Go</a> <br>
+					</p>
+					<p id="content">
+						<b>MS-Teams Dependency in Oncall</b><br>
+						Date: Feb 2019<br>
+						Info: Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON.<br>
+						Github Link: <a href="https://github.com/sharma1612harshit/oncall" target="_blank">Go</a> <br>
+					</p>
+					<p id="content">
+						<b>Web Application Deployed on Private Cloud</b><br>
+						Date: Dev 2018<br>
+						Info: Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.<br>
+					</p>
+		        </div>
+		    </div>
+			<div>
+		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
+		            <h3 class="uk-card-title">Achievements and Certifications:</h3>
+		        </div>
+		    </div>
+		    <div style = "margin-bottom: 30px">
+		        <div class="uk-card uk-card-hover uk-card-body">
+		            <p id="content">
+						IBM Gurukool<br>
+						HPES Core Java & Android<br>
+						Oracle Java SE7 Workforce<br>
+						NIIT Core Java<br>
+						Udemy Python3<br>
+						RedHat Ansible<br>
+						Linux Academy Jenkins<br>
+						Udemy Golang<br>
+						Udemy Full Stack Developer<br>
+					</p>
+		        </div>
+		    </div>
+			
 		
 
 		<div id="head-box-markdown" style="margin-top: 0px">
@@ -426,7 +436,6 @@
 				}
 			</p>
 		</div>
-		
 
 		<script>
 
