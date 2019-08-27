@@ -154,10 +154,45 @@
 		</style>
 	</head>
 	<body onload="init()" id="body">
+		<nav class="uk-navbar-container uk-margin" uk-navbar>
+		    <div class="uk-navbar-center">
 
+		        <div class="uk-navbar-center-left"><div>
+		            <ul class="uk-navbar-nav">
+		                <li>
+		                    <a href="#">Visual Modes</a>
+		                    <div class="uk-navbar-dropdown">
+		                        <ul class="uk-nav uk-navbar-dropdown-nav">
+		                            <li><a href="#" onclick="show_ui()"><span class="uk-margin-small-right" uk-icon="image"></span>UI</a></li>
+		                            <li><a href="#" onclick="show_markdown()"><span class="uk-margin-small-right" uk-icon="code"></span>Markdown</a></li>
+		                        </ul>
+		                    </div>
+		                </li>
+		               
+		                <li>
+		                    <a href="#">Contact</a>
+		                    <div class="uk-navbar-dropdown" uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
+		                        <ul class="uk-nav uk-navbar-dropdown-nav">
+		                        	<li><a href="#"  target="_blank"><span class="uk-margin-small-right" uk-icon="receiver"></span>+918193085864</a></li>
+		                        	<li>
+		                        		<a href="mailto:sharma1612harshit@gmail.com" title="sharma1612harshit@gmail.com" target="_blank"><span class="uk-margin-small-right" uk-icon="mail"></span>sharma1612harshit@gmail.com</a>
+    								</li>
+		                        	<li><a href="https://www.linkedin.com/in/sharma1612harshit/"  target="_blank"><span class="uk-margin-small-right" uk-icon="linkedin"></span>Linkedin</a></li>
+		                            <li><a href="https://www.github.com/sharma1612harshit/" target="_blank"><span class="uk-margin-small-right" uk-icon="github"></span>Github</a></li>
+		                            
+		                        </ul>
+		                    </div>
+		                </li>
+		            </ul>
+		        </div></div>
+		        <a class="uk-navbar-item uk-logo" href="#">Harshit Sharma</a>
+		        
+
+		    </div>
+		</nav>
+		<!--
 		<div id="switch-box" align="right">
-			<!--
-			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button> -->
+			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button>
 			<table border="0px">
 				<tr>
 					<td>
@@ -169,6 +204,7 @@
 				</tr>
 			</table>		
 		</div>
+		-->
 		<!--
 		<div id="git-box" align="right">
 			<div id="git-icon" align="right">
@@ -176,22 +212,6 @@
 			</div>
 		</div> -->
 		<div id="head-box-ui">
-			<div>
-		        <div class="uk-card uk-card-secondary uk-card-body">
-		            <h3 class="uk-card-title">Personal Info:</h3>
-		        </div>
-		    </div>
-			<div>
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-					Name: Harshit Sharma<br>
-					Contact: +918193085864<br>
-					Email: <a href="mailto:sharma1612harshit@gmail.com">sharma1612harshit@gmail.com</a><br>
-					Linkedin: <a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">@sharma1612harshit</a><br>
-					Github: <a href="https://www.github.com/sharma1612harshit/" target="_blank">@sharma1612harshit</a>
-				</p>
-		        </div>
-		    </div>
 
 		    <div>
 		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
@@ -325,7 +345,7 @@
 			
 		
 
-		<div id="head-box-markdown" style="margin-top: 0px">
+		<div id="head-box-markdown" style="margin-top: 0px;" >
 			<div id="ui-card-2">
 			</div>
 			<p id="text">
