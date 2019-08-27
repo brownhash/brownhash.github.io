@@ -6,482 +6,138 @@
 
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- UIkit CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
-
-		<!-- UIkit JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
-
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<!-- site-icon -->
 		<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sharma1612harshit/sharma1612harshit.github.io/master/favicon.png">
 
-		<!-- importing fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-
-		<style type="text/css">
-			body{
-				background-color: #ffffff;
-				cursor: wait;
-				font-family: 'Source Code Pro', monospace;
-				font-size: 16px;
-			}
-			#profile-image{
-				border-radius: 2%;
-				border-width: 5px;
-				border-color: #000000;
-				box-shadow: 5px 5px 5px #dedede;
-				-moz-box-shadow: 5px 5px 5px #dedede;
-				-webkit-box-shadow: 5px 5px 5px #dedede;
-				-khtml-box-shadow: 5px 5px 5px #dedede;
-			}
-			#text{
-				font-family: 'Source Code Pro', monospace;
-				font-size: 16px;
-			}
-			#git-box{
-				position:fixed; top: 10; right: 10;
-            	z-index: 2;
-            	cursor: wait;
-            	width:50%;
-            	height:40px;
-			}
-			#git-icon{
-				font-size: 20px;
-            			cursor: pointer;
-			}
+		<style>
 			#key{
-				color:#c91212;
-				font-size: 18px ;
-				font-weight: 700;
+				color: green;
 			}
-			#sub-key{
-				color:#0833cc;
-			}
-			#sub-key-2{
-				color:#c309ed;
-			}
-			#value{
-				color:#2e2e2e;
-			}
-			#switch-box{
-				position:fixed;
-            	z-index: 2;
-            	cursor: wait;
-            	width:95%;
-            	height:40px;
-			}
-			#switch{
-				font-size: 20px;
-            	width: 30%;
-            	height: 100%;
-            	cursor: pointer;
-			}
-			#head-box-markdown{
-				width:85%;
-				align-content: left		
-				clear: left;	
-			}
-			#ui-card{
-				background-image: linear-gradient(-90deg, #d4d4d4, white);
-				width: 95%;
-				padding: 20px;
-				background-color: #f7f7f7;
-				border-radius: 0%;
-				border-width: 5px;
-				border-color: #000000;
-				box-shadow: 5px 5px 5px #dedede;
-				-moz-box-shadow: 5px 5px 5px #dedede;
-				-webkit-box-shadow: 5px 5px 5px #dedede;
-				-khtml-box-shadow: 5px 5px 5px #dedede;
-			}
-			#ui-card-2{
-				width: 95%;
-				padding: 20px;
-				background-color: #ffffff;
-				border-radius: 0%;
-				border-width: 5px;
-				border-color: #000000;
-			}
-			#info-box{
-				width: 95%;
-				padding: 20px;
-				background-color: #363636;
-				border-radius: 0%;
-				border-width: 5px;
-				border-color: #000000;
-				box-shadow: 5px 5px 5px #dedede;
-				-moz-box-shadow: 5px 5px 5px #dedede;
-				-webkit-box-shadow: 5px 5px 5px #dedede;
-				-khtml-box-shadow: 5px 5px 5px #dedede;
-			}
-			#ui-card-small{
-				height: 100%;
-				padding: 20px;
-				background-color: #f7f7f7;
-				border-radius: 0%;
-				border-width: 5px;
-				border-color: #000000;
-			}
-			#button-div{
-				background-color: #ffffff;
-				opacity: 60%;
-				width: 100px;
-				height: 30px;
-				padding: 10px;
-				background-color: transparent;
-				border-radius: 0%;
-				border-style: solid;
-				border-width: 1px;
-				border-color: #d11919;
-				
-			}
-			#heading{
-				color: #2e2e2e;
-			}
-			#content{
-				color: #000000;
-			}
-			#mark-link{
-				color: #000000;
-			}
-			A:link { COLOR: #000000; TEXT-DECORATION: none; font-weight: normal }
-			A:visited { COLOR: #000000; TEXT-DECORATION: none; font-weight: normal }
-			A:active { COLOR: #ffea00; TEXT-DECORATION: none }
-			A:hover { COLOR: #ffea00; TEXT-DECORATION: none; font-weight: none }
 		</style>
+
 	</head>
-	<body onload="init()" id="body">
-		<nav class="uk-navbar-container uk-margin" uk-navbar>
-		    <div class="uk-navbar-center">
+	<body id="body">
+		<center>
+			<div class="card" style="width:90%; margin-top: 30px; margin-bottom: 30px">
+	  			<div class="card-body" align="left">
+		            <p id="text">
+		            	<code>
+						{<br> 
+							&emsp;<font id="key">Name:</font> 'Harshit Sharma',<br><br>
 
-		        <div class="uk-navbar-left"><div>
-		            <ul class="uk-navbar-nav">
-		                <li>
-		                    <a href="#">Visual Modes</a>
-		                    <div class="uk-navbar-dropdown" uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
-		                        <ul class="uk-nav uk-navbar-dropdown-nav">
-		                            <li><a href="#" onclick="show_ui()"><span class="uk-margin-small-right" uk-icon="image"></span>UI</a></li>
-		                            <li><a href="#" onclick="show_markdown()"><span class="uk-margin-small-right" uk-icon="code"></span>Markdown</a></li>
-		                        </ul>
-		                    </div>
-		                </li>
-		               
-		                <li>
-		                    <a href="#">Contact</a>
-		                    <div class="uk-navbar-dropdown" uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
-		                        <ul class="uk-nav uk-navbar-dropdown-nav">
-		                        	<li><a href="#"  target="_blank"><span class="uk-margin-small-right" uk-icon="receiver"></span>+918193085864</a></li>
-		                        	<li>
-		                        		<a href="mailto:sharma1612harshit@gmail.com" title="sharma1612harshit@gmail.com" target="_blank"><span class="uk-margin-small-right" uk-icon="mail"></span>sharma1612harshit@gmail.com</a>
-    								</li>
-		                        	<li><a href="https://www.linkedin.com/in/sharma1612harshit/"  target="_blank"><span class="uk-margin-small-right" uk-icon="linkedin"></span>Linkedin</a></li>
-		                            <li><a href="https://www.github.com/sharma1612harshit/" target="_blank"><span class="uk-margin-small-right" uk-icon="github"></span>Github</a></li>
-		                            
-		                        </ul>
-		                    </div>
-		                </li>
-		            </ul>
-		        </div></div>
-		    </div>
-		</nav>
-		<!--
-		<div id="switch-box" align="right">
-			<button id="switch" name="ui" value="ui" onclick="show_ui()">UI</button><button id="switch" onclick="show_markdown()">Markdown</button>
-			<table border="0px">
-				<tr>
-					<td>
-						<button onclick="show_ui()" class="uk-button uk-button-secondary"><span class="uk-margin-small-right" uk-icon="image"></span>UI</button>
-					</td>
-					<td>
-						<button onclick="show_markdown()" class="uk-button uk-button-secondary"><span class="uk-margin-small-right" uk-icon="code"></span>Markdown</button>
-					</td>
-				</tr>
-			</table>		
-		</div>
-		-->
-		<!--
-		<div id="git-box" align="right">
-			<div id="git-icon" align="right">
-				<a href="https://www.github.com/sharma1612harshit" title="My github profile" target="_blank"><img width="130px" src="https://github.com/sharma1612harshit/sharma1612harshit.github.io/blob/master/GitHub-Logo.png?raw=true" title="My github profile" alt="Github profile"></a>
+							&emsp;<font >Experience:</font> {<br>
+								&emsp;&emsp;<font >Devops Intern:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Company:</font> 'Rivigo Labs, Gurugram, Haryana',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'July 2019 - Present',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. ',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >Devops Intern:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Company:</font> 'Rivigo Labs, Gurugram, Haryana',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'Dec 2018 - Feb 2019',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger.',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+							&emsp;&emsp;}<br><br>
+
+							&emsp;<font >Education:</font> {<br>
+								&emsp;&emsp;<font >B.Tech:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Institute:</font> 'GLA University, Mathura',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Passing Out Year:</font> 2020,<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Stream:</font> 'Computer Science with specialisation in Cloud Computing and Virtualisation',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Percentage/CGPA:</font> 7.1,<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >Intermediate:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Institute:</font> 'Dayawati Modi Academy - 1, Meerut',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Passing Out Year:</font> 2016,<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Stream:</font> 'PCM',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Percentage/CGPA:</font> 82.4,<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >High School:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Institute:</font> 'Dayawati Modi Academy - 1, Meerut',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Passing Out Year:</font> 2014,<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Percentage/CGPA:</font> 9.8,<br>
+								&emsp;&emsp;&emsp;},<br>
+
+							&emsp;&emsp;}<br><br>
+
+							&emsp;<font >Skills:</font> {<br>
+								&emsp;&emsp;<font id="key">Programming Languages:</font> ['Python', 'GoLang', 'Java', 'JavaScript', 'HTML', 'CSS', 'C', 'php',],<br>
+								&emsp;&emsp;<font id="key">Databases:</font> ['MySQL', 'MongoDB'],<br>
+								&emsp;&emsp;<font id="key">Cloud Platforms:</font> ['Amazon Web Services', 'Google Cloud Platform', 'Open Stack'],<br>
+								&emsp;&emsp;<font id="key">Virtualization Platforms:</font> ['Docker', 'Vagrant', 'VMware'],<br>
+								&emsp;&emsp;<font id="key">Web Frameworks:</font> ['Django', 'Flask'],<br>
+								&emsp;&emsp;<font id="key">CI/CD Tools:</font> 'Jenkins',<br>
+								&emsp;&emsp;<font id="key">Infrastructure Automation Tools:</font> ['Ansible', 'Terraform'],<br>
+							&emsp;&emsp;}<br><br>
+
+							&emsp;<font >Projects:</font> {<br>
+
+								&emsp;&emsp;<font >AWS RI Utilization:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'August 2019',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >Git Management Tools:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'July 2019',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Consists of tools that help managing the configuration and commits within a local git repository.',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >DevHops:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'April 2019',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/DevHops" target="_blank">https://github.com/sharma1612harshit/DevHops</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >MS-Teams Dependency in Oncall:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'Feb 2019',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Github Link:</font> '<a id="mark-link" href="https://github.com/sharma1612harshit/oncall" target="_blank">https://github.com/sharma1612harshit/oncall</a>',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+								&emsp;&emsp;<font >Web Application Deployed on Private Cloud:</font> {<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Date:</font> 'Dec 2018',<br>
+									&emsp;&emsp;&emsp;&emsp;<font id="key">Info:</font> 'Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.',<br>
+								&emsp;&emsp;&emsp;},<br>
+
+							&emsp;&emsp;}<br><br>
+
+							&emsp;<font >Achievements and Certifications:</font> {<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'IBM Gurukool',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'HPES Core Java & Android',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'Oracle Java SE7 Workforce',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'NIIT Core Java',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'Udemy Python3',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'RedHat Ansible',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'Linux Academy Jenkins',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'Udemy Golang',<br>
+								&emsp;&emsp;<font id="key">Name:</font> 'Udemy Full Stack Developer',<br>
+							&emsp;&emsp;}<br><br>
+
+							&emsp;<font>Contact:</font> {<br>
+								&emsp;&emsp;<font id="key">Email:</font> 'sharma1612harshit@gmail.com',<br>
+								&emsp;&emsp;<font id="key">Linkedin:</font> <a href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">'https://www.linkedin.com/in/sharma1612harshit/'</a>,<br>
+								&emsp;&emsp;<font id="key">Github:</font> <a href="https://www.github.com/sharma1612harshit/" target="_blank">'https://www.github.com/sharma1612harshit/'</a>,<br>
+								&emsp;&emsp;<font id="key">Phone:</font> '+91-8193085864',<br>
+							&emsp;&emsp;}<br><br>
+						}</code>
+					</p>
+				</div>
 			</div>
-		</div> -->
-		<div id="head-box-ui">
+		</center>
 
-		    <div>
-		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
-		            <h3 class="uk-card-title">Experience:</h3>
-		        </div>
-		    </div>
-			<div>
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-						<b>Devops Intern</b><br>
-						Comapny: Rivigo Labs, Gurugram, Haryana<br>
-						Date: July 2019 - Present<br>
-						Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. <br>
-					</p>
-					<p id="content">
-						<b>Devops Intern</b><br>
-						Comapny: Rivigo Labs, Gurugram, Haryana<br>
-						Date: Dec 2018 - Feb 2019<br>
-						Info: Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger. <br>
-					</p>
-		        </div>
-		    </div>
 
-		    <div>
-		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
-		            <h3 class="uk-card-title">Education:</h3>
-		        </div>
-		    </div>
-			<div>
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-						<b>B.Tech</b><br>
-						Institute: GLA University, Mathura<br>
-						Passing Out Year: 2020<br>
-						Stream: Computer Science with Specialisation in Cloud Computing and Virtualisation<br>
-						Percentage/CGPA: 7.1
-					</p>
-					<p id="content">
-						<b>Intermediate</b><br>
-						Institute: Dayawati Modi Academy - 1, Meerut<br>
-						Passing Out Year: 2016<br>
-						Stream: PCM<br>
-						Percentage/CGPA: 82.4
-					</p>
-					<p id="content">
-						<b>High School</b><br>
-						Institute: Dayawati Modi Academy - 1, Meerut<br>
-						Passing Out Year: 2014<br>
-						Percentage/CGPA: 9.8
-					</p>
-		        </div>
-		    </div>
-
-			<div>
-		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
-		            <h3 class="uk-card-title">Skills:</h3>
-		        </div>
-		    </div>
-		    <div>
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-					Programming Languages: Python, GoLang, JAVA, JavaScript, HTML, CSS, C, php<br>
-					Databases: MySQL, Mongo DB<br>
-					Cloud Platforms: Amazon Web Services, Google Cloud Platform<br>
-					Virtuatlisation Platform: Docker, Vagrant, VMware<br>
-					Web Frameworks: Django, Flask<br>
-					CI/CD Tools: Jenkins<br>
-					Infrastructure Automation Tools: Ansible, Terraform<br>
-				</p>
-		        </div>
-		    </div>
-
-			<div>
-		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
-		            <h3 class="uk-card-title">Projects:</h3>
-		        </div>
-		    </div>
-		    <div>
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-						<b>AWS Ri Utilisation</b><br>
-						Date: August 2019<br>
-						Info: Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances<br>
-						Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">Go</a> <br>
-					</p>
-					<p id="content">
-						<b>Git Management Tools</b><br>
-						Date: July 2019<br>
-						Info: Consists of tools that help managing the configuration and commits within a local git repository.<br>
-						Github Link: <a href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">Go</a> <br>
-					</p>
-					<p id="content">
-						<b>DevHops</b><br>
-						Date: April 2019<br>
-						Info: DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask.<br>
-						Github Link: <a href="https://github.com/sharma1612harshit/DevHops" target="_blank">Go</a> <br>
-					</p>
-					<p id="content">
-						<b>MS-Teams Dependency in Oncall</b><br>
-						Date: Feb 2019<br>
-						Info: Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON.<br>
-						Github Link: <a href="https://github.com/sharma1612harshit/oncall" target="_blank">Go</a> <br>
-					</p>
-					<p id="content">
-						<b>Web Application Deployed on Private Cloud</b><br>
-						Date: Dev 2018<br>
-						Info: Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.<br>
-					</p>
-		        </div>
-		    </div>
-			<div>
-		        <div class="uk-card uk-card-secondary uk-card-body" style="margin-top: 30px">
-		            <h3 class="uk-card-title">Achievements and Certifications:</h3>
-		        </div>
-		    </div>
-		    <div style = "margin-bottom: 30px">
-		        <div class="uk-card uk-card-hover uk-card-body">
-		            <p id="content">
-						IBM Gurukool<br>
-						HPES Core Java & Android<br>
-						Oracle Java SE7 Workforce<br>
-						NIIT Core Java<br>
-						Udemy Python3<br>
-						RedHat Ansible<br>
-						Linux Academy Jenkins<br>
-						Udemy Golang<br>
-						Udemy Full Stack Developer<br>
-					</p>
-		        </div>
-		    </div>
-			
-		
-
-		<div id="head-box-markdown" style="margin-top: 0px;" >
-			<div id="ui-card-2">
-			</div>
-			<p id="text">
-				{<br> 
-					&emsp;<font id="key">Name:</font> <b id="value">'Harshit Sharma'</b>,<br><br>
-
-					&emsp;<font id="key">Experience:</font> {<br>
-						&emsp;&emsp;<font id="sub-key">Devops Intern:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019 - Present'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for creating additional scheduler for oncall. Application development using Python. Working on core AWS concepts. '</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">Devops Intern:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Company:</font> <b id="value">'Rivigo Labs, Gurugram, Haryana'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018 - Feb 2019'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Worked upon setup and teardown of infrastructure over cloud platform. Responsible for merged pull request in Linkedin’s Oncall GitHub repository for adding MS-Teams messenger dependency in Linkedin’s Oncall using Python. Development of Notification script for Oncall shifts using Python and MS-Teams Messenger.'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-					&emsp;&emsp;}<br><br>
-
-					&emsp;<font id="key">Education:</font> {<br>
-						&emsp;&emsp;<font id="sub-key">B.Tech:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'GLA University, Mathura'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2020</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Stream:</font> <b id="value">'Computer Science with specialisation in Cloud Computing and Virtualisation'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">7.1</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">Intermediate:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'Dayawati Modi Academy - 1, Meerut'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2016</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Stream:</font> <b id="value">'PCM'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">82.4</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">High School:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Institute:</font> <b id="value">'Dayawati Modi Academy - 1, Meerut'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Passing Out Year:</font> <b id="value">2014</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Percentage/CGPA:</font> <b id="value">9.8</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-					&emsp;&emsp;}<br><br>
-
-					&emsp;<font id="key">Skills:</font> {<br>
-						&emsp;&emsp;<font id="sub-key">Programming Languages:</font> <b id="value">['Python', 'GoLang', 'Java', 'JavaScript', 'HTML', 'CSS', 'C', 'php',]</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Databases:</font> <b id="value">['MySQL', 'MongoDB']</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Cloud Platforms:</font> <b id="value">['Amazon Web Services', 'Google Cloud Platform', 'Open Stack']</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Virtualization Platforms:</font> <b id="value">['Docker', 'Vagrant', 'VMware']</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Web Frameworks:</font> <b id="value">['Django', 'Flask']</b>,<br>
-						&emsp;&emsp;<font id="sub-key">CI/CD Tools:</font> <b id="value">'Jenkins'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Infrastructure Automation Tools:</font> <b id="value">['Ansible', 'Terraform']</b>,<br>
-					&emsp;&emsp;}<br><br>
-
-					&emsp;<font id="key">Projects:</font> {<br>
-
-						&emsp;&emsp;<font id="sub-key">AWS RI Utilization:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'August 2019'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Calculating the Reserved instance utilisation per instance type within a particular region. And sending allers if Reserved instaces outnumber the ondemand instances'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/RI_alert</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">Git Management Tools:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'July 2019'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Consists of tools that help managing the configuration and commits within a local git repository.'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/mycodes/tree/master/git_tools" target="_blank">https://github.com/sharma1612harshit/mycodes/tree/master/git_tools</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">DevHops:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'April 2019'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'DevHops is an attempt to solve legacy Devops task using a unified portal. At present it serves as a classical load balancer. Technologies Used – Python, Flask'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/DevHops" target="_blank">https://github.com/sharma1612harshit/DevHops</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">MS-Teams Dependency in Oncall:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Feb 2019'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Oncall is an Open-Source calendar tool designed for scheduling and managing Oncall shifts. Added MS-Teams messenger as a shift notifier. Got the pull request merged into Linkedin’s GitHub repository. Technologies used - Python, Flask, MySQL, JSON'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Github Link:</font> <b id="value">'<a id="mark-link" href="https://github.com/sharma1612harshit/oncall" target="_blank">https://github.com/sharma1612harshit/oncall</a>'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-						&emsp;&emsp;<font id="sub-key">Web Application Deployed on Private Cloud:</font> {<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Date:</font> <b id="value">'Dec 2018'</b>,<br>
-							&emsp;&emsp;&emsp;&emsp;<font id="sub-key-2">Info:</font> <b id="value">'Private Cloud built using OpenStack. Used OpenStack instance for deploying website using LAMP. Created a 2 System architecture where 1 node represented the compute node while the other represented the storage node.'</b>,<br>
-						&emsp;&emsp;&emsp;},<br>
-
-					&emsp;&emsp;}<br><br>
-
-					&emsp;<font id="key">Achievements and Certifications:</font> {<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'IBM Gurukool'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'HPES Core Java & Android'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Oracle Java SE7 Workforce'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'NIIT Core Java'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Python3'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'RedHat Ansible'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Linux Academy Jenkins'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Golang'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Name:</font> <b id="value">'Udemy Full Stack Developer'</b>,<br>
-					&emsp;&emsp;}<br><br>
-
-					&emsp;<font id="key">Contact:</font> {<br>
-						&emsp;&emsp;<font id="sub-key">Email:</font> <b id="value">'sharma1612harshit@gmail.com'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Linkedin:</font> <b id="value">'<a id="mark-link" href="https://www.linkedin.com/in/sharma1612harshit/" target="_blank">https://www.linkedin.com/in/sharma1612harshit/</a>'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Github:</font> <b id="value">'<a id="mark-link" href="https://www.github.com/sharma1612harshit" target="_blank">https://www.github.com/sharma1612harshit/</a>'</b>,<br>
-						&emsp;&emsp;<font id="sub-key">Phone:</font> <b id="value">'+91-8193085864'</b>,<br>
-					&emsp;&emsp;}<br><br>
-				}
-			</p>
-		</div>
-
-		<script>
-
-			function init() {
-			  var x = document.getElementById("head-box-markdown");
-			  x.style.display = "none";
-			}
-
-			function show_markdown() {
-			  var x = document.getElementById("head-box-markdown");
-			  var y = document.getElementById("head-box-ui");
-
-			  if (x.style.display === "none") {
-			  	y.style.display = "none";
-			    x.style.display = "block";
-			  }
-			}
-
-			function show_ui() {
-			  var y = document.getElementById("head-box-ui");
-			  var x = document.getElementById("head-box-markdown");
-			  if (y.style.display === "none") {
-			  	x.style.display = "none";
-			    y.style.display = "block";
-			  }
-			}
-
-			
-		</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	</body>
 </html>
