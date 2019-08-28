@@ -3,15 +3,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Version HOME</title>
-<style>
-    #bodyb{
-      background: url() no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-</style>
 
 <!-- bootstrap style sheets -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,23 +11,7 @@
 </head>
 
 <body id="bodyb" >
-
-    <!-- weather div -->
-    <div style="width:100%; padding-top:15%">
-      <center>
-        <h1><div id="temp" style="font-size:109px"></div><div id="minutely"></div></h1>
-        <h1><div id="location"></div></h1>
-      </center>
-    </div>
-    <!-- weather div -->
-
-
-<!-- bootstrap scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- bootstrap scripts -->
-
+  <a id="location"></a> <a id="temp">No data found</a>
 <!-- weather scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
@@ -53,7 +28,7 @@ function success(position) {
   longitude = (position.coords.longitude).toFixed(2);
 
 
-  location.innerHTML = 'Weather at Lat: '+latitude+' Lon: '+longitude;
+  location.innerHTML = 'Weather at Lat: '+latitude+' Lon: '+longitude+' is ';
 
    $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
     $('#temp').html((((data.currently.temperature-32)*5)/9).toFixed(2) + '° C');
