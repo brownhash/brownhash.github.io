@@ -183,7 +183,7 @@
 	    var circles = [];
 
 	    var colorPicker = (function() {
-	      var colors = ["#FFFFFF","#000000"];
+	      var colors = ["#FFFFFF","#DF4444","#00297A","#F3BC00","#000000"];
 	      var index = 0;
 	      function next() {
 	        index = index++ < colors.length-1 ? index : 0;
@@ -342,8 +342,6 @@
 	    (function init() {
 	      resizeCanvas();
 	      if (window.CP) {
-	        // CodePen's loop detection was causin' problems
-	        // and I have no idea why, so...
 	        window.CP.PenTimer.MAX_TIME_IN_LOOP_WO_EXIT = 6000; 
 	      }
 	      window.addEventListener("resize", resizeCanvas);
