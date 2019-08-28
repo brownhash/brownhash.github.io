@@ -71,7 +71,6 @@
                     <a class="btn btn-light" href="https://sharma1612harshit.github.io/ready_templates/particle.html" role="button">Particle</a>
                      <button type="button" id="location" class="btn btn-secondary" disabled=""></button>
                      <button type="button" id="temp" class="btn btn-secondary" disabled=""></button>
-                     <button type="button" id="minutely" class="btn btn-secondary" disabled=""></button>
                 </div>
       </div>
       <div id="data" class="card" style="width:90%; margin-top: 0px; margin-bottom: 30px; opacity: .8 ">
@@ -204,7 +203,7 @@
           longitude = (position.coords.longitude).toFixed(2);
 
 
-          location.innerHTML = 'Lat: '+latitude+' Lon: '+longitude;
+          location.innerHTML = 'Weather at Lat: '+latitude+' Lon: '+longitude+' is ';
 
            $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
             $('#temp').html((((data.currently.temperature-32)*5)/9).toFixed(2) + '° C');
