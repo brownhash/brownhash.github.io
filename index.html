@@ -73,6 +73,7 @@
                   <code>
             {<br> 
               &emsp;&emsp;<font id="key">Name:</font> 'Harshit Sharma',<br><br>
+              &emsp;&emsp;<font id="key">Get resume:</font> ['<a href="#" onclick="printDiv('data')">Json format</a>','<a href="https://github.com/sharma1612harshit/other/raw/master/Harshit%20Sharma%20Resume.pdf">Pdf format</a>']<br><br>
 
               &emsp;&emsp;<font >Experience:</font> {<br>
                 &emsp;&emsp;&emsp;&emsp;<font >Devops Intern:</font> {<br>
@@ -388,6 +389,19 @@
 	      fauxClick.pageY = y;
 	      document.dispatchEvent(fauxClick);
 	    }
+    </script>
+
+    <script type="text/javascript">
+        function printDiv(divName) {
+             var printContents = document.getElementById(divName).innerHTML;
+             var originalContents = document.body.innerHTML;
+
+             document.body.innerHTML = printContents;
+
+             window.print();
+
+             document.body.innerHTML = originalContents;
+        }
     </script>
 
 
