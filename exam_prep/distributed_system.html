@@ -786,7 +786,7 @@
         </div>
     </div>
 
-    <div id="corba" class="content uk-card uk-card-default">
+    <div id="corba objects architecture orb idl dynamic invocation interface repository adapters" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>CORBA</h3>
         </div>
@@ -795,8 +795,39 @@
             • CORBA is just a specification for creating and using distributed objects;<br>
             • CORBA is not a programming language.<br>
             • The CORBA architecture is based on the object model.<br>
-            • The model is abstract in the sense that it is not directly realized by any particular technology; this allows applications to be built in a standard manner using basic building blocks such as objects. Therefore, a CORBA-based system is a collection of objects that isolates the requestors of services (clients) from the providers of services (servers) by a well-defined encapsulating interface.<br>
+            • The model is abstract in the sense that it is not directly realized by any particular technology; this allows applications to be built in a standard manner using basic building blocks such as objects. Therefore, a CORBA-based system is a collection of objects that isolates the requestors of services (clients) from the providers of services (servers) by a well-defined encapsulating interface.<br><br>
 
+            <b>CORBA OBJECTS</b><br>
+            • CORBA objects can run on any platform.<br>
+            • CORBA objects can be located anywhere on the network.<br>
+            • CORBA objects can be written in any language that has IDL mapping.<br><br>
+
+            <b>CORBA ARCHITECTURE</b><br>
+            • CORBA is composed of five major components<br>
+            • ORB,<br>
+            • IDL,<br>
+            • dynamic invocation interface(DII),<br>
+            • interface repositories (IR), and<br>
+            • object adapters (OA).<br><br>
+
+            <b>ORB</b><br>
+            • The ORB, which is the heart of CORBA, is responsible for all the mechanisms required to perform these tasks:<br>
+            • Find the object implementation for the request.<br>
+            • Prepare the object implementation to receive the request.<br>
+            • Communicate the data making up the request.<br><br>
+
+            <b>IDL</b><br>
+            The IDL defines the types of objects by defining their interfaces. An interface consists of a set of named operations and the parameters to those operations. Note that IDL is used to describe interfaces only, not implementations. Despite the fact that IDL syntax is similar to C++
+            and Java, IDL is not a programming language.<br><br>
+
+            <b>Dynamic invocation interface</b><br>
+            The DII, on the other hand, allows client applications to use server objects without knowing the type of those objects at compile time<br><br>
+
+            <b>Interface Repository</b><br>
+            The IR provides another way to specify the interfaces to objects. Interfaces can be added to the interface repository service. Using the IR, a client should be able to locate an object that is unknown at compile time, find information about its interface, then build a request to be forwarded through the ORB.<br><br>
+
+            <b>Object Adapters</b><br>
+            An object adapter is the primary way that an object implementation accesses services provided by the ORB. Such services include object reference generation and interpretation, method invocation, security of interactions, and object and implementation activation and deactivation.
 
         </div>
     </div>
