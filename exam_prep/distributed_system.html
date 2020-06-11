@@ -284,6 +284,148 @@
         </div>
     </div>
 
+    <div id="system models model architectural application architecture middleware operating platform rpc rmi corba java microsoft dcom web services client server and peer to peer thin fat" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>System Models</h3>
+        </div>
+        <div class="uk-card-body">
+            Systems that are intended for use in real world environment should be designed to function correctly in the widest possible range of circumstances and in the face of many possible difficulties and threats.<br><br>
+
+            Earlier slides shows that DS of different types share important underlying properties and give rise to design problems.<br><br>
+
+            Here we are going to discuss common properties and design issues for distributed systems in the form of descriptive models.<br><br>
+
+            Each model is intended to provide an abstract, simplified but consistent description of a relevant aspect of distributed system design.<br><br>
+
+            • <b>Architectural Model</b><br>
+            defines the way in which the component of system interact with each another and the way they have been implemented in the network.<br><br>
+
+            These models are basically concern with the placement of system and its part and the relationship that exist between them. The goal of architecture model is to meet the current needs as well as the need of future<br><br>
+            - <b>Software Architecture</b><br>
+            It refers to the structuring of software as layers or modules in a single computer and in terms of services offered and requested between processes located in the same or different computers. These process and service oriented views can be expressed as service layers.<br>
+            <pre>
+                Application services
+                middle ware
+                operating system ____________platform
+                computer & nw h/w ______|
+            </pre>
+            <b>Platform</b><br>
+            The lowest level hardware and software layers are referred as platform to distributed system and their application.<br>
+
+            These low level layers provide services to the layers above them.<br>
+
+            Intel x86/ Windows, Intel x86/Solarsis, Intel x86/Linux, PowerPC/Mac OS X are major example of hardware and software layers.<br><br>
+
+            <b>Middle Ware</b><br>
+            It is layer of software whose purpose is to mask heterogeneity and to provide a convenient programming model to application programmers.<br>
+            The goal of middleware is to create system independent interfaces for distributed applications.<br>
+            The principle aim of middleware, namely raising the level of abstraction for distributed programming, is achieved in three ways.<br><br>
+
+            communication mechanisms that are more convenient and less error prone than basic message passing;<br>
+            independence from OS, network protocol, programming language, etc. and<br>
+            standard services (such as a naming service, transaction service, security service, etc.).<br><br>
+
+            To make the integration of these various services easier, and to improve transparency and system independence, middleware is usually based on a particular paradigm, or model, for describing distribution and communication.<br><br>
+
+            <b>RPC</b> (Sun RPC) and group communication systems such as Isis were amongst the earliest instances of middleware. Object-oriented middleware products and standards are widely used, such as<br>
+            <b>Java RMI</b> (Remote Method Invocation)<br>
+            <b>CORBA</b> (Common Object Request Broker Architecture)<br>
+            Web services<br>
+            <b>Microsoft DCOM</b> (Distributed Component Object Model)<br><br>
+
+
+            - <b>System Architecture</b><br>
+
+            A distributed system is composed of a number of elements, the most important of which are software components, processing nodes and networks.<br>
+
+            Some of these elements can be specified as part of a distributed system’s design, while others are given.<br>
+
+            Typically when building a distributed system, the software is under the designer’s control.<br>
+
+            Depending on the scale of the system, the hardware can be specified within the design as well, or already exists and has to be taken as-is.<br>
+
+            The key, however, is that the software components must be distributed over the hardware components in some way.<br><br>
+
+            The software of distributed systems can become fairly complex—especially in large distributed systems—and its components can spread over many machines.<br>
+            It is important, therefore, to understand how to organize the system.<br>
+            The software architecture of distributed systems deals with how software components are organized and how they work together, i.e., communicate with each other.<br>
+            Once the software components are instantiated and placed on real machines, then the actual system architecture comes into picture.<br>
+            <b>Client Server</b> and <b>Peer to Peer</b><br><br>
+
+            <b>Client Server Architecture</b><br>
+            The client-server architecture is the most common and widely used model for communication between processes.<br>
+            In this architecture one process takes on the role of a server, while all other processes take on the roles of clients.<br>
+            The server process provides a service (e.g., a time service, a database service, a banking service, etc.) and the clients are customers of that service.<br>
+            A client sends a request to a server, the request is processed at the server and a reply is returned to the client.<br>
+            A typical client-server application can be decomposed into three logical parts: the interface part, the application logic part, and the data part.<br><br>
+
+            Implementations of the client-server architecture vary with regards to how the parts are separated over the client and server roles.<br>
+            A <b>thin client</b> implementation will provide a minimal user interface layer, and leave everything else to the server.<br>
+            A <b>fat client</b> implementation, on the other hand, will include all of the user interface and application logic in the client, and only rely on the server to store and provide access to data.<br>
+            Implementations in between will split up the interface or application logic parts over the clients and server in different ways.<br><br>
+
+        </div>
+    </div>
+
+    <div id="vertical distribution multi tier" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Vertical Distribution</h3>
+        </div>
+        <div class="uk-card-body">
+            An extension of the client-server architecture, the vertical distribution, or multi-tier, architecture distributes the traditional server functionality over multiple servers.<br>
+            A client request is sent to the first server.<br>
+            During processing of the request this server will request the services of the next server, who will do the same, until the final server is reached.<br>
+            In this way the various servers become clients of each other. Each server is responsible for a different step (or tier) in the fulfillment of the original client request.<br>
+
+        </div>
+    </div>
+
+    <div id="horizontal distribution multi tier" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Horizontal Distribution</h3>
+        </div>
+        <div class="uk-card-body">
+            While vertical distribution focuses on splitting up a server’s functionality over multiple computers, horizontal distribution involves replicating a server’s functionality over multiple computers.<br>
+            A typical example, as shown in Figure, is a replicated Web server.<br>
+            In this case each server machine contains a complete copy of all hosted Web pages and client requests are passed on to the servers in a round robin fashion.<br>
+            The horizontal distribution architecture is generally used to improve scalability (by reducing the load on individual servers) and reliability (by providing redundancy).<br>
+
+        </div>
+    </div>
+
+    <div id="peer to peer" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Peer to Peer</h3>
+        </div>
+        <div class="uk-card-body">
+            The peer to peer (P2P) architecture takes the opposite approach and assumes that all processes play the same role, and are therefore peers of each other.<br>
+            In this architecture, each process acts as both client and server, both sending out requests and processing incoming requests. The P2P model all processes provide the same logical services.<br>
+            Well known examples of the P2P model are file-sharing applications.<br>
+            When a node wishes to send a message to an arbitrary other node, in this architecture it must first locate that node by propagating a request along the links in the overlay network. Once the destination node is found, the two nodes can typically communicate directly.<br><br>
+
+            There are two key types of overlay networks, the distinction being based on how they are built and maintained. In all cases a node in the network will maintain a list of neighbors.<br>
+            In unstructured overlays the structure of the network often resembles a random graph. In order to keep the network connected as nodes join and leave, all nodes periodically exchange their partial views with neighbors, creating a new neighbor list for themselves. As long as nodes both push and pull this information the network tends to stay well connected.<br><br>
+
+            In the case of structured overlays the choice of a node’s neighbors is determined according to a specific structure.<br>
+            In a distributed hash table, for example, nodes work together to implement a hash table. Each node is responsible for storing the data associated with a range of identifiers.<br>
+            When joining a network, a node is assigned an identifier, locates the node responsible for the range containing that identifier, and takes over part of that identifier space.<br>
+            Each node keeps track of its neighbors in the identifier space.<br>
+
+        </div>
+    </div>
+
+    <div id="fundamental model" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Fundamental Model</h3>
+        </div>
+        <div class="uk-card-body">
+            Interaction Model<br>
+            Failure Model<br>
+            Security Model<br>
+
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
