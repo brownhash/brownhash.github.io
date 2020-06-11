@@ -414,14 +414,196 @@
         </div>
     </div>
 
-    <div id="fundamental model" class="content uk-card uk-card-default">
+    <div id="fundamental model interaction synchronous asynchronous arbitrary failures byzantine timing security" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Fundamental Model</h3>
         </div>
         <div class="uk-card-body">
-            Interaction Model<br>
-            Failure Model<br>
-            Security Model<br>
+            • <b>Interaction Model</b><br>
+            It describe how processes coordinate their actions.<br>
+            The process interacts within process by passing messages, resulting in communication flow and coordination of process.<br>
+            The rate at which each process proceed and the timing of the transmission of messages cannot be predicated.<br>
+            The interacting process performs all the activity in a distributed system.<br>
+            Each process has its own state, consisting of the set of data that it can access and update.<br>
+            The state belonging to each process is completely private, i.e. it cannot be accessed or updated by another process.<br>
+            In a distributed system it is hard to set time limits on the time taken for execution by a process, or for message delivery or clock drift.<br><br>
+
+            There are two interaction models:<br>
+            - Synchronous Model<br>
+            - Asynchronous Model<br>
+            Synchronous Model is one in which following bounds are defined:<br>
+            The time to execute each step of a process has known upper and lower bounds<br>
+            Each message transmitted over a channel is received within a known bound time<br>
+            Each process has a local clock whose drift rate from real time has a known bound<br>
+            It is difficult to arrive at the realistic values of the bounds, message delays and clock drift in the distributed system and to provide the guarantee over these chosen values.<br><br>
+
+            Unless these values cannot be guaranteed, their reliability will be in question. However, in a synchronous model it is possible to use timeouts.<br>
+            Asynchronous Models are one in which there is no bounds on:<br>
+            Process execution speed<br>
+            Message transmission delay<br>
+            Clock drift rates<br>
+            The asynchronous model allows no assumption about the time intervals involved in any execution. Actual distributed systems are very often asynchronous because of the need for processes to share the processors and for communication channels to share the network. If the process execution speed is not known and the process is sharing too many processor, than the nature of the process will be asynchronous.<br><br>
+
+            • <b>Failure Model</b><br>
+            Failure Model defines the ways in which failure may occur in order to provide an understanding of the effects of failures. In distributed system, both process and communication channel may fail; these failures are listed in different categories:<br>
+            Omission Failure refers to cases when a process or communication channel fails to perform action that it is supposed to do.<br>
+            Process Omission Failure If a process is crashed i.e. it has halted and will not be executed any further. Such process called as fail-stop if other process can detect certainly that the process has crashed.<br>
+            Communication Omission Failure The communication channel produces an omission failure if it is not able to transport message from sender to receiver’s buffer memory. This is known as buffer memory and is generally caused by lack of space in the buffer memory.<br><br>
+
+            - <b>Arbitrary Failures or Byzantine Failure:</b> it is used to describe possible failure semantics, in which any type of error may occur.<br>
+            An arbitrary failure of a process is one in which it arbitrarily omits intended processing steps or takes unintended processing steps.<br>
+            These failures cannot be detected by using whether the process responds to invocation.<br>
+            Arbitrary failures of communication channels are rare as the communication software is able to detect and remove faulty messages.<br><br>
+
+            - <b>Timing Failures</b> Timing failures are applicable in synchronous distributed systems where time limits are set on process execution time, message delivery time and clock drift rate.<br>
+            In asynchronous distributed system if the responses from the server take time it cannot be counted as timing failure.<br>
+            The timing failures are normally limited to synchronous systems where the bounds are known and therefore it could be assessed whether the failure has occurred or not.<br><br>
+
+
+            • <b>Security Model</b><br>
+            The security of a distributed system can be achieved by securing the processes and the channels used for their interactions and by protecting the objects that they encapsulate against unauthorized access.<br>
+
+            The threats from a potential enemy are threat to processors, threat to communication channels and denial of service. The system can be secured from these threats by the technique of cryptography.<br>
+
+            Protection is described in terms of objects and resources<br>
+
+
+        </div>
+    </div>
+
+    <div id="inherent limitations of distributed systems absence of global time shared memory" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Inherent limitations of Distributed Systems</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Absence of Global Clock</b><br>
+            In DS there is no system wide common clock or global clock. Notion of global time does not exist.<br>
+            Suppose a common clock is available for all process in the system: then two different process can observe a global clock value at different instant due to unpredictable message transmission delay.<br>
+            On other hand, if we provide each computer in the system with physical clock, these physical clock can drift from physical time.<br><br>
+
+            <b>IMPACT OF THE ABSENCE OF GLOBAL TIME</b><br>
+            The concept of temporal ordering is integral to design and development of any DS.<br>
+            For example an OS is responsible for scheduling process on the basis of temporal ordering.<br>
+            Due to the absence of global time, it is difficult to reason about temporal events in DS. Hence algorithm for DS are more difficult to design and debug compare to centralized system.<br>
+            Due to absence of global clock it is hard to collect up-to-date information on state of system.<br><br>
+
+            <b>ABSENCE OF SHARED MEMORY</b><br>
+            Computer in DS do not share memory, an up to date state of entire system is not available to any process.<br>
+            A process in DS can obtain coherent but partial view of system or a complete but incoherent view of system.<br>
+            Coherent view means all observation of different process are made at the same physical time.<br>
+            Complete view encompasses the local state of all computers and any message in transit in DS i.e. Global State.<br>
+        </div>
+    </div>
+
+    <div id="theoretical aspects" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Theoretical Aspects</h3>
+        </div>
+        <div class="uk-card-body">
+            Logical Clocks<br>
+            Causal Ordering<br>
+            Global State Recording<br>
+            Termination Detection<br>
+        </div>
+    </div>
+
+    <div id="lamport's lamports clock" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Lamport's Clock</h3>
+        </div>
+        <div class="uk-card-body">
+            Happened before relation:<br>
+            - a -> b : Event a occurred before event b. Events in the same process.<br>
+            - a -> b : If a is the event of sending a message m in a process and  b is the event of receipt of the same message m by another process.<br>
+            - a -> b, b -> c, then a -> c. “->” is transitive.<br>
+            Causally Ordered Events<br>
+            - a -> b : Event a “causally” affects event b<br>
+            Concurrent Events<br>
+            - a || b: if a !-> b and b !-> a<br>
+        </div>
+    </div>
+
+    <div id="logical clocks" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Logical Clocks</h3>
+        </div>
+        <div class="uk-card-body">
+            Conditions satisfied:<br>
+            - Ci is clock in Process Pi.<br>
+            - If a -> b in process Pi, Ci(a) < Ci(b)<br>
+            - Let a: sending message m in Pi; b : receiving message m in Pj; then, Ci(a) < Cj(b).<br>
+            Implementation Rules:<br>
+            - R1: Ci = Ci + d (d > 0); clock is updated between two successive events.<br>
+            - R2: Cj = max(Cj, tm + d); (d > 0);  When Pj receives a message m with a time stamp tm (tm assigned by Pi, the sender; tm = Ci(a), a being the event of sending message m).<br>
+            A reasonable value for d is 1<br>
+
+        </div>
+    </div>
+
+    <div id="vector clocks comparisons" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Vector clocks</h3>
+        </div>
+        <div class="uk-card-body">
+            Keep track of transitive dependencies among processes for recovery purposes.<br>
+            Ci[1..n]: is a “vector” clock at process Pi whose entries are the “assumed”/”best guess” clock values of different processes.<br>
+            Ci[j] (j != i) is the best guess of Pi for Pj’s clock.<br>
+            Vector clock rules:<br>
+            - Ci[i] = Ci[i] + d,  (d > 0); for successive events in Pi<br>
+            - For all k, Cj[k] = max (Cj[k],tm[k]), when a message m with time stamp tm is received by Pj from Pi.<br><br>
+
+            Vector Clocks Comparisons<br>
+            1.  Equal:  ta = tb  iff<br>
+            2.  Not Equal: ta != tb  iff ta[i] != tb[i], for at least one i<br>
+            3.  Less than or equal:  ta <= tb  iff ta[i] <= tb[i], for all i<br>
+            4.  Less than :  ta < tb  iff ta[i] <= tb[i] and ta[i] != tb[i], for all i<br>
+            5.  Concurrent:  ta || tb  iff ta  !< tb  and tb !< ta<br>
+            6.  Not less than or equal ...<br>
+            7.  Not less than ..<br>
+
+        </div>
+    </div>
+
+    <div id="global state recording" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Global State</h3>
+        </div>
+        <div class="uk-card-body">
+            A global state, GS of a system is the collection of the local states of its sites<br>
+            i.e. GS=(LS1,Ls2,LS3,----LSn) where n is the number of sites in the system<br><br>
+
+            RECORDING GLOBAL STATE:<br>
+            (e.g.,) Global state of A is recorded in (1) and not in (2).<br>
+            - State of B, C1, and C2 are recorded in (2)<br>
+            - Extra amount of $50 will appear in global state<br>
+            - Reason: A’s state recorded before sending message and C1’s state after sending message.<br>
+            Inconsistent global state if n < n’, where<br>
+            - n is number of messages sent by A along channel before A’s state was recorded<br>
+            - n’ is number of messages sent by A along the channel before channel’s state was recorded.<br>
+            Consistent global state: n = n’<br>
+
+        </div>
+    </div>
+
+    <div id="chandy lamport algorithm chandy-lamport" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Chandy-Lamport algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            The Chandy-Lamport algorithm uses a control message, called a Marker whose role in a FIFO system is to separate messages in the channels.<br>
+            After a site has recorded its snapshot, it sends a marker, along all of its outgoing channels before sending out any more messages.<br>
+            A marker separates the messages in the channel into those to be included in the snapshot from those not to be recorded in the snapshot.<br>
+            A process must record its snapshot no later than when it receives a marker on any of its incoming channels.<br><br>
+            The algorithm can be initiated by any process by executing the “Marker Sending Rule” by which it records its local state and sends a marker on each outgoing channel.<br>
+            A process executes the “Marker Receiving Rule” on receiving a marker. If the process has not yet recorded its local state, it records the state of the channel on which the marker is received as empty and executes the “Marker Sending Rule” to record its local state.<br>
+            The algorithm terminates after each process has received a marker on all of its incoming channels.<br>
+            All the local snapshots get disseminated to all other processes and all the processes can determine the global state.<br><br>
+            Marker Sending Rule for process I<br>
+            1 Process i records its state.<br>
+            2 For each outgoing channel C on which a marker has not been sent, i sends a marker along C before i sends further messages along C.<br>
+            Marker Receiving Rule for process j<br>
+            On receiving a marker along channel C: if j has not recorded its state then Record the state of C as the empty set Follow the “Marker Sending Rule” else Record the state of C as the set of messages received along C after j ’s state was recorded and before j received the marker along C<br>
+
 
         </div>
     </div>
