@@ -608,6 +608,199 @@
         </div>
     </div>
 
+    <div id="sun network file system sun nfs port mapper rpc access transparency virtual file system vfs hard soft mounted caching server validity condition write operation" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Sun Network File system</h3>
+        </div>
+        <div class="uk-card-body">
+            NFS was the first file service that was designed as a product by sun Microsystem in 1985.<br><br>
+
+            NFS provides transparent access to remote files for client programs running on UNIX and other system.<br><br>
+
+            The client-server relationship is symmetrical: each computer in an NFS network can act as both a client and a server, and the files at every machine can be made available for remote access by other machines.<br><br>
+
+            The NFS client and server modules communicate using remote procedure calling Sun’s RPC system.<br>
+            It can be configured to use either UDP or TCP, and the NFS protocol is compatible with both.<br><br>
+
+            A <b>port mapper</b> service is included to enable clients to bind to the service in a given host by name.<br><br>
+
+            NFS provides <b>access transparency</b> user programs can issue file operations for local or remote files without distinction.<br><br>
+
+            The integration is achieved by a <b>virtual file system (VFS)</b> module; which has been added to the UNIX kernel to distinguish between local and remote files.<br>
+
+            In addition, VFS keeps track of the file systems that are currently available both locally and remotely, and it passes each request to the appropriate local system module<br><br>
+
+            Remote file systems may be <b>hard mounted</b> or <b>soft mounted</b> in a  client computer.<br>
+
+            <b>Hard Mounted:</b> In a hard mounted file system, If a user level process access a file  in remote file system then the process is suspended until the request can be completed and if the remote host is unavailable , the NFS client continues to retry to retry the request until it is satisfied<br>
+
+            <b>Soft Mounted:</b> The client module will return a failure after a number of tries.<br>
+
+            <b>Caching</b> in both the client  and the server computer are indispensable features of NFS implementations in order to achieve adequate performance.<br><br>
+
+            <b>SERVER CACHING</b><br>
+            NFS servers use the cache at the server machine just as it is used for other file accesses.<br>
+            To ensure persistence of data, at the time of crash, the NFS protocol uses two options for write operation:<br>
+            Write through Caching: Data in write operation received from clients is stored in the memory cache at the server and written to disk before a reply is sent to the client.<br>
+            Data on write operation stored only in the memory cache. It will be written to disk when a commit operation is received from the relevant file.<br>
+            The NFS client caches the results of operation in order to reduce the number of requests transmitted to servers.,<br>
+
+            Client caching introduces the potential for different versions of files  to exist in different client nodes.<br>
+            The clients are therefore, responsible for polling the server to check the currency of the cached data that they hold.<br>
+
+            A timestamp based method is used to validate cached blocks before they are used.<br><br>
+
+            <b>Validity condition</b><br>
+            (T – Tc < t) ˅ (T<sub>mclient</sub> = T<sub>mserver</sub>)<br><br>
+
+            <b>Write Operation</b><br>
+            When a  cached page is modified it is marked as dirty and is scheduled to be flushed to the server asynchronously.<br>
+            The modified pages are flushed when the file is closed or a sync occurs at the client<br>
+        </div>
+    </div>
+
+    <div id="andrew file system benefits drawbacks call back mechanism information sharing on a large scale whole-file whole file caching serving architecture venus ufid representation of fids cells volumes tokens cache manager protection space design" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Andrew File System</h3>
+        </div>
+        <div class="uk-card-body">
+            The design of the Andrew file system reflects an intention to support information sharing on a large scale by minimizing client - server communication.<br>
+            This was achieved by transferring whole files between server and client computers and catching them at clients until the server receives a more up to date version.<br>
+            AFS is distributed file system that enables co-operating hosts (clients and servers) to efficiently share file system resources across both local area and wide area networks<br>
+            AFS provides transparent file access<br>
+            AFS runs on systems from: HP, Next, DEC, IBM, SUN, and SGI.<br><br>
+            AFS is based on a distributed file system originally developed at the Information Technology Center at Carnegie-Mellon University in 1984.<br>
+            The idea was to provide a campus-wide file system for home directories which would run effectively using a limited bandwidth campus backbone network.<br><br>
+            <b>whole-file serving:</b> entire contents of directories and files transferred from server to client (AFS-3: in chunks of 64 Kbytes)<br>
+            <b>whole file caching:</b> when file transferred to client it will be stored on that client’s local disk<br><br>
+
+            <b>ANDREW FILE SYSTEM ARCHITECTURE</b><br>
+            Venus manages the cache removing the least recently used files when a new file is acquired from  a server to make the required space if the partition is full.<br>
+            A flat file service is implemented by the Vice servers and the hierarchic directory structure required by UNIX  user programs is implemented by the set of Venus processes in the workstations<br>
+            Each file and directory in the shared file space is identified by a unique, 96-bit file identifier (fid) similar to a UFID.<br>
+            The Venus processes translate the pathnames issued by the clients to fids<br><br>
+
+            The <b>representation of fids</b> include<br>
+            Volume number:  represents the volume containing the file<br>
+            NFS file handle: identifying file within volume<br>
+            Uniquifier: for unique file identifiers<br><br>
+
+            Files are grouped  into volumes for ease of location and movement.<br>
+            • <b>Cells</b><br>
+            - An AFS cell is a collection of servers grouped together administratively and presenting a single, cohesive file system.<br>
+            - Typically, an AFS cell is a set of hosts that use the same Internet domain name.<br>
+            - Normally, a variation of the domain name is used as the cell name. Users log into AFS client workstations which request information and files from the cell's servers on behalf of the users.<br><br>
+
+            • <b>Volumes</b><br>
+            - The storage disks in a computer are divided into sections called partitions. AFS further divides partitions into units called volumes.<br>
+            - The volumes provide a convenient container for storing related files and directories.<br>
+            - System administrator can move volumes from one file server to another without noticing, because AFS automatically tracks a volume’s location<br><br>
+
+            • <b>Tokens</b><br>
+            - AFS does not use UNIX user IDs for authentication.<br>
+            - In order to access files which are not world accessible using AFS, you must have a valid AFS token. User may see what tokens currently they hold using the tokens command.<br><br>
+
+            • <b>Cache Manager</b><br>
+            - Cache Manager maintains information about the identities of the users logged into the machine, finds and requests data on their behalf, and keeps chunks of retrieved files on local disk.<br>
+            - The effect of this is that as soon as a remote file is accessed a chunk of that file gets copied to local disk and so subsequent accesses (warm reads) are almost as fast as to local disk and considerably faster than a cold read (across the network).<br><br>
+
+            • <b>File Protection</b><br>
+            • <b>File Space Design</b><br><br>
+
+            <b>BENEFITS</b><br>
+            • Caching facility:    Caching significantly reduces the amount of network traffic, improving performance when a cold read is necessary<br>
+            • Location Independence: AFS does its mapping (filename to location) at the server. This has the tremendous advantage of making the served file space location independent<br>
+            • Scalability:     An architectural goal of the AFS designers was client/server ratios of 200:1 which has been successfully exceeded at some sites.<br>
+            • Single Systems Image (SSI):     Establishing the same view of file store from each client and server in a network of systems (that comprise an AFS cell) is an order of magnitude simpler with AFS than it is with, say, NFS.<br>
+            • Improved security: Firstly, AFS makes use of Kerberos to authenticate users. This improves security. Secondly, AFS uses access control lists (ACLs) to enable users to restrict access to their own directories.<br>
+            • "Easy to use" networking<br>
+            • Accessing remote file resources via the network becomes much simpler when using AFS<br>
+            • Improved system management capability<br>
+            • Systems administrators are able to make configuration changes from any client in the AFS cell<br>
+            • Improved robustness to server crash<br>
+            • Replicated AFS volumes<br><br>
+
+            <b>DRAWBACKS</b><br>
+            • Invasive install<br>
+            • Complexity of backend server function<br>
+            • Authentication issues with applications (e.g. ticket expiration)<br><br>
+
+            <b>CALL BACK MECHANISM</b><br>
+            • It ensures that cached copies of files are updated when another client performs<br>
+            • a close operation on that file<br>
+            • callback promise<br>
+            – a token issued by Vice and stored with cached file<br>
+            – status: valid or cancelled<br>
+            • When server performs request to update file, then it<br>
+            – sends callback to all Venus processes to which it has sent callback promise<br>
+            – RPC from server to Venus process<br>
+            – Venus process sets callback promise for local copy to cancelled<br>
+            • Venus handling an open<br>
+            – check whether local copy of file has valid callback promise<br>
+            – if canceled, fresh copy must be fetched from Vice server<br>
+            • Restart of workstation after failure<br>
+            – retain as many locally cached files as possible, but callbacks may have been missed<br>
+            – Venus sends cache validation request to the Vice server contains file modification timestamp<br>
+            • if timestamp is current, server sends valid and callback promise is restored with valid<br>
+            • if timestamp not current, server sends cancelled<br>
+            • Problem: communication link failures<br>
+            – callback must be renewed with above protocol before new open if a time T has lapsed since file was cached or callback promise was last validated<br>
+
+        </div>
+    </div>
+
+    <div id="rpc remote procedure call local procedure vs strawman solution 4 properties marshaling port mapper" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>RPC (Remote Procedure Call)</h3>
+        </div>
+        <div class="uk-card-body">
+            • A remote procedure call makes a call to a remote service look like a local call<br>
+            - RPC makes transparent whether server is local or remote<br>
+            - RPC allows applications to become distributed transparently<br>
+            - RPC makes architecture of remote machine transparent<br>
+            • An RPC is really a process invocation, not a procedure call.<br>
+            • They make life easy for programmers, but hard for Network OS designers.<br><br>
+
+            4 properties of distributed computing that make achieving transparency difficult:<br>
+            • Partial failures<br>
+            • Concurrency<br>
+            • Latency<br>
+            • Memory access<br><br>
+
+            <b>STRAWMAN SOLUTION</b><br>
+            Make remote behavior identical to local behavior:<br>
+            Every partial failure results in complete failure<br>
+            You abort and reboot the whole system<br>
+            You wait patiently until system is repaired<br><br>
+
+            <b>MARSHALLING</b><br>
+            The client calls a local procedure, called the client stub. To the client process, it appears that this is the actual procedure.<br>
+            The client stub packages the arguments to the remote procedure and builds one or more network messages.<br>
+            The packaging of arguments into a network message is called marshaling.<br><br>
+
+            <b>RPC PORT MAPPER</b><br>
+            RPC Programs do not bind to specific protocol ports like several other technologies.<br>
+            Instead, they use a Portmapper, which dynamically allocates an arbitrary unused protocol port for a connection.<br>
+            An application does need to know what port to use to contact the Portmapper, but that is usually standardized in a company.<br>
+
+        </div>
+    </div>
+
+    <div id="corba" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>CORBA</h3>
+        </div>
+        <div class="uk-card-body">
+            • CORBA is an industry standard developed by the OMG (a group of more than 700 companies) to aid in distributed objects programming.
+            • CORBA is just a specification for creating and using distributed objects;
+            • CORBA is not a programming language.
+            • The CORBA architecture is based on the object model.
+            • The model is abstract in the sense that it is not directly realized by any particular technology; this allows applications to be built in a standard manner using basic building blocks such as objects. Therefore, a CORBA-based system is a collection of objects that isolates the requestors of services (clients) from the providers of services (servers) by a well-defined encapsulating interface.
+
+
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
