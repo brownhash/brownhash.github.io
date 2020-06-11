@@ -39,5 +39,5 @@ function id_finder(keyword) {
 
 function search() {
     var x = document.getElementById("search_bar");
-    id_finder(x.value);
+    id_finder(x.value.toLowerCase());
 }
