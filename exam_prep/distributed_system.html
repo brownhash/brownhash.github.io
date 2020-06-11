@@ -20,7 +20,7 @@
 <input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
 
 <center>
-    <div id="distributed systems definition" class="content uk-card uk-card-default">
+    <div id="distributed systems definition introduction" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Definition of Distributed Systems</h3>
         </div>
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div id="properties and common goals of distributed systems" class="content uk-card uk-card-default">
+    <div id="properties and common goals of distributed systems introduction" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Common Goals and properties of distributed systems</h3>
         </div>
@@ -58,6 +58,141 @@
 
             Each computer has only a limited, incomplete view of the system. Each computer may
             know only one part of the input.
+        </div>
+    </div>
+
+    <div id="parallel and distributed computing characteristics" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Parallel and Distributed Computing</h3>
+        </div>
+        <div class="uk-card-body">
+            In parallel computing, all
+            processors may have access
+            to a shared memory to
+            exchange information
+            between processors.
+
+            <hr>
+
+            In distributed computing,
+            each processor has its own
+            private memory (distributed
+            memory). Information is
+            exchanged by passing
+            messages between the
+            processors.
+        </div>
+    </div>
+
+    <div id="introduction to distributed systems system architecture user perception" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>System architecture</h3>
+        </div>
+        <div class="uk-card-body">
+            the machines are autonomous; this means they are
+            computers which, in principle, could work independently.
+            <hr>
+            <b>User Perception:</b>
+            the distributed system is perceived as a single system
+            solving a certain problem (even though, in reality, we have several computers
+            placed in different locations).
+
+            The distributed system has following characteristics:
+
+            They do not have share memory or clock
+
+            The computers communicate between themselves by the exchanging messages
+            over a communication network
+
+            Each computer has its own memory and operating system
+        </div>
+    </div>
+
+    <div id="advantages of distributed systems system" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Advantages of Distributed Systems</h3>
+        </div>
+        <div class="uk-card-body">
+            Performance:
+            very often a collection of processors can provide higher   performance (and better price/performance ratio) than a Centralized computer.
+            <hr>
+            Distribution:
+            many applications involve, by their nature, spatially separated machines banking, Commercial, automotive system).
+            <hr>
+            Reliability (fault tolerance):
+            if some of the machines crash, the system can survive.
+            <hr>
+            Incremental growth:
+            as requirements on processing power grow, new machines can be added incrementally.
+            <hr>
+            Sharing of data/resources:
+            shared data is essential to many applications (banking,  computer supported
+            Cooperative work, reservation systems)
+            other resources can be also shared (e.g. expensive printers).
+            <hr>
+            Communication:
+            facilitates human-to-human communication.
+
+        </div>
+    </div>
+
+    <div id="disadvantages of distributed computing" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Disadvantages of distributed computing</h3>
+        </div>
+        <div class="uk-card-body">
+            Difficulties of developing distributed software:
+            how should operating systems, programming languages and applications look like?
+            <hr>
+            Networking problems
+            several problems are created by the network infrastructure, which have to be dealt with: loss of messages, overloading.
+            <hr>
+            Security problems
+            sharing generates the problem of data security.
+        </div>
+    </div>
+
+    <div id="centralised and distributed computing characteristics" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Centralized & Distributed System characteristics</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Centralised Computing</b><br>
+            One component with non-autonomous Parts<br>
+            Component shared by users all the time<br>
+            All resources accessible<br>
+            Software runs in a single process<br>
+            Single Point of control<br>
+            Single Point of failure
+            <hr>
+            <b>Distributed Computing</b><br>
+            Multiple autonomous components<br>
+            Components are not shared by all users<br>
+            Resources may not be accessible<br>
+            Software runs in concurrent processes on different processors<br>
+            Multiple Points of control<br>
+            Multiple Points of failure
+            <hr>
+            <b>What are we trying to achieve when we construct a distributed system?</b><br>
+            Certain common characteristics can be used to assess distributed systems<br>
+            • Resource Sharing<br>
+            • Openness<br>
+            • Concurrency<br>
+            • Scalability<br>
+            • Fault Tolerance<br>
+            • Transparency<br>
+
+        </div>
+    </div>
+
+
+
+    <div id="keywords" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>heading</h3>
+        </div>
+        <div class="uk-card-body">
+            content
         </div>
     </div>
 </center>
