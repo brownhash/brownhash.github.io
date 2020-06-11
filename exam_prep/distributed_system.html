@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exam Search</title>
+    <title>Exam Search: Distributed Systems</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,26 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
 
-    <style>
-        body {
-            margin-top: 80px;
-        }
-        .content {
-            width: 80%;
-            margin: 30px;
-            text-align: left;
-        }
-        .hidden {
-            display: none;
-        }
-        .search {
-            box-shadow: 5px 5px 8px #888888;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 3;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css" />
 </head>
 <body>
 
@@ -81,50 +62,6 @@
     </div>
 </center>
 
-<script>
-    function get_ids() {
-        var allElements = document.getElementsByTagName("*");
-        var allIds = [];
-        for (var i = 0, n = allElements.length; i < n; ++i) {
-            var el = allElements[i];
-            if (el.id) { allIds.push(el.id); }
-        }
-        return allIds;
-    }
-
-    function id_finder(keyword) {
-        var ids = get_ids();
-
-        if (keyword.length > 2) {
-
-            for (var i = 0; i < ids.length; i++) {
-                var id = ids[i].toString();
-
-                for (var j=0; j < keyword.toString().split(" ").length; j++) {
-
-                    var key = keyword.toString().split(" ")[j];
-
-                    if (key.length > 1) {
-                        if (id.includes(key.toString())) {
-                            var element = document.getElementById(id);
-                            element.classList.remove("hidden");
-                        }
-                        else {
-                            var element = document.getElementById(id);
-                            if (id !== "search_bar") {
-                                element.classList.add("hidden");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    function search() {
-        var x = document.getElementById("search_bar");
-        id_finder(x.value);
-    }
-</script>
+<script src="main.js"></script>
 </body>
 </html>
