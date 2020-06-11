@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Search</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+
+    <style>
+        body {
+            margin-top: 80px;
+        }
+        .content {
+            width: 80%;
+            margin: 30px;
+            text-align: left;
+        }
+        .hidden {
+            display: none;
+        }
+        .search {
+            box-shadow: 5px 5px 8px #888888;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+<input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
+
+<center>
+    <div id="distributed systems definition" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Definition of Distributed Systems</h3>
+        </div>
+        <div class="uk-card-body">
+            A distributed system consists of a collection of
+            autonomous computers, connected through a
+            network and distribution middleware, which
+            enables computers to coordinate their activities
+            and to share the resources of the system, so that
+            users perceive the system as a single, integrated
+            computing facility.
+        </div>
+    </div>
+
+    <div id="properties and common goals of distributed systems" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Common Goals and properties of distributed systems</h3>
+        </div>
+        <div class="uk-card-body">
+            A distributed system may have a common goal, such as solving a large computational
+            problem.
+
+            Alternatively, each computer may have its own user with individual needs, and the
+            purpose of the distributed system is to coordinate the use of shared resources or
+            provide communication services to the users.
+
+            Other typical properties of distributed systems include the following:
+
+            The system has to tolerate failures in individual computers.
+
+            The structure of the system (network topology, network latency, number of computers)
+            is not known in advance, the system may consist of different kinds of computers and
+            network links, and the system may change during the execution of a distributed
+            program.
+
+            Each computer has only a limited, incomplete view of the system. Each computer may
+            know only one part of the input.
+        </div>
+    </div>
+</center>
+
+<script>
+    function get_ids() {
+        var allElements = document.getElementsByTagName("*");
+        var allIds = [];
+        for (var i = 0, n = allElements.length; i < n; ++i) {
+            var el = allElements[i];
+            if (el.id) { allIds.push(el.id); }
+        }
+        return allIds;
+    }
+
+    function id_finder(keyword) {
+        var ids = get_ids();
+
+        if (keyword.length > 2) {
+
+            for (var i = 0; i < ids.length; i++) {
+                var id = ids[i].toString();
+
+                for (var j=0; j < keyword.toString().split(" ").length; j++) {
+
+                    var key = keyword.toString().split(" ")[j];
+
+                    if (key.length > 1) {
+                        if (id.includes(key.toString())) {
+                            var element = document.getElementById(id);
+                            element.classList.remove("hidden");
+                        }
+                        else {
+                            var element = document.getElementById(id);
+                            if (id !== "search_bar") {
+                                element.classList.add("hidden");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function search() {
+        var x = document.getElementById("search_bar");
+        id_finder(x.value);
+    }
+</script>
+</body>
+</html>
