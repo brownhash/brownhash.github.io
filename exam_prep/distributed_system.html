@@ -172,20 +172,117 @@
             Software runs in concurrent processes on different processors<br>
             Multiple Points of control<br>
             Multiple Points of failure
-            <hr>
-            <b>What are we trying to achieve when we construct a distributed system?</b><br>
-            Certain common characteristics can be used to assess distributed systems<br>
-            • Resource Sharing<br>
-            • Openness<br>
-            • Concurrency<br>
-            • Scalability<br>
-            • Fault Tolerance<br>
-            • Transparency<br>
 
         </div>
     </div>
 
+    <div id="what are we trying to achieve when we construct a distributed system resource sharing openness concurrency scalability fault tolerance transparency access location migration replication failure performance relocation persistence" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>What are we trying to achieve when we construct a distributed system?</h3>
+        </div>
+        <div class="uk-card-body">
+            Certain common characteristics can be used to assess distributed systems<br><br>
+            • <b>Resource Sharing</b><br>
+            Ability to use any hardware, software or data anywhere in the system.<br>
 
+            Resource manager controls access, provides naming scheme and controls concurrency.<br>
+
+            Resource sharing model (e.g. client/server or object-based) describing how<br>
+            - resources are provided,<br>
+            - they are used and<br>
+            - provider and user interact with each other.<br><br>
+
+            • <b>Openness</b><br>
+            Openness is concerned with extensions and improvements of distributed systems.<br>
+
+            Detailed interfaces of components need to be published.<br>
+            New components have to be integrated with existing components.<br>
+
+            Differences in data representation of interface types on different processors (of different vendors) have to be resolved.<br><br>
+
+            • <b>Concurrency</b><br>
+
+            Components in distributed systems are executed in concurrent processes.<br>
+
+            Components access and update shared resources (e.g. variables, databases, device drivers).<br>
+
+            Integrity of the system may be violated if concurrent updates are not coordinated.<br>
+            - Lost updates<br>
+            - Inconsistent analysis<br><br>
+
+            • <b>Scalability</b><br>
+            Adaption of distributed systems to<br>
+            - accommodate more users<br>
+            - respond faster (this is the hard one)<br>
+
+            Usually done by adding more and/or faster processors.<br>
+
+            Components should not need to be changed when increases scale of a system.<br>
+
+            Design components to be scalable!<br><br>
+
+            • <b>Fault Tolerance</b><br>
+            Hardware, software and networks fail!<br>
+
+            Distributed systems must maintain availability even at low levels of hardware/software/network reliability.<br>
+
+            Fault tolerance is achieved by<br>
+            - recovery<br>
+            - redundancy<br><br>
+
+            • <b>Transparency</b><br>
+            Distributed systems should be perceived by users and application programmers as a whole rather than as a collection of cooperating components.<br>
+
+            Transparency has different dimensions.<br>
+
+            These represent various properties that distributed systems should have.<br><br>
+
+            - <b>Access Transparency:</b> Local and remote resources are accessed using identical operations.<br>
+            - <b>Location Transparency:</b> Users are unaware of the location of resources<br>
+            - <b>Migration Transparency:</b> Resources can migrate without name change<br>
+            - <b>Replication Transparency:</b> Users are unaware of the existence of multiple copies of resources<br>
+            - <b>Failure Transparency:</b> Users are unaware of the failure of individual components<br>
+            - <b>Concurrency Transparency:</b> Users are unaware of sharing resources with others<br>
+            - <b>Performance transparency:</b> load variation should not lead to performance degradation. This could be achieved by automatic reconfiguration as response to changes of the load; it is difficult to achieve.<br>
+            - <b>Relocation Transparency:</b> Hide that a resource may be moved to another location while in use (the others don’t notice).<br>
+            - <b>Persistence Transparency:</b> Hide whether a (software) resource is in memory or on disk<br>
+        </div>
+    </div>
+
+    <div id="issues in distributed systems global knowledge naming scalability compatibility process synchronisation resource management security structuring" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Issues in distributed systems</h3>
+        </div>
+        <div class="uk-card-body">
+            • <b>Global Knowledge</b><br>
+            Due to the unavailability of global clock and shared memory and unpredictable message delay, it is impossible to to collect the upto date information about the global state<br><br>
+
+            • <b>Naming</b><br>
+            Names are used to refer the objects. A name  service map a logical name to the physical address by making use of lookup table<br><br>
+
+            • <b>Scalability</b><br>
+            Grow with time<br><br>
+
+            • <b>Compatibility</b><br>
+            Three level of compatibility exist in DS<br>
+            - Binary level<br>
+            - Execution level<br>
+            - Protocol level<br><br>
+
+            • <b>Process synchronization</b><br>
+            The synchronization is DS is difficult because of the unavailable of shared memory
+            Problem of mutual exclusion<br><br>
+
+            • <b>Resource management</b><br>
+            Resource management concern with both local and remote resources available to user in an effective manner<br><br>
+
+            • <b>Security</b><br>
+            Authentication and authorization<br><br>
+
+            • <b>Structuring</b><br>
+
+        </div>
+    </div>
 
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
