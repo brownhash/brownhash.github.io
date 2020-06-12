@@ -1147,6 +1147,118 @@
         </div>
     </div>
 
+    <div id="handling failures 2 phase commit protocol drawbacks two" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Handling failures</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>2-phase commit protocol handles failures as below:</b><br>
+            • If coordinator crashes before writing the COMMIT record:<br>
+            - on recovery, it will send ABORT message to all others.<br>
+            - Cohorts who agreed to commit, will simply undo the transaction using the UNDO log and abort.<br>
+            - Other cohorts will simply abort.<br>
+            - All cohorts are blocked till coordinator recovers.<br>
+            • Coordinator crashes after COMMIT before writing COMPLETE<br>
+            - On recovery, broadcast a COMMIT and wait for ack<br>
+            • Cohort crashes in phase 1? : coordinator aborts the transaction.<br>
+            • Cohort crashes in phase 2? : on recovery, it will check with the coordinator whether to abort or commit.<br><br>
+            <b>Drawback: blocking protocol. Cohorts blocked if coordinator fails.</b><br>
+            • Resources and locks held unnecessarily.<br>
+
+        </div>
+    </div>
+
+    <div id="2 phase commit state machine two drawbacks" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>2-phase commit: State Machine</h3>
+        </div>
+        <div class="uk-card-body">
+            • Synchronous protocol: all sites proceed in rounds, i.e., a site never leads another by more than 1 state transition.<br>
+            • A state transition occurs in a process participating in the 2-phase commit protocol whenever it receives/sends messages.<br>
+            • States: q (idle or querying state), w (wait), a (abort), c (commit).<br>
+            • When coordinator is in state q, cohorts are in q or a.<br>
+            • Coordinator in w -> cohort can be in q, w, or a.<br>
+            • Coordinator in a/c -> cohort is in w or a/c.<br>
+            • A cohort in a/c: other cohorts may be in a/c or w.<br>
+            • A site is never in c when another site is in q as the protocol is synchronous.<br><br>
+
+            <b>Drawbacks</b><br>
+            • Drawback: blocking protocol. Cohorts blocked if coordinator fails.<br>
+            - Resources and locks held unnecessarily.<br>
+            • Conditions that cause blocking:<br>
+            - Assume that only one site is operational. This site cannot decide to abort a transaction as some other site may be in commit state.<br>
+            - It cannot commit as some other site can be in abort state.<br>
+            - Hence, the site is blocked until all failed sites recover.<br>
+        </div>
+    </div>
+
+    <div id="non blocking commit non-blocking notations protocol buffer state phase 3 2 1 three two one" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Non-blocking Commit</h3>
+        </div>
+        <div class="uk-card-body">
+            • Non-blocking commit:<br>
+            - Sites should agree on the outcome by examining their local states.<br>
+            - A failed site, upon recovery, should reach the same conclusion regarding the outcome. Consistent with other working sites.<br>
+            - Independent recovery: if a recovering site can decide on the final outcome based solely on its local state.<br>
+            - A non-blocking commit protocol can support independent recovery.<br><br>
+            • Notations:<br>
+            - Concurrency set: Let Si denote the state of the site i. The set of all the states that may be concurrent with it is concurrency set (C(si)).<br>
+            - (e.g.,) Consider a system having 2 sites.If site 2’s state is w2, then C(w2) = {c1, a1, w1}. C(q2) = {q1, w1}. a1, c1 not in C(q2) as 2-phase commit protocol is synchronous within 1 state transaction.<br>
+            - Sender set: Let s be any state, M be the set of all messages received in s. Sender set, S(s) = {i | site i sends m and m in M}<br><br>
+
+            <b>Protocol:</b><br>
+            Phase 1:<br>
+            • First phase identical to that of 2-phase commit, except for failures.<br>
+            • Here, coordinator is in w1 and each cohort is in a or w or q, depending on whether it has received the commit_request message or not.<br><br>
+
+            Phase 2<br>
+            • Coordinator sends a Prepare message to all the cohorts (if all of them sent Agreed message in phase 1).<br>
+            • Otherwise, it will send an Abort message to them.<br>
+            • On receiving a Prepare message, a cohort sends an acknowledgement to the coordinator.<br>
+            - If the coordinator fails before sending a Prepare message, it aborts the transaction on recovery.<br>
+            - Cohorts, on timing out on a Prepare message, also aborts the transaction.<br><br>
+
+            Phase 3:<br>
+            • On receiving acknowledgements to Prepare messages, the coordinator sends a Commit message to all cohorts.<br>
+            • Cohort commits on receiving this message.<br>
+            - Coordinator fails before sending commit? : commits upon recovery.<br>
+            - So cohorts on Commit message timeout, commit to the transaction.<br>
+            - Cohort failed before sending an acknowledgement? : coordinator times out and sends an abort message to all others.<br>
+            - Failed cohort aborts the transaction upon recovery.<br><br>
+
+            Use of buffer state:<br>
+            • (e.g.,) Suppose state pi (in cohort) is not present. Let coordinator wait in state p1 waiting for ack. Let cohort 2 (in w2) acknowledge and commit.<br>
+            • Suppose cohort 3 fails in w3. Coordinator will time out and abort. Cohort 3 will abort on recovery. Inconsistent with cohort 2.<br>
+        </div>
+    </div>
+
+    <div id="3 phase commit three 3-phase" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>3-Phase Commit</h3>
+        </div>
+        <div class="uk-card-body">
+            • Lemma: If a protocol contains a local state of a site with both abort and commit states in its concurrency set, then under independent recovery conditions it is not resilient to an arbitrary single failure.<br>
+            • In previous figure, C(W2) can have both abort and commit states in the concurrency set.<br>
+            • To make it a non-blocking protocol: introduce a buffer state at both coordinator and cohorts.<br>
+            • Now, C(W1) = {q2, w2, a2} and C(w2) = {a1, p1, w1}.<br>
+        </div>
+    </div>
+
+    <div id="failure timeout transactions rule for" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Failure, Timeout Transitions</h3>
+        </div>
+        <div class="uk-card-body">
+            • A failure transition occurs at a failed site at the instant it fails or immediately after it recovers from the failure.<br>
+            • Rule for failure transition: For every non-final state s (i.e., qi, wi, pi) in the protocol, if C(s) contains a commit, then assign a failure transition from s to a commit state in its FSA. Otherwise, assign a failure transition from s to an abort state.<br>
+            • If site i is waiting on a message from j, i can time out. i can determine the state of j based on the expected message.<br>
+            • Based on j’s state, the final state of j can be determined using failure transition at j.<br>
+            • This can be used for incorporating Timeout transitions at i.<br>
+            • Rule for timeout transition: For each nonfinal state s, if site j in S(s),and site j has a failure transition from s to a commit (abort) state, then assign a timeout transition from s to a commit (abort) state.<br>
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
