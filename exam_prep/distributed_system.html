@@ -1259,7 +1259,47 @@
         </div>
     </div>
 
-    <div id="keywords" class="content uk-card uk-card-default">
+    <div id="disadvantages of commit protocol" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Disadvantages of Commit Protocols</h3>
+        </div>
+        <div class="uk-card-body">
+            No protocol using the above independent recovery technique for simultaneous failure of more than 1 site.<br>
+            The above protocol is also not resilient to network partitioning.<br>
+        </div>
+    </div>
+
+    <div id="basic idea of voting protocol mechanism schemes static dynamic" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Voting Protocols</h3>
+        </div>
+        <div class="uk-card-body">
+            Basic idea of voting protocol:<br>
+
+            Each replica assigned some number of votes<br>
+            A majority of votes need to be collected before accessing a replica.<br><br>
+
+            Voting Protocol mechanism:<br>
+            More fault tolerant to site failures, network partitions, and message losses.<br><br>
+
+            Types of voting schemes:<br>
+            <b>Static<br>
+            • System Model:<br>
+            - File replicas at different sites.<br>
+            - File lock rule: either one writer + no reader or multiple readers + no writer.<br>
+            - Every file is associated with a version number that gives the number of times a file has been updated.<br>
+            - Version numbers are stored on stable storage. Every successful write updates version number.<br><br>
+
+            <b>Dynamic</b><br>
+                • Used to overcome from failure.<br>
+                • Can change vote value also.<br>
+                • Dynamic voting:<br>
+                • Adapt the number of votes or the set of sites that can form a quorum, to the changing state of the system due to sites & communication failures.<br>
+
+        </div>
+    </div>
+
+    <div id="keyword" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
         </div>
