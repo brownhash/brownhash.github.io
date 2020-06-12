@@ -1298,6 +1298,22 @@
         </div>
     </div>
 
+    <div id="voting algorithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Voting Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            • Let a site i issue a read or write request for a file.<br>
+            • Site i issues a Lock_Request to its local lock manager<br>
+            • When the lock request is granted, site i sends a Vote_Request message to all the sites<br>
+            • When a site j receives a Vote_Request message, it Issues a Lock_Request to  its local lock manager.<br>
+            • If the local request is granted, then it returns the version number of the replica (VNj) and the number of the votes assigned to the replica (Vj) to site i.<br>
+            • If the site i is not successful in obtaining the quorum, then it issues a Release_Lock to the local lock manager as well as to all the sites in P from whom it has received votes.<br>
+            • If site i is successful in obtaining the quorum, then it checks whether its copy of the file is current. A copy is current if its version number is equal to M. If the copy is not current, a current copy is obtained from a site that has a current copy. Once a current copy is available locally, site I performs the next step.<br>
+
+        </div>
+    </div>
+
     <div id="keyword" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
