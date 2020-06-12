@@ -832,6 +832,321 @@
         </div>
     </div>
 
+    <div id="recovery classification of failures process system secondary communication" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Recovery in Distributed Systems</h3>
+        </div>
+        <div class="uk-card-body">
+            • Failure of a site/node in a distributed system causes inconsistencies in the state of the system.<br>
+            • Recovery: bringing back the failed node in step with other nodes in the system.<br>
+
+            <b>Classification of Failures:</b><br>
+            • Process failure:<br>
+            - Deadlocks, protection violation, erroneous user input, etc.<br><br>
+
+            • System failure:<br>
+            - Failure of processor/system. System failure can have full/partial amnesia.<br>
+            - It can be a pause failure (system restarts at the same state it was in before the crash) or a complete halt.<br><br>
+
+            • Secondary storage failure:<br>
+            - data inaccessible.<br><br>
+
+            • Communication failure:<br>
+            - network inaccessible.<br><br>
+
+        </div>
+    </div>
+
+    <div id="backward and forward recovery problems" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Backward & Forward Recovery</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Forward Recovery:</b><br>
+            • Assess damages that could be caused by faults, remove those damages (errors), and help processes continue.<br>
+            • Difficult to do forward assessment. Generally tough.<br><br>
+
+            <b>Backward Recovery:</b><br>
+            • When forward assessment not possible. Restore processes to previous error-free state.<br>
+            • Expensive to rollback states<br>
+            • Does not eliminate same fault occurring again (i.e. loop on a fault + recovery)<br>
+            • Unrecoverable actions: print outs, cash dispensed at ATMs.<br><br>
+
+            <b>Problems with Backward Error Recovery Approach</b><br>
+            • The major problems associated with the backward error recovery approach are:<br>
+            • Performance Penalty : The overhead to restore a process state to a prior state can be quite high.<br>
+            • There is no guarantee that faults will not occur again when processing begins from a prior state.<br>
+            • Some component of the system state may be recoverable.<br>
+            • The forward error recovery technique, incur less overhead because only those parts of the state that deviate from the intended value need to be corrected.<br>
+        </div>
+    </div>
+
+    <div id="recovery system model backward" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Recovery System Model</h3>
+        </div>
+        <div class="uk-card-body">
+            • System is Single Machine, consist of Stable storage and secondary storage.<br>
+            • Storage that does not lose information in event of system failure is stable storage.<br>
+            • Stable storage is used to store the logs and recovery points.<br>
+            • It is assumed that data on the secondary storage is archived periodically.<br><br>
+
+            <b>For Backward Recovery</b><br>
+            • Backward is simpler than forward as it  dependent of fault and error caused by fault.<br>
+            • A single system with secondary and stable storage<br>
+            • Stable storage does not lose information on failures<br>
+            • Stable storage used for logs and recovery points<br>
+            • Stable storage assumed to be more secure than secondary storage.<br>
+            • Data on secondary storage assumed to be archived periodically.<br>
+        </div>
+    </div>
+
+    <div id="recovery approaches" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Approaches</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Operation-based Approach</b><br>
+            • Maintaining logs: all modifications to the state of a process are recorded in sufficient detail so that a previous state can be restored by reversing all changes made to the state.<br>
+            • (e.g.,) Commit in database transactions: a transaction if it is committed to by all nodes, then the changes are permanent. If it does not commit, the effect of transactions are to be undone.<br>
+            • Updating-in-place: Every write (update) results in a log of (1) object name (2) old object state (3) new state. Operations:<br>
+            • A do operation updates & writes the log<br>
+            • An undo operation uses the log to remove the effect of a do<br>
+            • A redo operation uses the log to repeat a do<br>
+            • Write-ahead-log: To avoid the problem of a crash after update and before logging.<br>
+            • Write (undo & redo) logs before update<br><br>
+
+            <b>State-based Approach</b><br>
+            • Establish a recovery point where the process state is saved.<br>
+            • Recovery done by restoring the process state at the recovery, called a checkpoint. This process is called rollback.<br>
+            • Process of saving called checkpointing or taking a check point.<br>
+            • Rollback normally done to the most recent checkpoint, hence many checkpoints are done over the execution of a process.<br>
+            • Shadow pages technique can be used for checkpointing. Page containing the object to be updated is duplicated and maintained as a checkpoint in stable storage.<br>
+            • Actual update done on page in secondary storage. Copy in stable storage used for rollback.<br>
+        </div>
+    </div>
+
+    <div id="recovery in concurrent systems" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Recovery in Concurrent Systems</h3>
+        </div>
+        <div class="uk-card-body">
+            • Distributed system state involves message exchanges.<br>
+            • In distributed systems, rolling back one process can cause the roll back of other processes.<br>
+            • Orphan messages & the Domino effect: Assume Y fails after sending m.<br>
+            • X has record of m at x3 but Y has no record. m -> orphan message.<br>
+            • Y rolls back to y2 -> X should go to x2.<br>
+            • If Z rolls back, X and Y has to go to x1 and y1 -> Domino effect, roll back of one process causes one or more processes to roll back.<br>
+        </div>
+    </div>
+
+    <div id="lost messages" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Lost Messages</h3>
+        </div>
+        <div class="uk-card-body">
+            • If Y fails after receiving m, it will rollback to y1.<br>
+            • X will rollback to x1<br>
+            • m will be a lost message as X has recorded it as sent and Y has no record of receiving it.<br>
+        </div>
+    </div>
+
+    <div id="live locks livelocks" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Livelocks</h3>
+        </div>
+        <div class="uk-card-body">
+            • Y crashes before receiving n1. Y rolls back to Y1 -> X to x1.<br>
+            • Y recovers, receives n1 and sends m2.<br>
+            • X recovers, sends n2 but has no record of sending n1<br>
+            • Hence, Y is forced to rollback second time. X also rolls back as it has<br>
+            • received m2 but Y has no record of m2.<br>
+            • Above sequence can repeat indefinitely, causing a livelock.<br>
+        </div>
+    </div>
+
+    <div id="consistent checkpoints" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Consistent Checkpoints</h3>
+        </div>
+        <div class="uk-card-body">
+            • Overcoming domino effect and livelocks: checkpoints should not have messages in transit.<br>
+            • Consistent checkpoints: no message exchange between any pair of processes in the set as well as outside the set during the interval spanned by checkpoints.<br>
+            • {x1,y1,z1} is a strongly consistent checkpoint.<br>
+        </div>
+    </div>
+
+    <div id="synchronous approach checkpointing first second phase" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Synchronous Approach</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Checkpointing:</b><br>
+            • First phase:<br>
+            - An initiating process, Pi, takes a tentative checkpoint.<br>
+            - Pi requests all other processes to take tentative checkpoints.<br>
+            - Every process informs whether it was able to take checkpoint.<br>
+            - A process can fail to take a checkpoint due to the nature of application (e.g.,) lack of log space, unrecoverable transactions.<br>
+            • Second phase:<br>
+            - If all processes took checkpoints, Pi decides to make the checkpoint permanent.<br>
+            - Otherwise, checkpoints are to be discarded.<br>
+            - Pi conveys this decision to all the processes as to whether checkpoints are to be made permanent or to be discarded.<br>
+        </div>
+    </div>
+
+    <div id="distributed databases activity in issues data structures algorithms" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Distributed Databases</h3>
+        </div>
+        <div class="uk-card-body">
+            Checkpointing objectives in distributed database systems (DDBS):<br>
+            • Normal operations should be minimally interfered with, by checkpointing.<br>
+            • A DDBS may update different objects in different sites, local checkpointing at each site is better.<br>
+            • For faster recovery, checkpoints be consistent (desirable property).<br><br>
+            Activity in DDBS is in terms of transactions. So in DDBS, a consistent checkpoint should either include updates of a transaction completely or not include it all.<br>
+            Issues in identifying checkpoints:<br>
+            • How sites agree on what transactions are to be included<br>
+            • Taking checkpoints without interference<br><br>
+            Data Structures<br>
+            • LC: local clock as per Lamport’s logical clock<br>
+            • LCPN (local checkpoint number): determined locally for the current checkpoint.<br><br>
+            Algorithm: initiated by checkpoint coordinator (CC). CC uses checkpoint subordinates (CS).<br>
+            • Phase 1 at the CC<br>
+            • CC broadcasts a Checkpoint_Request message with a local timestamp LCcc.<br>
+            • LCPNcc := LCcc<br>
+            • CONVERTcc := false<br>
+            • Wait for replies from CSs.<br>
+            • Phase 1 at CSs<br>
+        </div>
+    </div>
+
+    <div id="fault tolerance what is failure types of faults" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Fault Tolerance</h3>
+        </div>
+        <div class="uk-card-body">
+            • Fault Tolerance is closely related to the notion of “Dependability”. In Distributed Systems, this is characterized under a number of headings:<br><br>
+
+            • Availability – the system is ready to be used immediately.<br>
+            • Reliability – the system can run continuously without failure.<br>
+            • Safety – if a system fails, nothing catastrophic will happen.<br>
+            • Maintainability – when a system fails, it can be repaired easily and quickly (and, sometimes, without its users noticing the failure).<br><br>
+
+            <b>What is failure?</b><br>
+            • A system is said to “fail” when it cannot meet its promises.<br>
+            • A failure is brought about by the existence of “errors” in the system.<br>
+            • The cause of an error is called a “fault”.<br><br>
+
+            <b>Types of faults:</b>
+            There are three main types of ‘fault’:<br><br>
+
+            • Transient Fault – appears once, then disappears.<br>
+            • Intermittent Fault – occurs, vanishes, reappears; but: follows no real pattern (worst kind).<br>
+            • Permanent Fault – once it occurs, only the replacement/repair of a faulty component will allow the DS to function normally.<br><br>
+        </div>
+    </div>
+
+    <div id="failure masking by redundancy information time physical" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Failure Masking by Redundancy</h3>
+        </div>
+        <div class="uk-card-body">
+            Strategy: hide the occurrence of failure from other processes using redundancy.<br>
+
+            Three main types:<br><br>
+
+            • Information Redundancy – add extra bits to allow for error detection/recovery (e.g., Hamming codes and the like).<br>
+            • Time Redundancy – perform operation and, if needs be, perform it again. Think about how transactions work (BEGIN/END/COMMIT/ABORT).<br>
+            • Physical Redundancy – add extra (duplicate) hardware and/or software to the system.<br>
+        </div>
+    </div>
+
+    <div id="system reliability fault intolerance vs fault tolerance issues process deaths machine failure network" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>System reliability: Fault-Intolerance vs. Fault-Tolerance</h3>
+        </div>
+        <div class="uk-card-body">
+            The fault intolerance (or fault-avoidance) approach improves system reliability by removing the source of failures (i.e., hardware and software faults) before normal operation begins<br><br>
+
+            The approach of fault-tolerance expect faults to be present during system operation, but employs design techniques which insure the continued correct execution of the computing process<br><br>
+
+            <b>Issues</b><br>
+            • Process Deaths:<br>
+            - All resources allocated to a process must be recovered when a process dies<br>
+            - Kernel and remaining processes can notify other cooperating processes<br>
+            - Client-server systems: client (server) process needs to be informed that the corresponding server (client) process died<br><br>
+            • Machine failure:<br>
+            - All processes running on that machine will die<br>
+            - Client-server systems: difficult to distinguish between a process and machine failure<br>
+            - Issue: detection by processes of other machines<br><br>
+            • Network Failure:<br>
+            - Network may be partitioned into subnets<br>
+            - Machines from different subnets cannot communicate<br>
+            - Difficult for  a process to distinguish between a machine and a communication link failure<br>
+        </div>
+    </div>
+
+    <div id="atomic actions" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Atomic Actions</h3>
+        </div>
+        <div class="uk-card-body">
+            • Example: Processes P1 & P2 share a data named X.<br>
+            - P1: ... lock(X); X:= X + Z; unlock(X); ...<br>
+            - P2: ... lock(X); X := X + Y; unlock(X); ...<br><br>
+            • Updating of X by P1 or P2 should be done atomically i.e., without any interruption.<br><br>
+            • Atomic operation if:<br>
+            - the process performing it is not aware of existence of any others.<br>
+            - the process doing it does not communicate with others during the operation time.<br>
+            - No other state change in the process except the operation.<br>
+            - Effects on the system gives an impression of indivisible and perhaps instantaneous operation.<br>
+        </div>
+    </div>
+
+    <div id="committing" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Committing</h3>
+        </div>
+        <div class="uk-card-body">
+            • A group of actions is grouped as a transaction and the group is treated as an atomic action.<br>
+            • The transaction, during the course of its execution, decides to commit or abort.<br>
+
+            • Commit: guarantee that the transaction will be completed.<br>
+
+            • Abort: guarantee not to do the transaction and erase any part of the transaction done so far.<br>
+
+            • Global atomicity: (e.g.,) A distributed database transaction that must be processed at every or none of the sites.<br>
+
+            • Commit protocols: are ones that enforce global atomicity.<br>
+
+        </div>
+    </div>
+
+    <div id="2 phase commit protocol phase 1 two one cohorts coordinator" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>2-phase Commit Protocol</h3>
+        </div>
+        <div class="uk-card-body">
+            • Distributed transaction carried out by a coordinator + a set of cohorts executing at different sites.<br><br>
+            • Phase 1:<br>
+            <b>At the coordinator:</b><br>
+            - Coordinator sends a COMMIT-REQUEST message to every cohort requesting them to commit.<br>
+            - Coordinator waits for reply from all others.<br>
+            <b>At the cohorts:</b><br>
+            - On receiving the request: if the transaction execution is successful, the cohort writes UNDO and REDO log on stable storage. Sends AGREED message to coordinator.<br>
+            - Otherwise, sends an ABORT message.<br><br>
+            • Phase 2:<br>
+            <b>At the coordinator...:</b><br>
+            - Otherwise, send an ABORT message<br>
+            - Coordinator waits for acknowledgement from each cohort.<br>
+            - No acknowledgement within a timeout period? : resend the commit/abort message to that cohort.<br>
+            - All acknowledgements received? : write a COMPLETE record to the log.<br>
+            <b>At the cohorts:</b><br>
+            - On COMMIT message: resources & locks for the transaction released. Send Acknowledgement to the coordinator.<br>
+            - On ABORT message: undo the transaction using UNDO log, release resources & locks held by the transaction, send Acknowledgement.<br>
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
