@@ -19,7 +19,7 @@
 
 <input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
 
-<center>
+<div style="text-align: center;">
     <div id="distributed systems definition introduction" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Definition of Distributed Systems</h3>
@@ -1310,7 +1310,6 @@
             • If the local request is granted, then it returns the version number of the replica (VNj) and the number of the votes assigned to the replica (Vj) to site i.<br>
             • If the site i is not successful in obtaining the quorum, then it issues a Release_Lock to the local lock manager as well as to all the sites in P from whom it has received votes.<br>
             • If site i is successful in obtaining the quorum, then it checks whether its copy of the file is current. A copy is current if its version number is equal to M. If the copy is not current, a current copy is obtained from a site that has a current copy. Once a current copy is available locally, site I performs the next step.<br>
-
         </div>
     </div>
 
@@ -1322,7 +1321,7 @@
             content
         </div>
     </div>
-</center>
+</div>
 
 <script src="main.js"></script>
 </body>
