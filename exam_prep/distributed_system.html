@@ -1300,7 +1300,7 @@
         </div>
     </div>
 
-    <div id="voting algorithm" class="content uk-card uk-card-default">
+    <div id="voting algorithm vote assignment" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Voting Algorithm</h3>
         </div>
@@ -1311,7 +1311,72 @@
             • When a site j receives a Vote_Request message, it Issues a Lock_Request to  its local lock manager.<br>
             • If the local request is granted, then it returns the version number of the replica (VNj) and the number of the votes assigned to the replica (Vj) to site i.<br>
             • If the site i is not successful in obtaining the quorum, then it issues a Release_Lock to the local lock manager as well as to all the sites in P from whom it has received votes.<br>
-            • If site i is successful in obtaining the quorum, then it checks whether its copy of the file is current. A copy is current if its version number is equal to M. If the copy is not current, a current copy is obtained from a site that has a current copy. Once a current copy is available locally, site I performs the next step.<br>
+            • If site i is successful in obtaining the quorum, then it checks whether its copy of the file is current. A copy is current if its version number is equal to M. If the copy is not current, a current copy is obtained from a site that has a current copy. Once a current copy is available locally, site I performs the next step.<br><br>
+
+            <b>Vote Assignment</b><br>
+            Let v be the total number of votes assigned to all copies. Read & write quorum, r & w, are selected such that:<br>
+            r + w > v<br>
+            w > v/2<br><br>
+
+            Above values are determined so that there is a non-null intersection between every read and write quorum, i.e., at least 1 current copy in any reading quorum gathered.<br>
+            Write quorum is high enough to disallow simultaneous writes on 2 distinct subset of replicas.<br><br>
+
+            System with 4 replicas at 4 sites. Votes assigned: V1 = 1, V2 = 1, V3 = 2, & V4 = 1.<br>
+            r = 3 & w = 3<br>
+        </div>
+    </div>
+
+    <div id="dynamic voting majority based approach vote reassignment" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Dynamic Voting</h3>
+        </div>
+        <div class="uk-card-body">
+            Used to overcome from failure.<br>
+            Can change vote value also.<br><br>
+
+            Dynamic voting:<br>
+            Adapt the number of votes or the set of sites that can form a quorum, to the changing state of the system due to sites & communication failures.<br><br>
+
+            <b>Majority based approach:</b><br>
+
+            set of sites change with system state. This set can form a majority to allow access to replicated data.<br><br>
+
+            <b>Dynamic vote reassignment:</b><br>
+
+            Number of votes assigned to a site changes dynamically.<br>
+        </div>
+    </div>
+
+    <div id="load balancing motivation" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Motivations</h3>
+        </div>
+        <div class="uk-card-body">
+            In a locally distributed system, there is a good possibility that several computers are heavily loaded while others are idle or lightly loaded<br>
+            If we can move jobs around (in other words, distribute the load more evenly), the overall performance of the system can be maximize<br>
+            A distributed scheduler is a resource management component of a distributed operating system that focuses on judiciously and transparently redistributing the load of the system among the computers to maximize the overall performance<br>
+        </div>
+    </div>
+
+    <div id="issues in load balancing classification of distribution static dynamic adaptive" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Issues In Load Distributing</h3>
+        </div>
+        <div class="uk-card-body">
+            Load estimation<br>
+            - Resource queue lengths<br>
+            - CPU utilization<br><br>
+
+            <b>Classification of Load distributing algorithms</b><br>
+            • Basic function: transfer load (tasks) from heavily loaded computers to idle or lightly loaded computers.<br>
+            • Can be characterized as:<br>
+            - Static: decisions are hard-wired in the algorithm using a priori knowledge of the system.<br>
+            - Dynamic: use system state information (the loads at nodes), at least in part.<br>
+            - Adaptive: dynamically changing parameters of the algorithm to suit the changing system state.<br><br>
+
+            <b>Load balancing vs. load sharing</b><br>
+            • Strive to reduce the likelihood of an unshared state (a state in which one computer lies idle while at the same time tasks contend for service at another computer) by transferring tasks to lightly loaded nodes.<br>
+            • Load balancing algorithms go a step further by attempting to equalize loads at all computers<br>
         </div>
     </div>
 
