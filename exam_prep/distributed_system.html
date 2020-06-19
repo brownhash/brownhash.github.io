@@ -1385,6 +1385,41 @@
         </div>
     </div>
 
+    <div id="mutual exclusion three basic approaches for distributed token non-token quorum based" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Mutual Exclusion</h3>
+        </div>
+        <div class="uk-card-body">
+            • Concurrent access of processes to a shared resource or data is executed in mutually exclusive manner.<br>
+            • Only one process is allowed to execute the critical section (CS) at any given time.<br><br>
+
+            Three basic approaches for distributed mutual exclusion:<br>
+            • Token based approach<br>
+            • Non-token based approach<br>
+            • Quorum based approach<br>
+        </div>
+    </div>
+
+    <div id="token based approach" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Token-based approach</h3>
+        </div>
+        <div class="uk-card-body">
+            • A unique token is shared among the sites.<br>
+            • A site is allowed to enter its CS if it possesses the token.<br>
+            • Mutual exclusion is ensured because the token is unique.<br>
+        </div>
+    </div>
+
+    <div id="non-token based approach" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Non-token based approach</h3>
+        </div>
+        <div class="uk-card-body">
+            Two or more successive rounds of messages are exchanged among the sites to determine which site will enter the CS next.
+        </div>
+    </div>
+
     <div id="keyword" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
@@ -1393,6 +1428,177 @@
             content
         </div>
     </div>
+
+    <div id="quorum based approach" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Quorum based approach</h3>
+        </div>
+        <div class="uk-card-body">
+            • Each site requests permission to execute the CS from a subset of sites (called a quorum).<br>
+            • Any two quorums contain a common site.<br>
+            • This common site is responsible to make sure that only one request executes the CS at any time.<br>
+        </div>
+    </div>
+
+    <div id="system model mutual exclusion" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>System Model</h3>
+        </div>
+        <div class="uk-card-body">
+            • The system consists of N sites, S1, S2, ..., SN.<br>
+            • We assume that a single process is running on each site. The process at site Si is denoted by pi .<br>
+            • A site can be in one of the following three states: requesting the CS,<br>
+            • executing the CS, or neither requesting nor executing the CS (i.e., idle).<br>
+        </div>
+    </div>
+
+    <div id="requirements of mutual exclusion algorithms" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Requirements of Mutual Exclusion Algorithms</h3>
+        </div>
+        <div class="uk-card-body">
+            • <b>Safety Property:</b> At any instant, only one process can execute the critical section.<br>
+            • <b>Liveness Property:</b> This property states the absence of deadlock and starvation. Two or more sites should not endlessly wait for messages which will never arrive.<br>
+            • <b>Fairness:</b> Each process gets a fair chance to execute the CS. Fairness property generally means the CS execution requests are executed in the order of their arrival (time is determined by a logical clock) in the system.<br>
+        </div>
+    </div>
+
+    <div id="performance metrics message complexity synchronization delay response time system throughput" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Performance Metrics</h3>
+        </div>
+        <div class="uk-card-body">
+            • Message complexity<br>
+            - The number of messages required per CS execution by a site.<br><br>
+            • Synchronization delay<br>
+            - After a site leaves the CS, it is the time required and before the next site enters the CS<br><br>
+            • Response time<br>
+            - The time interval a request waits for its CS execution to be over after its request messages have been sent out<br><br>
+            • System throughput<br>
+            - The rate at which the system executes requests for the CS.<br>
+            - system throughput=1/(SD+E)<br>
+            - where SD is the synchronization delay and E is the average critical section execution time.<br>
+        </div>
+    </div>
+
+    <div id="lamport lamport’s algorithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Lamport’s Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            • Requests for CS are executed in the increasing order of timestamps and time is determined by logical clocks.<br>
+            • Every site Si keeps a queue, request queuei , which contains mutual exclusion requests ordered by their timestamps.<br>
+            • This algorithm requires communication channels to deliver messages the FIFO order.<br>
+        </div>
+    </div>
+
+    <div id="maekawa’s algorithm maekawa" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Maekawa’s Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            Maekawa’s algorithm was the first quorum-based mutual exclusion algorithm. The request sets for sites (i.e., quorums) in Maekawa’s algorithm are constructed to satisfy the following conditions:
+        </div>
+    </div>
+
+    <div id="handling deadlocks" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Handling Deadlocks</h3>
+        </div>
+        <div class="uk-card-body">
+            Deadlock handling requires three types of messages:<br>
+            • FAILED: A FAILED message from site Si to site Sj indicates that Si can not grant Sj ’s request because it has currently granted permission to a site with a higher priority request.<br>
+            • INQUIRE: An INQUIRE message from Si to Sj indicates that Si would like to find out from Sj if it has succeeded in locking all the sites in its request set.<br>
+            • YIELD: A YIELD message from site Si to Sj indicates that Si is returning the permission to Sj (to yield to a higher priority request at Sj ).<br>
+        </div>
+    </div>
+
+    <div id="token based algorithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Token Based Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            • In token-based algorithms, a unique token is shared among the sites.<br>
+            • A site is allowed to enter its CS if it possesses the token.<br>
+            • Token-based algorithms use sequence numbers instead of timestamps. (Used to distinguish between old and current requests.)<br>
+        </div>
+    </div>
+
+    <div id="raymond’s raymond tree-based algorithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Raymond’s Tree-Based Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            • This algorithm uses a spanning tree to reduce the number of messages exchanged per critical section execution.<br>
+            • The network is viewed as a graph, a spanning tree of a network is a tree that contains all the N nodes.<br>
+            • The algorithm assumes that the underlying network guarantees message delivery. All nodes of the network are ’completely reliable.<br>
+            • A node needs to hold information about and communicate only to its immediate-neighboring nodes.<br>
+            • Similar to the concept of tokens used in token-based algorithms, this algorithm uses a concept of privilege.<br>
+            • Only one node can be in possession of the privilege (called the privileged node) at any time, except when the privilege is in transit from one node to another in the form of a PRIVILEGE message.<br>
+            • When there are no nodes requesting for the privilege, it remains in possession of the node that last used it.<br>
+        </div>
+    </div>
+
+    <div id="holder variables" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>The HOLDER Variables</h3>
+        </div>
+        <div class="uk-card-body">
+            • Each node maintains a HOLDER variable that provides information about the placement of the privilege in relation to the node itself.<br>
+            • A node stores in its HOLDER variable the identity of a node that it thinks has the privilege or leads to the node having the privilege.<br>
+            • For two nodes X and Y, if HOLDERX = Y, we could redraw the undirected edge between the nodes X and Y as a directed edge from X to Y.<br>
+        </div>
+    </div>
+
+    <div id="suzuki-kasami’s algorithm suzuki kasami" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Synchronization delay</h3>
+        </div>
+        <div class="uk-card-body">
+            • If a site wants to enter the CS and it does not have the token, it broadcasts a REQUEST message for the token to all other sites.<br>
+            • A site which possesses the token sends it to the requesting site upon the receipt of its REQUEST message.<br>
+            • If a site receives a REQUEST message when it is executing the CS, it sends the token only after it has completed the execution of the CS.<br>
+        </div>
+    </div>
+
+    <div id="interprocess communication characteristics reliability ordering synchronous asynchronous" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Interprocess Communication - Characteristics</h3>
+        </div>
+        <div class="uk-card-body">
+            • Message passing between a pair of processes can be supported by TWO message communication operations: SEND and RECEIVE.<br>
+            • This activity involves communication of data from sending process to the receiving process and may involve the synchronization of two process.<br>
+            • Synchronous Communication – where S and R synchronize at every message. Performs Blocking operation.<br>
+            • Asynchronous Communication - S operation is non blocking but R can be blocking or non blocking.<br>
+            • Message Destination - Messages are sent as pairs (Internet address, local port).<br>
+            • Local port is message destination within computer, specified as integer. Port has one receiver but many sender.<br><br>
+            • Reliability<br>
+            - Reliable Communication in terms of validity and integrity.<br>
+            - Validity means, In point to point, Message should be guaranteed to be delivered despite reasonable no. of packet can be dropped or lost if not then unreliable.<br>
+            - For integrity messages must arrive uncorrupted and without duplication.<br><br>
+            • Ordering<br>
+            - Messages should be delivered in which they were transmitted by sender. If it out of order than is regarded as failure by such application.<br>
+        </div>
+    </div>
+
+    <div id="synchronization delay" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Synchronization delay</h3>
+        </div>
+        <div class="uk-card-body">
+
+        </div>
+    </div>
+
+    <div id="synchronization delay" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Synchronization delay</h3>
+        </div>
+        <div class="uk-card-body">
+
+        </div>
+    </div>
+
 </div>
 
 <script src="main.js"></script>
