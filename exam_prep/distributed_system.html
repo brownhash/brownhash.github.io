@@ -1581,12 +1581,28 @@
         </div>
     </div>
 
-    <div id="synchronization delay" class="content uk-card uk-card-default">
+    <div id="client-server communication client server do operation dooperation get request getrequest sendreply send reply message type request id remote preference operation" class="content uk-card uk-card-default">
         <div class="uk-card-header">
-            <h3>Synchronization delay</h3>
+            <h3>Client-server Communication</h3>
         </div>
         <div class="uk-card-body">
+            This form of communication is designed to support the roles and message exchanging in Client server interaction.<br>
+            Normally request reply communication is synchronous because the client process block until the reply arrive.<br>
+            It is reliable because reply from server is acknowledgement to client.<br>
+            This may be asynchronous where client can afford to retrieve replies later.<br><br>
 
+            doOperation();<br>
+            sends a request message to the remote server and returns the reply.<br>
+            The arguments specify the remote server, the operation to be invoked and the arguments of that operation.<br><br>
+            getRequest ();<br>
+            acquires a client request via the server port.<br><br>
+            sendReply();<br>
+            sends the reply message reply to the client at its Internet address and port.<br><br>
+
+            Message type- Message is a REQUEST message or REPLY message<br>
+            RequestID- A doOperation in a client generated requestID and server copy it into the corresponding REPLY message<br>
+            Remote reference- Marshalling<br>
+            OperationID- Method to be invoke<br>
         </div>
     </div>
 
