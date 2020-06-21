@@ -41,3 +41,8 @@ function search() {
     let x = document.getElementById("search_bar");
     id_finder(x.value.toLowerCase());
 }
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
