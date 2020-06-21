@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+<span id="top"></span>
 
 <input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
+
+<a href="#top" class="uk-icon-button uk-button-danger topbtn" uk-tooltip="Scroll to top" uk-icon="triangle-up"></a>
+
 <div style="text-align: center;">
     <div class="uk-card uk-card-secondary uk-card-body content">
         <h3>A Definitive Guide For Distributed Computing</h3>
@@ -1755,15 +1759,67 @@
         </div>
     </div>
 
-    <div id="synchronization delay" class="content uk-card uk-card-default">
+    <div id="data replication reason behind approaches to single leader multileader leaderless multi synchronous vs asynchronous based benefits of using disadvantages pitfalls" class="content uk-card uk-card-default">
         <div class="uk-card-header">
-            <h3>Synchronization delay</h3>
+            <h3>Replication</h3>
         </div>
         <div class="uk-card-body">
+            An important way to provide access to limited or heavily loaded resources and also to ensure access after failures is to duplicate those resources.<br>
+            Replication is important for high availability, performance enhancement and fault tolerance.<br><br>
 
+            Reason behind data replication in a distributed system<br>
+            • Higher Availability<br>
+            • Reduced Latency<br>
+            • Read Scalability<br>
+            • Network Interruption<br><br>
+
+            Approaches to data replication<br>
+            • Single-leader<br>
+            In single leader replication, the leader(master or primary) replicates data to all of its followers (slaves, read replicas, secondary )nodes.<br>
+            Whenever a new write comes to the master node, it keeps that write to its local storage and sends the same data to all its replicas as a change stream or replication log<br>
+            Many relational databases like<br>
+            PostgreSQL, MySQL, and Oracle Data Guard and NoSQL databases like MongoDB, RethinkDB, and Espresso use this mode of replication<br><br>
+
+            • multi-leader<br>
+            • leaderless<br><br>
+
+            Moreover, each such approach copies data either synchronously or asynchronously.<br><br>
+
+            <b>Synchronous vs Asynchronous leader based replication</b><br>
+            When a write comes to a leader, the leader can send the same write request to all its followers and wait for the acknowledgment from each of them. Once the leader receives acknowledgement it can then notify the client of a successful write.<br>
+            This is the synchronous mode of replication<br><br>
+
+            Benefits of using synchronous replication<br>
+            • Data consistency<br>
+            • Easy to upgrade a follower to a new leader<br>
+            • Reads without any data inconsistency<br><br>
+
+            Pitfalls of synchronous replication<br>
+            • Increased latency<br>
+            • Reduced Availability<br>
         </div>
     </div>
 
+    <div id="coda file system how does works rpc2" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Coda file system</h3>
+        </div>
+        <div class="uk-card-body">
+            Coda is a network file system and a descendent of the Andrew File System .<br><br>
+            It was designed to be:<br>
+            • Highly secure<br>
+            • Available<br>
+            • Transparent to its users.<br><br>
+
+            <b>How does coda works?</b><br>
+            • Availability of files by replicating a file volume across many servers<br>
+            • Disconnected mode of operation by caching files at the client machine<br><br>
+
+            Coda uses RPC2: more sophisticated than the traditional RPC used by NFS<br>
+            RPC2 implements a functionality called side effect: a separate connection is opened when a remote procedure is called.<br>
+            This separate connection is for the application specific protocol between the client and the server.<br>
+        </div>
+    </div>
 </div>
 
 <script src="main.js"></script>
