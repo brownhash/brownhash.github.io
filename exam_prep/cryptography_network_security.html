@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Search: Distributed Systems</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+
+    <link rel="stylesheet" href="resources/main.css" />
+</head>
+<body>
+<span id="top"></span>
+
+<input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
+
+<a href="" onclick="scrollToTop()" class="uk-icon-button uk-button-danger topbtn" uk-tooltip="Scroll to top" uk-icon="triangle-up"></a>
+
+<div style="text-align: center;">
+    <div class="uk-card uk-card-secondary uk-card-body content">
+        <h3> <a href="https://sharma1612harshit.github.io/exam_prep" class="uk-icon-button uk-button-default" uk-tooltip="back" uk-icon="triangle-left"></a> A Definitive Guide For Cryptography And Network Security</h3>
+    </div>
+
+    <div id="keywords" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Heading</h3>
+        </div>
+        <div class="uk-card-body">
+            Content
+        </div>
+    </div>
+</div>
+
+<script src="resources/main.js"></script>
+</body>
+</html>
