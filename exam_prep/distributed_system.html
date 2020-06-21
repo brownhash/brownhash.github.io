@@ -1581,7 +1581,7 @@
         </div>
     </div>
 
-    <div id="client-server communication client server do operation dooperation get request getrequest sendreply send reply message type request id remote preference operation" class="content uk-card uk-card-default">
+    <div id="client-server communication client server do operation dooperation get request getrequest sendreply send reply message type request id remote preference operation timeout discarding duplicate message" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Client-server Communication</h3>
         </div>
@@ -1602,7 +1602,156 @@
             Message type- Message is a REQUEST message or REPLY message<br>
             RequestID- A doOperation in a client generated requestID and server copy it into the corresponding REPLY message<br>
             Remote reference- Marshalling<br>
-            OperationID- Method to be invoke<br>
+            OperationID- Method to be invoke<br><br>
+
+            <b>Time Out</b><br>
+            due to request or reply message getting lost.<br>
+            do-Operation can do after time out.<br>
+            For lost message do-Operation send request repeatedly.<br><br>
+
+            <b>Discarding Duplicate request message</b><br>
+            Due to re transmission of messages.<br>
+            Due to time out after sending<br>
+            Request Identifier to be attached with messages to filter out duplicate messages.<br><br>
+
+            <b>Lost Reply Messages</b><br>
+            If server has already sent reply when it receives a duplicate request it will need to execute the operation again to obtain the result, unless it has stored the result of original execution.<br>
+            Some servers can execute their operations more than once and obtain the same results each time.<br>
+        </div>
+    </div>
+
+    <div id="rpc exchange protocol r rr rra" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>RPC Exchange Protocol</h3>
+        </div>
+        <div class="uk-card-body">
+            Three protocols with different semantics in the presence of communication failure are used for implementing various types of RPC.<br><br>
+            They are<br>
+            • The request (R) protocol<br>
+            • The request-reply (RR) protocol<br>
+            • The request-reply- acknowledge reply (RRA) protocol<br><br>
+
+            The R protocol is used when  there is no value to be returned from the procedure and the client requires no confirmation that the procedure has been executed<br>
+            The RR protocol is useful for client-server exchange<br>
+            The RRA is based on exchange of three messages,  The acknowledge reply message contains the requestId from the reply message being acknowledged.  This helps  server in discarding the message from history<br>
+        </div>
+    </div>
+
+    <div id="group communication characteristics" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Group Communication</h3>
+        </div>
+        <div class="uk-card-body">
+            The pair wise exchange of  message is not the best model for communication from one process to a group of other processes, as for example when a service is implemented as a number of different processes in different computers, perhaps to provide fault tolerance or to enhance availability.<br>
+            A multicast operation is more appropriate – this is an operation that sends a single message from one process to each of the members of a group of processes, usually in such a way that the membership of the group is transparent to the sender.<br>
+            There is a range of possibilities in the desired behavior of a multicast. The simplest provides no guarantees about message delivery or ordering.<br><br>
+
+            <b>Characteristics</b><br>
+            Multicast message provide a useful infrastructure for constructing distributed systems with the following characteristics:<br>
+            Fault tolerance based on replicated services: A replicated services consists of a group of servers. Client requests are multicast to all the members of the group, each of which performs an identical operation. Even when some of the members fail, clients can still be served.<br>
+            Finding the discovery servers in spontaneous networking:<br>
+            Multicast message can be used by servers and clients to  locate available discovery services in order to register their interfaces or  to look up the interfaces of other services in the distributed system.<br>
+            Better Performance through Replicated data:<br>
+            Data are replicated to increase the performance of a service – in some cases replicas of the data are placed in users computers. Each time the data changes, the new value is multicast to the processes managing the replicas.<br>
+            Propagation of event notifications:<br>
+            Multicast to a group may be used to notify processes when something  happens For example, a news system might notify interested users when a new message has been posted on a particular newsgroup.<br>
+            IP multicast & review need a group of the above users of group communication to see which of them can be satisfied by IP multicast.<br>
+        </div>
+    </div>
+
+    <div id="ip multicast" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>IP multicast – an implementation of group communication</h3>
+        </div>
+        <div class="uk-card-body">
+            IP Multicast is built on top of the internet Protocol, IP.<br>
+            IP packets are addressed to computers- ports belong to the TCP and UDP levels.<br>
+            IP multicast allows the sender to transmit a single IP packets to a set of computers that forms a multicast group.<br>
+            The sender is unaware of the identities of the individual recipient and of the size of the group.<br>
+            A multicast group is specified by a class D internet address - that is, an address whose first 4 bits are 1110 in IPv4.<br>
+        </div>
+    </div>
+
+    <div id="events and notifications registering interest" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Events and notifications</h3>
+        </div>
+        <div class="uk-card-body">
+            The idea behind the use of events is that one object can react to a change occurring in another object.<br>
+            Notification of events are essentially asynchronous and determined by their receivers.<br>
+            In particular, in interactive applications, the actions that the user performs on objects, are seen as events that cause changes in the objects that maintain the state of the application.<br>
+            The objects that are responsible for displaying a view of the current state are notified whenever the state changes.<br>
+            Distributed event-based systems extend the local event model by allowing  multiple objects at different locations to be notified of events taking place at an object.<br>
+            They use the publish subscribe- paradigm, in which an object that generates events publishes the type of events that it will make available for observation by other objects.<br>
+            Object that want to receive notification from an object that has published its event subscribe to the types of events that are of interest to them.<br>
+            Objects that represent events are called notification.<br>
+            Notification may be stored, sent in messages, queried and applied in a variety of orders to different thing<br><br>
+
+            When a publisher experiences an event, subscribers that expressed an interest in that type of event will receive notifications.<br>
+            Subscribing to a particular type of event is also called <b>registering interest</b> in that type of event.<br><br>
+
+            Each event has attributes that specify information about that event, such as the name or identifier of the object that generated it, the operation, its parameters and the time<br>
+            An event Sources can generate events of one or more different types.<br>
+        </div>
+    </div>
+
+    <div id="participants in distributed event notification object of interest subscriber observer objects publisher" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Participants in Distributed Event Notification</h3>
+        </div>
+        <div class="uk-card-body">
+            • The object of Interest: Object that experiences changes of state, as a result of its operations being invoked.<br>
+            • Event: An event occurs at an object of interest as the result of the completion of a method execution.<br>
+            • Notifications: It is an object that contains information about an event (type and its attributes).<br>
+            • Subscriber: It  is an object that has subscribed to some type of events in another object. It receives notifications about such events.<br>
+            • Observer objects: The main purpose is to decouple an object of interest from its subscribers. An object of interest can have many different subscribers with different interests.<br>
+            • Publisher: This is an object that declares that it will generate notifications of particular types of event. A publisher may be an object of interest or an observer.<br>
+        </div>
+    </div>
+
+    <div id="remote procedure call rpc terms process steps advantages" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Remote procedure call (RPC)</h3>
+        </div>
+        <div class="uk-card-body">
+            Remote procedure call (RPC) is a powerful technique for constructing distributed, client-server based applications.<br>
+            RPC is a technology that allows a computer program to cause a subroutine or procedure to execute in another address space (commonly on another computer on a shared network) without the programmer explicitly coding the details for this remote interaction.<br>
+            That is, the programmer would write essentially the same code whether the subroutine is local to the executing program, or remote.<br>
+            When the software in question is written using object-oriented principles<br><br>
+
+            <b>Terms:</b><br>
+            • Client<br>
+            • Server<br>
+            • Endpoint<br>
+            • Endpoint Mapper (EPM)<br>
+            • Client Stub<br>
+            • Server Stub<br><br>
+
+            <b>Process:</b><br>
+            The RPC process starts on the client side.<br>
+            The client application calls a local stub procedure instead of code implementing the procedure.<br>
+            Stubs are compiled and linked with the client application during development.<br>
+            Instead of containing code that implements the remote procedure, the client stub code retrieves the required parameters from the client address space and delivers them to the client runtime library.<br>
+            The client runtime library then translates the parameters as needed into a standard Network Data Representation (NDR) format for transmission to the server<br><br>
+
+            <b>Steps:</b><br>
+            1. The client calls a local procedure, called the client stub. To the client process, it appears that this is the actual procedure. The client stub packages the arguments to the remote procedure and builds one or more network messages. The packaging of arguments into a network message is called marshaling<br>
+            2. Network messages are sent by the client stub to the remote system.<br>
+            3. Network messages are transferred by the kernel to the remote system via some protocol.<br>
+            4. A server stub procedure on the server receives the messages. It unmarshals the arguments from the messages and possibly converts them from a standard form into a machine-specific form.<br>
+            5. The server stub executes a local procedure call to the actual server function, passing it the arguments that it received from the client.<br>
+            6. When the server is finished, it returns to the server stub with its return values.<br>
+            7. The server stub converts the return values (if necessary) and marshals them into one or more network messages to send to the client stub.<br>
+            8. Messages get sent back across the network to the client stub.<br>
+            9. The client stub reads the messages from the local kernel.<br>
+            10. It then returns the results to the client function (possibly converting them first).<br>
+            The client code then continues its execution<br><br>
+
+            <b>Advantages</b><br>
+            No need to worry about getting a unique transport address (a socket on a machine). The server can bind to any port and register the port with its RPC name server. The client will contact this name server and request the port number that corresponds to the program it needs.<br>
+            The system is transport independent. This makes code more portable to environments that may have different transport providers in use. It also allows processes on a server to make themselves available over every transport provider on a system.<br>
+            Applications on the client only need to know one transport address—that of the rpcbind (or portmap) process.<br>
+            The function-call model can be used instead of the send/receive (read/write) interface provided by sockets.<br>
         </div>
     </div>
 
