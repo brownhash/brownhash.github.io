@@ -2,7 +2,7 @@ body {
     margin-top: 80px;
 }
 .content {
-    width: 95%;
+    width: auto;
     margin: 30px;
     text-align: left;
 }
