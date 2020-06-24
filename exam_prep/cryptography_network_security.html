@@ -473,12 +473,394 @@
         </div>
     </div>
 
-    <div id="keywords" class="content uk-card uk-card-default">
+    <div id="algebraic structures" class="content uk-card uk-card-default">
         <div class="uk-card-header">
-            <h3>Heading</h3>
+            <h3>Algebraic Structures</h3>
         </div>
         <div class="uk-card-body">
-            Content
+            Cryptography requires sets of integers and specific operations that are defined for those sets.<br>
+            The combination of the set and the operations that are applied to the elements of the set is called an algebraic structure.<br>
+        </div>
+    </div>
+
+    <div id="group" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Group</h3>
+        </div>
+        <div class="uk-card-body">
+            •A group (G) is a set of elements with a binary operation (•) that satisfies four properties. A commutative group satisfies an extra property, commutativity.<br><br>
+
+            • Closure: If a and b are elements of G, then c=a•b is also an element of G.<br>
+            • Associativity: If a.b & c are elements of G, then (a•b) •c=a•(b•c)<br>
+            • Commutativity: For all a & b in G, a•b=b•a<br>
+            • Existence of Identity: For all a in G, there exist an identity element e such that e•a=a•e=a<br>
+            • Existence of Inverse : For all a in G, there exist an element a’ such that a•a’=a’•a=e<br>
+        </div>
+    </div>
+
+    <div id="ring" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Ring</h3>
+        </div>
+        <div class="uk-card-body">
+            • A ring, R = <{…}, •, □ >, is an algebraic structure with two operations.<br><br>
+
+            • The first operation must satisfy all the five properties of abelian group and second operation must satisfy only two or three properties for ring & abelian ring respectively.<br><br>
+
+            • In addition, second operation must be distributed over the first one.<br><br>
+
+            • For all a,b, & c in R, we have<br>
+            • a □ (b•c)=(a □ b) •(a □ c) &    (a•b) □ c=(a □ c) •(b □ c)<br><br>
+
+            • The set Z with two operations, addition and multiplication, is a commutative ring. We show it by R = <Z, +, ×>. Addition satisfies all of the five properties; multiplication satisfies only three properties.<br>
+        </div>
+    </div>
+
+    <div id="field" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Field</h3>
+        </div>
+        <div class="uk-card-body">
+            A field, denoted by F = <{…}, •, □ > is a commutative ring in which the second operation satisfies all the five properties defined for the first operation except that the identity of the first operation has no inverse with respect to the second operation.
+        </div>
+    </div>
+
+    <div id="finite fields galois" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Finite Fields</h3>
+        </div>
+        <div class="uk-card-body">
+            Galois showed that for a field to be finite, the number of elements should be p<sup>n</sup>, where p is a prime and n is a positive integer.<br><br>
+            A Galois field, GF(p<sup>n</sup>), is a finite field with p<sup>n</sup> elements.<br><br>
+            A very common field in this category is GF(2) with the set {0, 1} and two operations, addition and multiplication, as shown in Figure below.<br>
+        </div>
+    </div>
+
+    <div id="attacks disclosure traffic analysis masquerade content modification sequence timing source destination" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Attacks</h3>
+        </div>
+        <div class="uk-card-body">
+            In the context of communication across the network, following attacks can be identified.<br><br>
+
+            • Disclosure<br>
+            • Traffic Analysis<br>
+            • Masquerade<br>
+            • Content Modification<br>
+            • Sequence Modification<br>
+            • Timing Modification<br>
+            • Source Repudiation<br>
+            • Destination Repudiation<br>
+        </div>
+    </div>
+
+    <div id="authentication requirements message encryption code mac hash function" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Authentication Requirements</h3>
+        </div>
+        <div class="uk-card-body">
+            • Measures to deal 1 & 2 attacks comes under message privacy.<br>
+            • Measures to deal with 3 to 6 comes under message authentication.<br>
+            • Measures to deal with 7 comes under digital signature. However, may also be used to address attacks from 3 to 6.<br>
+            • Measures to deal with 8 requires digital signature along with few other protocols.<br><br>
+
+            Any message authentication is fundamentally having two levels.<br><br>
+
+            At the lower level, some authenticator is generated & at the next level, generated authenticator is used to authenticate the message.<br><br>
+
+            Three types of functions that may be used to produce the authenticator.<br><br>
+
+            • Message encryption: Ciphertext of the entire message serves as authenticator.<br>
+            • Message authentication Code (MAC) : Function of the message and a secret key that produces a fixed length value that serves as authenticator.<br>
+            • Hash function: Function that maps a message to fixed length value that serves as authenticator.<br>
+        </div>
+    </div>
+
+    <div id="message authentication code mac requirements of" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Message Authentication Code (MAC)</h3>
+        </div>
+        <div class="uk-card-body">
+            Here MAC function C creates a small fixed-sized block depending on both message M and a shared secret key K.<br><br>
+
+            MAC is appended to the message M<br><br>
+
+            MAC=C<sub>K</sub>(M)<br><br>
+
+            M: Message<br>
+            K: Secret key<br>
+            C: MAC function<br>
+            MAC: Message authentication code<br><br>
+
+            Requirements of MAC function<br><br>
+            The MAC function must satisfy the following requirements:<br>
+
+            If an opponent  observes M & C<sub>k</sub>(M), it is computationally infeasible for the opponent to construct the message M’ such that C<sub>k</sub>(M’)=C<sub>k</sub>(M).<br>
+
+            C<sub>k</sub>(M) should be uniformly distributed such that with randomly chosen messages M and M’, the probability C<sub>k</sub>(M)=C<sub>k</sub>(M’) is 2-n where n is the number of bits in the MAC.<br>
+        </div>
+    </div>
+
+    <div id="hash functions requirements of" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Hash Functions</h3>
+        </div>
+        <div class="uk-card-body">
+            A variation of the MAC is a one way hash function.<br>
+            Here hash function accepts a variable size message M as input and produces a fixed size output, referred to as H(M).<br><br>
+
+            (a) Encrypt message plus hash code.<br>
+            (b) Encrypt hash code - shared secret key<br><br>
+
+            Requirements of Hash function<br>
+            • H can be applied to block of data of any size.<br>
+            • H produces fixed-length output.<br>
+            • H(x) is relatively easy to compute for any given x.<br>
+            • For any given h, it is computationally infeasible to find x such that H(x)=h. This is referred to as one-way property.<br>
+            • For any given block x, it is computationally infeasible to find y≠x with  H(y)=H(x). This is referred to as weak collision resistance.<br>
+            • It is computationally infeasible to find pair (x,y) such that H(x)=H(y). This is referred to as strong collision resistance.<br>
+        </div>
+    </div>
+
+    <div id="security of hash function & and mac brute force attack on mac space key space" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Security of Hash Function & MACs</h3>
+        </div>
+        <div class="uk-card-body">
+            We can group attacks on hash function and MAC’s into two categories: brute force attacks and cryptanalysis.<br><br>
+
+            Brute force attack:<br><br>
+
+            Hash functions:<br>
+            For any given h, it is computationally infeasible to find x such that H(x)=h. This is referred to as one-way property.<br>
+            For any given block x, it is computationally infeasible to find y≠x with  H(y)=H(x). This is referred to as weak collision resistance.<br>
+            It is computationally infeasible to find pair (x,y) such that H(x)=H(y). This is referred to as strong collision resistance.<br><br>
+
+            MAC:<br>
+            Given a fixed message x with n-bit MAC code h=H(x),  a brute force method of finding a collision is to pick a random bit string and check if H(y)=H(x).<br>
+            There are two lines of attacks possible: Attack the key space and attack the MAC values.<br><br>
+
+            Attack on Key space:<br>
+            Suppose the key size is k bits and that the attacker has one known text MAC pair. Then the attacker can compute the n-bit MAC on the known text for all possible keys.<br>
+            At least, one key is guaranteed to produce the correct match.<br>
+            This phase of attack takes a level of effort proportional to 2<sup>k</sup><br><br>
+
+            Attack on MAC space:<br>
+            The objective is to generate a valid MAC value for a given message or to find a message that matches a given MAC value.<br>
+            The level of effort is comparable to that for attacking the one way or weak collision resistance property of a hash function (2<sup>n</sup>).<br><br>
+
+            Finally the level of effort for brute force attack on a MAC algorithm can be expressed as min(2<sup>k</sup>,2<sup>n</sup> ).<br>
+        </div>
+    </div>
+
+    <div id="birthday problems problem 1 2 3 4" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Birthday Problems</h3>
+        </div>
+        <div class="uk-card-body">
+            Problem 1: What is the minimum number, k, of students in classroom such that it is likely that at least one student has a predefined birthday.<br>
+            We have a uniformly distributed random variable with N possible values, then what is the minimum number of instances k such that it is likely that at least one instance is equal to a predefined value.<br><br>
+
+            Problem 2: What is the minimum number, k, of students in classroom such that it is likely that at least one student has the same birthday as the student selected by the professor.<br>
+            We have a uniformly distributed random variable with N possible values, then what is the minimum number of instances k such that it is likely that at least one instance is equal to the selected one.<br><br>
+
+            Problem 3: What is the minimum number, k, of students in classroom such that it is likely that at least two students have the same birthday.<br>
+            We have a uniformly distributed random variable with N possible values, then what is the minimum number of instances k such that it is likely that at least two instances are equal.<br><br>
+
+            Problem 4: We have two classes, each with k students. What is the minimum value k so that it is likely that at least one student from the first classroom has the same birthday as a student from the second classroom<br>
+            We have a uniformly distributed random variable with N possible values. We generate two sets of random values each with k instances. What is the minimum number k such that it is likely that at least one instance from the first set is equal to one instance on the second set.<br>
+
+        </div>
+    </div>
+
+    <div id="asymmetric key crypto system cryptosystem" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Asymmetric Key cryptosystem</h3>
+        </div>
+        <div class="uk-card-body">
+            Main ingredients of Public Key Cryptosystem:<br>
+            • Plaintext<br>
+            • Encryption algorithm<br>
+            • Public and private key<br>
+            • Cipher text<br>
+            • Decryption algorithm<br>
+        </div>
+    </div>
+
+    <div id="rsa algorithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>RSA algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            • Named after inventors Ron Rivest, Adi Shamir and Len Adleman.<br>
+            • RSA is a block cipher between 0 and n-1 for some n.<br>
+            • Typical size of n is 1024 bits or 309 digits.<br>
+            • Select two prime numbers: p=5, q=7.<br>
+            • n=5*7=35<br>
+            • ɸ(n)=24<br>
+            • e=5;d=5; (e*d) mod ɸ(n)=1.<br>
+            • Take plaintext M=2, then after encryption 2^5 mod35= 32.<br>
+            • Ciphertext 32^5 mod 35=2. (Hint: 33554432)<br>
+        </div>
+    </div>
+
+    <div id="attacks on rsa factorisation chosen ciphertext cipher text encryption exponent decryption modulus attack" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Attacks on RSA</h3>
+        </div>
+        <div class="uk-card-body">
+            <b>Factorization:</b> <br>
+            Eve can factor n to obtain p & q and can calculate ɸ(n)=(p-1)*(q-1). It can then calculate inverse d such that  e*d mod ɸ(n)= 1.<br><br>
+
+            <b>Chosen Ciphertext Attack:</b><br>
+            Assume that A creates ciphertext C=Pe mod n and send C to B. Eve intercepts C and uses the following to find P.<br>
+
+            1. Eve choses a random integer X in Zn*.<br>
+            2. Eve calculates Y=C * Xe mod n.<br>
+            3. Eve sends Y to B for decryption and get Z=Yd mod n. (Chosen Cipertext)<br>
+            4. Eve can find P because<br>
+            Z=Yd mod n= (C * Xe)d mod n= (Cd * Xed )mod n=<br>
+            (Cd * X) mod n=(P * X) mod n.<br>
+            Z= (P * X) mod n  →  P=(Z * X-1) mod n<br><br>
+
+            <b>Attack on Encryption Exponent:</b><br>
+            To reduce the encryption time, it is tempting to use a small encryption exponent (e).<br><br>
+
+            The broadcast attack can be launched if one entity sends the same message to a group of recipients with the same low encryption exponent.<br><br>
+
+            For example: A sends the same message to three recipients with the same public exponent e=3 and the moduli n1, n2 and n3.<br>
+            C1=P3 mod n1     C2=P3 mod n2        C3=P3 mod n3<br><br>
+
+            Apply CRT algorithm, to find the values of P3 and thus can calculate different values for C1, C2 & C3<br><br>
+
+            <b>Attack on Decryption Exponent:</b><br>
+            If intruder can find the decryption exponent d, then it can decrypt the current encrypted message.<br>
+
+            However, if Eve knows the value of d, it can use probabilistic algorithm to factor n and find the values of p and q.<br>
+
+            This means that if Bob finds out that the decryption exponent is compromised, he needs to create new value of n, public key and private key.<br><br>
+
+            <b>Attacks on the Modulus:</b><br>
+            Common modulus attack: This attack can be launched if a community uses a common modulus like n.<br><br>
+
+            For example: People in a community might let a trusted party select p & q, calculate n and ɸ(n) and create a pair of exponents for each entity.<br>
+
+            Using its own exponents, eve can launch probabilistic attack to factor n and find B’s private key. (Assumtion Eve is also a part of community).<br>
+        </div>
+    </div>
+
+    <div id="exponentiation and & logarithm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>EXPONENTIATION AND LOGARITHM</h3>
+        </div>
+        <div class="uk-card-body">
+            Exponentiation: y = a<sup>x</sup> -> Logarithm: x = log<sub>a</sub>y
+        </div>
+    </div>
+
+    <div id="sha versions sha-1 sha-224 sha-256 sha-384 sha-512 sh 1 224 384 512 256" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SHA Versions</h3>
+        </div>
+        <div class="uk-card-body">
+            <pre>
+                                       SHA1     SHA224     SHA256     SHA384     SHA512
+                -------------------------------------------------------------------------
+                message digest         160      224        256        384        512
+                message size           < 2<sup>64</sup>    < 2<sup>64</sup>       < 2<sup>64</sup>       < 2<sup>128</sup>     < 2<sup>128</sup>
+                block size             512      512        512        1024       1024
+                word size              32       32         32         64         64
+                number of steps        80       64         64         80         80
+            </pre>
+        </div>
+    </div>
+
+    <div id="sha-512 logic sh 512" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SHA-512 Logic</h3>
+        </div>
+        <div class="uk-card-body">
+            1. Append padding bits : The message is padded, so that padded message is 128 bits less than an integer multiple of 1024.<br><br>
+
+            2. Append length: A 128 bits of message length is appended to the message. (M mod 2^128)<br><br>
+
+            3. Initialize hash buffer: A 512 bit buffer is used to hold intermediate and final results.<br>
+            a=6A09E667F3BCC908, b=, c=, d=, e=,f=,g=, h=<br>
+            These values are stored in big-endian format.<br><br>
+
+            4. Processing in multiple of 1024-bit blocks: This module is the heart of the algorithm and consists of 80 rounds.<br><br>
+
+            5. Output: After all N 1024 bit blocks have been processed, the output from the Nth stage is the 512 bit digest.<br>
+        </div>
+    </div>
+
+    <div id="comparision conventional signatures and digital vs" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Conventional Signatures vs Digital Signatures</h3>
+        </div>
+        <div class="uk-card-body">
+            A conventional signature is included in the document; it is part of the document.<br>
+            But when we sign a document digitally, we send the signature as a separate document.<br><br>
+
+            For a conventional signature, when the recipient receives a document, she compares the signature on the document with the signature on file.<br>
+            For a digital signature, the recipient receives the message and the signature. The recipient needs to apply a verification technique to the combination of the message and the signature to verify the authenticity.<br><br>
+
+            For a conventional signature, there is normally a one-to-many relationship between a signature and documents.<br>
+            For a digital signature, there is a one-to-one relationship between a signature and a message.<br><br>
+
+            In conventional signature, a copy of the signed document can be distinguished from the original one on file.<br>
+            In digital signature, there is no such distinction unless there is a factor of time on the document.<br>
+        </div>
+    </div>
+
+    <div id="digital signature process" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Digital Signature Process</h3>
+        </div>
+        <div class="uk-card-body">
+            The sender uses a signing algorithm to sign the message.<br><br>
+
+            The message and the signature are sent to the receiver.<br>
+            The receiver receives the message and the signature and applies the verifying algorithm to the combination.<br><br>
+
+            If the result is true, the message is accepted; otherwise, it is rejected.<br>
+        </div>
+    </div>
+
+    <div id="digital signature schemes" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Digital Signature Schemes</h3>
+        </div>
+        <div class="uk-card-body">
+            • RSA Digital Signature Scheme<br>
+            • ElGamal Digital Signature Scheme<br>
+            • Digital Signature Standard (DSS)<br>
+        </div>
+    </div>
+
+    <div id="digital signature standard dss" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Digital Signature Standard (DSS)</h3>
+        </div>
+        <div class="uk-card-body">
+            • US Govt approved signature scheme<br>
+            • designed by NIST & NSA in early 90's<br>
+            • published as FIPS-186 in 1991<br>
+            • revised in 1993, 1996 & then 2000<br>
+            • uses the SHA hash algorithm<br>
+            • DSS is the standard, DSA is the algorithm<br>
+            • FIPS 186-2 (2000) includes alternative RSA & elliptic curve signature variants<br>
+            • DSA is digital signature only unlike RSA<br>
+            • is a public-key technique<br>
+        </div>
+    </div>
+
+    <div id="keywords" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>heading</h3>
+        </div>
+        <div class="uk-card-body">
+            content
         </div>
     </div>
 </div>
