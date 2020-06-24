@@ -183,6 +183,131 @@
         </div>
     </div>
 
+    <div id="transposition cipher-keyless transposition cipher keyless cipher rail fence cipher" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Transposition Cipher-Keyless Transposition Cipher</h3>
+        </div>
+        <div class="uk-card-body">
+            There are two methods for permutation of characters.<br><br>
+
+            Text is written column by column and then transmitted row by row.<br>
+            Text is written row by row and then transmitted column by column.<br><br>
+
+            A good example of the first method is the Rail Fence Cipher.<br>
+
+            For example: Meet me at the park
+            <pre>
+
+                m   e   m   a   t   e   a   k
+                 \ / \ / \ / \ / \ / \ / \ /
+                  e   t   e   t   h   p   r
+            </pre>
+            Cipher: memateaketethpr
+        </div>
+    </div>
+
+    <div id="keyed transposition cipher" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Keyed Transposition Cipher</h3>
+        </div>
+        <div class="uk-card-body">
+            Another method is to divide the plaintext into groups of predetermined size called blocks.<br>
+            Then key is used to permute the characters in each block separately.<br>
+
+            <pre>
+
+                message: enemy attacks tonight
+
+                > enemy attac kston ightz
+                > eemyn taact tkons hitzg
+
+                encryption \/   | 3 | 1 | 4 | 5 | 2 |
+                                | 1 | 2 | 3 | 4 | 5 |   /\ decryption
+            </pre>
+        </div>
+    </div>
+
+    <div id="modern block cipher" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Modern Block Cipher</h3>
+        </div>
+        <div class="uk-card-body">
+            • Modern block ciphers can be Stream or Block.<br>
+            • Modern block ciphers are based on bit level data.<br>
+            • However traditional ciphers are all based on character level data.<br>
+            • Stream ciphers takes each data bit by bit for encryption.<br>
+            • Block ciphers takes block of data for encryption/decryption.<br>
+        </div>
+    </div>
+
+    <div id="substitution box s-box s box" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Substitution box (S-box)</h3>
+        </div>
+        <div class="uk-card-body">
+            An S-box is an m × n substitution unit, where m and n are not necessarily the same.<br>
+            The following table defines the input/output relationship for an S-box of size 3 × 2.<br>
+            The leftmost bit of the input defines the row; the two rightmost bits of the input define the column.<br>
+            The two output bits are values on the cross section of the selected row and column.<br>
+        </div>
+    </div>
+
+    <div id="product cipher diffusion confusion" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Product cipher</h3>
+        </div>
+        <div class="uk-card-body">
+            A product cipher is a complex cipher combining substitution, permutation, and other components.<br><br>
+
+            <b>Diffusion</b><br>
+            The idea of diffusion is to hide the relationship between the ciphertext and the plaintext.<br><br>
+
+            <b>Confusion</b><br>
+            The idea of confusion is to hide the relationship between the ciphertext and the key.<br>
+        </div>
+    </div>
+
+    <div id="avalanche effect" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Avalanche effect</h3>
+        </div>
+        <div class="uk-card-body">
+            A small change in either the plaintext or the key, should produce the significant change in the ciphertext.
+        </div>
+    </div>
+
+    <div id="strength of des use of 56 bit 56-bit keys nature of algorithm timing attacks" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Strength of DES</h3>
+        </div>
+        <div class="uk-card-body">
+            The use of 56-bit keys:<br>
+            With a key length of 56 bits, there are 2<sup>56</sup> possible keys<br>
+            which is equivalent to 7.2 X 10<sup>16</sup> keys<br><br>
+
+            Nature of DES algorithm<br>
+            The design of algorithm specially the design of S-boxes are not made public.<br><br>
+
+            Timing Attacks<br>
+            Timing attack is one in which information about the key or plaintext is obtained by observing how long it takes to perform decryption on various ciphertexts.<br>
+        </div>
+    </div>
+
+    <div id="block cipher modes of operation electronic codebook cipher block chaining feedback output counter ecb cbc cfb ofb ctr" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Block Cipher Modes of Operation</h3>
+        </div>
+        <div class="uk-card-body">
+            To apply DES in variety of applications, different modes of operation have been defined.<br><br>
+
+            • Electronic Codebook(ECB)<br>
+            • Cipher Block Chaining(CBC)<br>
+            • Cipher Feedback(CFB)<br>
+            • Output Feedback(OFB)<br>
+            • Counter (CTR)<br>
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>Heading</h3>
@@ -194,5 +319,29 @@
 </div>
 
 <script src="resources/main.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBp6cHQCBo5iv1NSEs6nJEwuz-9ayv6yD0",
+        authDomain: "portfolio-harrydbst.firebaseapp.com",
+        databaseURL: "https://portfolio-harrydbst.firebaseio.com",
+        projectId: "portfolio-harrydbst",
+        storageBucket: "portfolio-harrydbst.appspot.com",
+        messagingSenderId: "1366130803",
+        appId: "1:1366130803:web:1fa5bcd91263fc2d4eea06",
+        measurementId: "G-Z5Q3PFLKMH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 </body>
 </html>
