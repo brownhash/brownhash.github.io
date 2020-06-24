@@ -1188,12 +1188,336 @@
         </div>
     </div>
 
-    <div id="keywords" class="content uk-card uk-card-default">
+    <div id="pgp compression zip" class="content uk-card uk-card-default">
         <div class="uk-card-header">
-            <h3>heading</h3>
+            <h3>PGP Compression</h3>
         </div>
         <div class="uk-card-body">
-            content
+            As a default, PGP compresses the message after applying the signature but before encryption<br>
+            This has the benefit of saving space both for e-mail transmission and for file storage<br>
+            The placement of the compression algorithm is critical<br>
+            It is preferable to sign an uncompressed message so that one can store only the uncompressed message together with the signature for future verification.<br>
+            Message encryption is applied after compression to strengthen cryptographic security<br>
+            The compression algorithm used is ZIP<br>
+        </div>
+    </div>
+
+    <div id="mime smime s/mime" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>S/MIME</h3>
+        </div>
+        <div class="uk-card-body">
+            Another security service designed for electronic mail is Secure/Multipurpose Internet Mail Extension (S/MIME). The protocol is an enhancement of the Multipurpose Internet Mail Extension (MIME) protocol.
+        </div>
+    </div>
+
+    <div id="mime multi purpose internet mail extensions" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Multipurpose Internet Mail Extensions ( MIME )</h3>
+        </div>
+        <div class="uk-card-body">
+            MIME is a specification for enhancing the capabilities of standard Internet electronic mail.<br><br>
+
+            When using the MIME standard, messages can contain the following types<br>
+            • Text messages in ASCII.<br>
+            • Character sets other than ASCII.<br>
+            • Multi-media: Image, Audio, and Video messages.<br>
+            • Multiple objects in a single message.<br>
+            • Multi-font messages.<br>
+            • Messages of unlimited length.<br>
+            • Binary files.<br>
+        </div>
+    </div>
+
+    <div id="smtp simple mail transfer protocol limitations of" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SMTP</h3>
+        </div>
+        <div class="uk-card-body">
+            SMPT ( Simple Mail Transfer Protocol ) is  widely used around the world, it is the standard protocol for transferring mail between hosts in the TCP/IP suite.<br>
+            However, SMPT has been limited to the delivery of simple text messages which does not meet the rising demand for capability of delivery mail containing various types of data, including voice, images and video clips.<br>
+            To satisfy this requirement, a new electronic mail standard, which builds on SMPT, has been defined.<br>
+
+            Limitations of the SMPT scheme<br>
+            • The message may contain only ASCII characters<br>
+            • The maximum line length allowed is 1000 characters<br>
+            • The message must not be longer than a predefined maximum size<br>
+            • Cannot transmit executable files or other binary objects.<br>
+            • It cannot transmit text data that includes national language characters ( 8-bit codes) because it is limited to 7-bit ASCII.<br>
+            • SMTP servers may reject mail message over a certain size.<br>
+            • SMTP gateways that translate between ASCII and the Character code EBCDIC do not use a consistent set of mappings, resulting in translation problems.<br>
+        </div>
+    </div>
+
+    <div id="rfc 5322 rfc5322" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>RFC 5322</h3>
+        </div>
+        <div class="uk-card-body">
+            Defines a format for text messages that are sent using electronic mail<br>
+            Messages are viewed as having an envelope and contents<br>
+            The envelope contains whatever information is needed to accomplish transmission and delivery<br>
+            The contents compose the object to be delivered to the recipient<br>
+            RFC 5322 standard applies only to the contents<br>
+            The content standard includes a set of header fields that may be used by the mail system to create the envelope<br>
+        </div>
+    </div>
+
+    <div id="web security integrity confidentiality denial of service authentication" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Web Security</h3>
+        </div>
+        <div class="uk-card-body">
+            Web now widely used by business, government, individuals<br>
+            but Internet & Web are vulnerable<br>
+            have a variety of threats<br>
+            • integrity<br>
+            • confidentiality<br>
+            • denial of service<br>
+            • authentication<br>
+            need added security mechanisms<br>
+        </div>
+    </div>
+
+    <div id="ssl secure socket layer session connection architecture connection state" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SSL Secure Socket Layer</h3>
+        </div>
+        <div class="uk-card-body">
+            transport layer security service<br>
+            originally developed by Netscape<br>
+            version 3 designed with public input<br>
+            subsequently became Internet standard known as TLS (Transport Layer Security)<br>
+            uses TCP to provide a reliable end-to-end service<br>
+            SSL has two layers of protocols<br><br>
+
+            <b>Architecture</b><br><br>
+
+            SSL Session<br>
+            • an association between client & server<br>
+            • created by the Handshake Protocol<br>
+            • define a set of cryptographic parameters<br>
+            • may be shared by multiple SSL connections<br><br>
+
+            SSL Connection<br>
+            • a transient, peer-to-peer, communications link<br>
+            • associated with 1 SSL session<br><br>
+
+            Connection state is defined by<br>
+            • Server and Client Random<br>
+            • Server write MAC secret<br>
+            • Client write MAC secret<br>
+            • Server write key<br>
+            • Client write key<br>
+            • Initialization vectors<br>
+            • Sequence numbers<br>
+        </div>
+    </div>
+
+    <div id="cryptographic computations master secret" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Cryptographic Computations- Master Secret</h3>
+        </div>
+        <div class="uk-card-body">
+            The Master secret is generated using the following procedure<br>
+            Client and server exchange two random numbers.<br>
+            The client and server exchange one pre-master secret using one of the key exchange algorithm.<br>
+            48byte Master secret is generated by using pre-master secret by using the hash functions.<br>
+        </div>
+    </div>
+
+    <div id="cryptographic computations key material" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Cryptographic Computations Key Material</h3>
+        </div>
+        <div class="uk-card-body">
+            Generation of cryptographic parameters<br>
+            The Master secret is used to create variable-length key material by applying the same set of hash functions and prepending with different constants.<br>
+            Six different keys are extracted from the key material.<br>
+            client write MAC secret, a server write MAC secret, a client write key, a server write key, a client write IV, and a server write IV.<br>
+        </div>
+    </div>
+
+    <div id="ssl change cipher spec protocol" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SSL Change Cipher Spec Protocol</h3>
+        </div>
+        <div class="uk-card-body">
+            one of 3 SSL specific protocols which use the SSL Record protocol<br>
+            a single message<br>
+            causes pending state to become current<br>
+            hence updating the cipher suite in use<br>
+        </div>
+    </div>
+
+    <div id="ssl alert protocol" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SSL Alert Protocol</h3>
+        </div>
+        <div class="uk-card-body">
+            conveys SSL-related alerts to peer entity<br>
+            severity<br>
+            Warning or Fatal<br>
+            specific alert<br>
+            Fatal: unexpected message, bad record mac, decompression failure, handshake failure, illegal parameter<br>
+            Warning: close notify, no certificate, bad certificate, unsupported certificate, certificate revoked, certificate expired, certificate unknown<br>
+            compressed & encrypted like all SSL data<br>
+        </div>
+    </div>
+
+    <div id="ssl handshake protocol" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SSL Handshake Protocol</h3>
+        </div>
+        <div class="uk-card-body">
+            The SSL Handshake protocol uses messages to negotiate cipher suite, to authenticate server to the client, to authenticate client to the server and to exchange information for building the cryptographic secrets.<br>
+            The handshaking is done in four phases.<br>
+        </div>
+    </div>
+
+    <div id="authentication header ah next payload length security parameter sequence number" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Authentication Header (AH)</h3>
+        </div>
+        <div class="uk-card-body">
+            Next Header: The 8-bit next header field defines the type of load such as TCP, UDP etc.<br>
+            Payload Length: It defines the length of the authentication header in 4-byte multiples.<br>
+            Security Parameter Index: The 32-bit SPI is the name of the virtual circuit identifier and is same for all the packets sent during a connection.<br>
+            Sequence number: A 32-bit sequence number provides ordering information for a sequence of datagrams.<br>
+            Authentication Data: The authentication data field is the result of applying a hash function to the entire IP datagram.<br>
+        </div>
+    </div>
+
+    <div id="encapsulating security payload esp security parameter sequence number padding pad length next header authentication data" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Encapsulating Security Payload (ESP)</h3>
+        </div>
+        <div class="uk-card-body">
+            Steps to be followed are as follows:<br>
+            • An ESP trailer is added to the payload.<br>
+            • The payload and the trailer are encrypted.<br>
+            • The ESP header is added.<br>
+            • The ESP header, payload, and ESP trailer are used to create the authentication data.<br>
+            • The authentication data are added to the end of the ESP trailer.<br>
+            • The IP is added after changing the protocol value to 50.<br><br>
+
+            Security Parameter Index: The 32-bit security parameter index field is similar to that defined for the AH protocol.<br>
+            Sequence number: The 32-bit sequence number field similar to AH protocol.<br>
+            Padding: The variable length field of 0’s serve as padding.<br>
+            Pad length: The 8-bit pad-length defines the number of padding bytes.<br>
+            Next header: The 8-bit next header defines the protocol used for carrying the payload of the datagram.<br>
+            Authentication data: The authentication data field is the result of applying an authentication to parts of the datagram.<br>
+        </div>
+    </div>
+
+    <div id="secure electronic transaction set main entities of" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Secure Electronic Transaction(SET)</h3>
+        </div>
+        <div class="uk-card-body">
+            Electronic commerce, as exemplified by the popularity of the Internet, is going to have an enormous impact on the financial services industry.<br>
+            No financial institution will be left unaffected by the explosion of electronic commerce.<br>
+            Even though SSL is extremely effective and widely accepted as the online payment standard, it requires the customer and merchant to trust each other.<br><br>
+
+            There are four main entities in SET:<br>
+            Cardholder (customer)<br>
+            Merchant (web server)<br>
+            Merchant’s Bank (payment gateway, acquirer): payment gateway is a<br>
+            device operated by an acquirer.<br>
+            Issuer (cardholder’s bank)<br>
+        </div>
+    </div>
+
+    <div id="disadvantages of ssl" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Disadvantage of SSL</h3>
+        </div>
+        <div class="uk-card-body">
+            The cardholder is protected from eavesdroppers but not from the merchant. Some merchants are dishonest.<br>
+            The merchant has not protected from dishonest customers who supply an invalid credit card number or who claim a refund from their bank without cause.<br>
+        </div>
+    </div>
+
+    <div id="intrusion detection system ids" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Intrusion Detection System (IDS)</h3>
+        </div>
+        <div class="uk-card-body">
+            The three important components are – Sensors, Analysers and administrators interfaces.<br>
+            The sensors collect traffic data and user activity data and send them to an analyser which looks for suspicious activity.<br>
+            If the analyser detects an activity it sends an alert to the administrator’s interface.<br>
+            If an intrusion is detected quickly enough, the intruder can be identified and ejected from the system.<br>
+            The sooner that the intrusion is detected, the less the amount of damage.<br>
+            Intrusion detection enables the collection of information about intrusion techniques that can be used to strengthen the intrusion prevention facility.<br>
+        </div>
+    </div>
+
+    <div id="approaches to for intrusion detection statistical anomaly detection rule-based rule based" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Approaches to Intrusion Detection</h3>
+        </div>
+        <div class="uk-card-body">
+            Statistical anomaly detection:<br>
+            It involves the collection of data relating to the behavior of legitimate users over a period of time.<br>
+            Then statistical tests are applied to observed behavior to determine with a high level of confidence whether that behavior is not legitimate user behavior.<br>
+            Threshold detection: This approach involves defining thresholds, independent of user, for the frequency of occurrence of various events.<br>
+            Profile based: A profile of the activity of each user is developed and used to detect changes in the behavior of individual accounts.<br><br>
+
+            Rule-based detection:<br>
+            Involves an attempt to define a set of rules that can be used to decide that a given behavior is that of an intruder.<br>
+            Anomaly detection: Rules are developed to detect deviation from previous usage patterns.<br>
+            Penetration identification: The key feature of such systems is the use of rules for identifying known penetrations or penetrations that would exploit known weaknesses.<br>
+        </div>
+    </div>
+
+    <div id="host security" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Host Security</h3>
+        </div>
+        <div class="uk-card-body">
+            Host security refers to the protection of hardware, software, information stored and services running on these computers from any kind of theft and damage.<br>
+            It involves hardening the host’s operating system and applications to ensure protection against possible risks and threats.<br>
+            Host security can be achieved by means of. hardening OS, Server and Application.<br>
+        </div>
+    </div>
+
+    <div id="os security" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>OS Security</h3>
+        </div>
+        <div class="uk-card-body">
+            OS security refers to the practice of securing OS system files, file system and its resources from any unauthorized access, modification or destruction.<br>
+            Basic OS Hardening Techniques<br>
+            Apply patches and fixes quickly<br>
+            Use strong password for accounts<br>
+            Use of Access control List (ACL) and file permission for file and directory protection.<br>
+            File and file system encryption<br>
+            Disable any unnecessary file sharing<br>
+        </div>
+    </div>
+
+    <div id="hardening web server" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Hardening Web Server</h3>
+        </div>
+        <div class="uk-card-body">
+            Server hardening refers to the increased level of security provided in order for the servers to operate in a more secured environment.<br>
+            Place your web server isolated on a separate subnet i.e. DMZ.<br>
+            Benefit of the Web server isolation:<br>
+            If web server is compromised, it can not be used to compromise internal hosts.<br>
+            A separate firewall can be used to restrict and block unnecessary traffic on webserver.<br>
+        </div>
+    </div>
+
+    <div id="hardening application" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Hardening Application</h3>
+        </div>
+        <div class="uk-card-body">
+            Administrators should change the default password of an application.<br>
+            Administrators should not download and install applications from untrusted sources or third party sites.<br>
+            Administrators should ensure that applications are using strong encryption algorithms.<br>
+            Organizations need to continuously monitor their applications for vulnerabilities.<br>
         </div>
     </div>
 </div>
