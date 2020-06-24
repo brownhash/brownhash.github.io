@@ -855,6 +855,339 @@
         </div>
     </div>
 
+    <div id="session keys" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Session Keys</h3>
+        </div>
+        <div class="uk-card-body">
+            A KDC creates a secret key for each member. This secret key can be used only between the member and the KDC, not between two members.
+            A session symmetric key between two parties is used only once.
+        </div>
+    </div>
+
+    <div id="kerberos authentication server ticket-granting ticket granting real as tgs" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>KERBEROS</h3>
+        </div>
+        <div class="uk-card-body">
+            Kerberos is an authentication protocol, and at the same time a KDC, that has become very popular. Several systems, including Windows 2000, use Kerberos. Originally designed at MIT, it has gone through several versions.<br><br>
+
+            Authentication Server (AS)<br>
+            The authentication server (AS) is the KDC in the Kerberos protocol.<br><br>
+
+            Ticket-Granting Server (TGS)<br>
+            The ticket-granting server (TGS) issues a ticket for the real server (Bob).<br><br>
+
+            Real Server<br>
+            The real server (Bob) provides services for the user (Alice).<br>
+        </div>
+    </div>
+
+    <div id="kerberos version 5 realm" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Kerberos version 5</h3>
+        </div>
+        <div class="uk-card-body">
+            • Version 5 has a longer ticket lifetime.<br>
+            • Version 5 allows tickets to be renewed.<br>
+            • Version 5 can accept any symmetric-key algorithm.<br>
+            • Version 5 uses a different protocol for describing data types.<br>
+            • Version 5 has more overhead than version 4.<br><br>
+
+            <b>Realm</b><br>
+            Kerberos allows the global distribution of ASs and TGSs, with each system called a realm. A user may get a ticket for a local server or a remote server.<br>
+        </div>
+    </div>
+
+    <div id="symmetric-keyt agreement symmetric key diffie-hellman diffie hellman" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>SYMMETRIC-KEY AGREEMENT
+            </h3>
+        </div>
+        <div class="uk-card-body">
+            Alice and Bob can create a session key between themselves without using a KDC. This method of session-key creation is referred to as the symmetric-key agreement.<br>
+            The symmetric (shared) key in the <b>Diffie-Hellman</b> method is K = g<sup>xy</sup> mod p.<br>
+        </div>
+    </div>
+
+    <div id="public key distribution" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>PUBLIC KEY DISTRIBUTION</h3>
+        </div>
+        <div class="uk-card-body">
+            In asymmetric-key cryptography, people do not need to know a symmetric shared key; everyone shields a private key and advertises a public key.
+        </div>
+    </div>
+
+    <div id="certificate renewal revocation revoke reasons of" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Certificate Renewal & Certificate Revocation</h3>
+        </div>
+        <div class="uk-card-body">
+            Certificate Renewal<br>
+            Each certificate has a period of validity. If there is no problem with the certificate, the CA issues a new certificate before the old one expires.<br><br>
+
+            Certificate Revocation<br>
+            In some cases a certificate must be revoked before its expiration.<br><br>
+
+            Various reasons for certification revocation:<br>
+            1. The user’s private key is compromised.<br>
+            2. The CA is no longer willing to certify the user.<br>
+            3. The CA’s private key, which can verify certificates have been compromised.<br>
+        </div>
+    </div>
+
+    <div id="public key infrastructure pki" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Public Key Infrastructure</h3>
+        </div>
+        <div class="uk-card-body">
+            PKI is a model for creating, distributing and revoking certificates based on X.509.
+        </div>
+    </div>
+
+    <div id="trust model" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Trust Model</h3>
+        </div>
+        <div class="uk-card-body">
+            It is not possible to have just one CA issuing all certificates for all users.<br>
+            There should me many CA’s each responsible for creating, storing, issuing and revoking a limited number of certificates.<br>
+            The trust model defines rules that specify how a user can verify a certificate received from CA.<br>
+        </div>
+    </div>
+
+    <div id="trapdoors virus malware" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Trapdoors</h3>
+        </div>
+        <div class="uk-card-body">
+            • Secret entry point into a program.<br>
+            • Allows those who know access bypassing usual security procedures.<br>
+            • Have been commonly used by developers.<br>
+            • Threat when left in production programs, allowing exploited by attackers<br>
+            • Requires good s/w development & update.<br>
+        </div>
+    </div>
+
+    <div id="logic bomb virus malware" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Logic Bomb</h3>
+        </div>
+        <div class="uk-card-body">
+            • One of oldest types of malicious software.<br>
+            • Code embedded in legitimate program.<br>
+            • Activated when specified conditions met.<br>
+            • presence/absence of some file<br>
+            • particular date/time<br>
+            • particular user<br>
+            • When triggered typically damage system.<br>
+            • modify/delete files/disks<br>
+        </div>
+    </div>
+
+    <div id="trojan horse virus malware" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Trojan Horse</h3>
+        </div>
+        <div class="uk-card-body">
+            • Program with hidden side-effects.<br>
+            • Which is usually superficially attractive<br>
+            • eg game, ZIP software etc.<br>
+            • When run performs some additional tasks<br>
+            • allows attacker to indirectly gain access they do not have directly<br>
+            • Often used to propagate a virus/worm or install a backdoor or to destroy data.<br>
+        </div>
+    </div>
+
+    <div id="zombie virus malware" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Zombie</h3>
+        </div>
+        <div class="uk-card-body">
+            Program which secretly takes over another networked computer then uses it to indirectly launch attacks.
+            Often used to launch distributed denial of service (DDoS) attacks.
+        </div>
+    </div>
+
+    <div id="viruses virus" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Virus</h3>
+        </div>
+        <div class="uk-card-body">
+            • A virus is a piece of software that can "infect" other programs by modifying them.<br>
+            • The modification includes a copy of the virus program, which can then go on to infect other programs.<br>
+            • A virus can be pre-pended or post-pended to an executable program.<br>
+            • The key to its operation is that the infected program, when invoked, will first execute the virus code and then execute the original code of the program.<br>
+            • The virus may perform some action, usually detrimental to the system. This action could be a logic bomb that triggers only under certain conditions.<br>
+            • If the infection phase of the program is reasonably rapid, a user is unlikely to notice any difference between the execution of an infected and uninfected program.<br>
+        </div>
+    </div>
+
+    <div id="types of viruses parasitic memory-resident memory resident boot sector virus stealth polymorphic" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Types of Viruses</h3>
+        </div>
+        <div class="uk-card-body">
+            Parasitic virus: The traditional and still most common form of virus. A parasitic virus attaches itself to executable files and replicates, when the infected program is executed, by finding other executable files to infect.<br><br>
+
+            Memory-resident virus: Lodges in main memory as part of a resident system program. From that point on, the virus infects every program that executes.<br><br>
+
+            Boot sector virus: Infects a master boot record or boot record and spreads when a system is booted from the disk containing the virus.<br><br>
+
+            Stealth virus: A form of virus explicitly designed to hide itself from detection by antivirus software. For ex: Using compression to hide increased file size due to infection.<br><br>
+
+            Polymorphic virus: A virus that mutates with every infection, making detection by the "signature" of the virus impossible. For ex: To insert superfluous instructions or change the order of independent instructions.<br>
+        </div>
+    </div>
+
+    <div id="email virus e-mail" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>E-mail Virus</h3>
+        </div>
+        <div class="uk-card-body">
+            The first rapidly spreading e-mail viruses, such as Melissa, made use of a Microsoft Word macro embedded in an attachment.<br>
+            If the recipient opens the e-mail attachment, the Word macro is activated.<br>
+            Then e-mail virus sends itself to everyone on the mailing list in the user's e-mail package.<br>
+            Later, more powerful version of the e-mail virus appeared, which can be activated merely by opening an e-mail.<br>
+            Ultimately, a greater degree of security must be built into Internet utility and application software on PCs to counter the growing threat.<br>
+        </div>
+    </div>
+
+    <div id="worms" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Worms</h3>
+        </div>
+        <div class="uk-card-body">
+            A worm is a program that can replicate itself and send copies from computer to computer across network connections. Upon arrival, the worm may be activated to replicate and propagate. Also, the worm usually performs some unwanted function.<br><br>
+
+            An e-mail virus has some of the characteristics of a worm, however, we can still classify it as a virus because it requires a human to move it forward. To replicate itself, a network worm uses some sort of network vehicle. For ex. : Electronic mail facility, Remote login capability etc.<br><br>
+
+            The new copy of the worm program is then run on the remote system continues to spread in the same fashion.<br><br>
+
+            Ex: Stuxnet is a malicious is a malicious computer worm is a malicious computer worm, first uncovered in 2010. Thought to have been in development since at least 2005, Stuxnet targets SCADA is a malicious computer worm, first uncovered in 2010. Thought to have been in development since at least 2005, Stuxnet targets SCADA systems and is believed to be responsible for causing substantial damage to Iran's nuclear program is a malicious computer worm, first uncovered in 2010. Thought to have been in development since at least 2005, Stuxnet targets SCADA systems and is believed to be responsible for causing substantial damage to Iran's nuclear program. Although neither country has openly admitted responsibility, the worm is believed to be a jointly built American is a malicious computer worm, first uncovered in 2010. Thought to have been in development since at least 2005, Stuxnet targets SCADA systems and is believed to be responsible for causing substantial damage to Iran's nuclear program. Although neither country has openly admitted responsibility, the worm is believed to be a jointly built American/Israeli is a malicious computer worm, first uncovered in 2010. Thought to have been in development since at least 2005, Stuxnet targets SCADA systems and is believed to be responsible for causing substantial damage to Iran's nuclear program. Although neither country has openly admitted responsibility, the worm is believed to be a jointly built American/Israeli cyberweapon.[1][1][2]<br>
+        </div>
+    </div>
+
+    <div id="firewalls" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Firewalls</h3>
+        </div>
+        <div class="uk-card-body">
+            A firewall is a hardware device or a software program located at the network gateway server and used for secure communication between different networks according to a specified security policy.<br><br>
+
+            A firewall provides a line of defense, against attacks on an internal network from an external network.<br><br>
+
+            What does a Firewall do<br>
+            Prevent Network Scanning.<br>
+            Controls Traffic.<br>
+            Perform users authentication.<br>
+            Filters Packets, Services and Protocols.<br>
+            Performs Traffic logging.<br>
+            Performs Network Address Translation(NAT).<br>
+            Prevents malware attacks.<br>
+        </div>
+    </div>
+
+    <div id="limitations of firewall" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Limitations of Firewall</h3>
+        </div>
+        <div class="uk-card-body">
+            A firewall does not prevent the network from backdoor attacks.<br>
+            A firewall does not protect the network from insider attacks.<br>
+            A firewall cannot do anything if the network design and configurations is faulty.<br>
+            A firewall is not an alternative to antivirus or antimalware.<br>
+            A firewall cannot prevent social engineering threats.<br>
+            A firewall does not prevent password misuse.<br>
+            A firewall does not block attacks from a higher level of the protocol stack.<br>
+            A firewall does not protect against attack originating from common ports and applications.<br>
+            A firewall does not protect against attack from dial-up connection.<br>
+        </div>
+    </div>
+
+    <div id="types of firewalls packet filter application level circuit level gateway stateful inspection" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>heading</h3>
+        </div>
+        <div class="uk-card-body">
+            Types of firewalls: Packet filters, Application-level gateways, & Circuit-level gateways, Stateful Inspection Firewall.<br><br>
+
+            A <b>packet-filtering</b> router applies a set of rules to each incoming and outgoing IP packet to forward or discard the packet. Filtering rules are based on information contained in a network packet.<br><br>
+
+            An <b>Application level gateway</b>, also called a proxy server.<br>
+            The user contacts the gateway using a TCP/IP application, such as Telnet or FTP, and the gateway asks the user for the name of the remote host to be accessed.<br>
+            When the user responds and provides a valid user ID and authentication information, the gateway contacts the application on the remote host and relays TCP segments containing the application data between the two endpoints.<br>
+            A prime disadvantage is the additional processing overhead on each connection.<br><br>
+
+            <b>Circuit level gateway</b> can be a stand-alone system or it can be a specified function performed by an application level gateway for certain applications.<br>
+            A Circuit level gateway does not permit an end-to-end TCP connection; rather, the gateway sets up two TCP connections.<br>
+            One between itself and a TCP user on an inner host and one between itself and a TCP user on an outer host.<br>
+            Once the two connections are established, the gateway typically relays TCP segments from one connection to the other without examining the contents.<br><br>
+
+            <b>Stateful Inspection Packet Firewall</b><br>
+            When an application that uses TCP creates a session with a remote host, it creates a TCP connection in which the TCP port number for the remote (server) application is a number less than 1024 and the TCP port number for the local (client) application is a number between 1024 and 65535.<br>
+            A simple packet filtering firewall must permit inbound network traffic on all these high-numbered ports for TCP-based traffic to occur. This creates a vulnerability that can be exploited by unauthorized users.<br>
+            A stateful inspection packet firewall tightens up the rules for TCP traffic by creating a directory of outbound TCP connections.<br>
+            The packet filter will now allow incoming traffic to high-numbered ports only for those packets that fit the profile of one of the entries in this directory.<br>
+        </div>
+    </div>
+
+    <div id="firewall location & and management bastion host screened subnet multi-homed" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Firewall Location & Management</h3>
+        </div>
+        <div class="uk-card-body">
+            A security administrator must decide on the location and number of firewall needed.<br><br>
+
+            Bastion Host: A bastion host is a computer system designed and configured to protect network resources from an attack and it is placed between two networks where it acts as an application level gateway.<br><br>
+
+            Screened Subnet: Screened subnet or DMZ (additional zone ) contains hosts that offer public services. The public zone is connected directly to the internet and has no host which are controlled by the organization. The private zone consists of system internet users have no business accessing.<br><br>
+
+            Multi-homed Firewall: This type of fire wall consist of three interfaces which allow for further subdividing of the system based on specific security objects in the organization.<br>
+        </div>
+    </div>
+
+    <div id="pretty good privacy email e-mail security pgp" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>E-mail Security- Pretty Good Privacy (PGP)</h3>
+        </div>
+        <div class="uk-card-body">
+            Provides a confidentiality and authentication service that can be used for electronic mail and file storage applications<br>
+            Developed by Phil Zimmermann<br><br>
+
+            Selected the best available cryptographic algorithms as building blocks<br>
+            Integrated these algorithms into a general-purpose application that is independent of operating system and processor and that is based on a small set of easy-to-use commands<br>
+            Made the package and its documentation, including the source code, freely available via the Internet, bulletin boards, and commercial networks<br>
+            Entered into an agreement with a company to provide a fully compatible, low-cost commercial version of PGP<br>
+        </div>
+    </div>
+
+    <div id="pgp authentication" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>PGP Authentication</h3>
+        </div>
+        <div class="uk-card-body">
+            Combination of SHA-1 and RSA provides an effective digital signature scheme<br>
+            Because of the strength of RSA the recipient is assured that only the possessor of the matching private key can generate the signature<br>
+            Because of the strength of SHA-1 the recipient is assured that no one else could generate a new message that matches the hash code<br>
+            As an alternative, signatures can be generated using DSS/SHA-1<br>
+        </div>
+    </div>
+
+    <div id="pgp confidentiality" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>PGP Confidentiality</h3>
+        </div>
+        <div class="uk-card-body">
+            Provided by encrypting messages to be transmitted or to be stored locally as files<br>
+            In both cases the symmetric encryption algorithm CAST-128 may be used<br>
+            Alternatively IDEA or 3DES may be used<br>
+            The 64-bit cipher feedback (CFB) mode is used<br>
+            As an alternative to the use of RSA for key encryption, PGP uses ElGamal, a variant of Diffie-Hellman that provides encryption/decryption<br>
+        </div>
+    </div>
+
     <div id="keywords" class="content uk-card uk-card-default">
         <div class="uk-card-header">
             <h3>heading</h3>
