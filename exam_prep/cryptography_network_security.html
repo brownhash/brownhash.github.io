@@ -300,11 +300,176 @@
         <div class="uk-card-body">
             To apply DES in variety of applications, different modes of operation have been defined.<br><br>
 
-            • Electronic Codebook(ECB)<br>
-            • Cipher Block Chaining(CBC)<br>
-            • Cipher Feedback(CFB)<br>
+            • Electronic Codebook(ECB): The term codebook is used because for a given key, there is a unique ciphertext for every 64 bit of plaintext.<br>
+            • Cipher Block Chaining(CBC): Input to the encryption algorithm is the XOR of the current plaintext block and the preceding ciphertext block.<br>
+            • Cipher Feedback(CFB): To convert DES into stream cipher , Cipher feedback or output feedback mode is used<br>
             • Output Feedback(OFB)<br>
-            • Counter (CTR)<br>
+            • Counter (CTR): A counter equal to plaintext block size is used and counter value must be different for each plaintext block that is encrypted<br>
+        </div>
+    </div>
+
+    <div id="tripple des with 2 3 keys two three" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Triple DES</h3>
+        </div>
+        <div class="uk-card-body">
+            Triple DES with Two keys:<br>
+            C = E<sub>K1</sub> (D<sub>K2</sub> (E<sub>K1</sub> (P)))<br><br>
+
+            Triple DES with Three keys:<br>
+            C = E<sub>K3</sub> (D<sub>K2</sub> (E<sub>K1</sub> (P)))<br>
+        </div>
+    </div>
+
+    <div id="modular arithmetic modulo operator set of residues" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Modular Arithmetic</h3>
+        </div>
+        <div class="uk-card-body">
+            Modulo operator<br>
+            The modulo operator is shown as mod. The second input (n) is called the modulus. The output r is called the residue.<br><br>
+
+            <b>Set of Residues</b>: The modulo operation creates a set, which in modular arithmetic is referred to as the set of least residues modulo n, or Zn.<br>
+        </div>
+    </div>
+
+    <div id="congruence" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Congruence</h3>
+        </div>
+        <div class="uk-card-body">
+            To show that two integers are congruent, we use the congruence operator ( ≡ )
+        </div>
+    </div>
+
+    <div id="additive inverse" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Additive Inverse</h3>
+        </div>
+        <div class="uk-card-body">
+            In Z<sub>n</sub>, two numbers a and b are additive inverses of each other if<br>
+            a + b ≡ 0(mod n)<br>
+        </div>
+    </div>
+
+    <div id="multiplicative inverse" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Multiplicative Inverse</h3>
+        </div>
+        <div class="uk-card-body">
+            In Z<sub>n</sub>, two numbers a and b are the multiplicative inverse of each other if<br>
+            a X b ≡ 1(mod n)<br>
+        </div>
+    </div>
+
+    <div id="euclidean algorithm gcd" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Euclidean Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            Euclidean algorithm is used to find the GCD of two numbers.<br><br>
+
+            It is based on two facts:<br>
+            Fact 1: gcd(a,0)=a<br>
+            Fact 2: gcd(a,b)=gcd(b,r) where r is the remainder after dividing a by b.<br>
+        </div>
+    </div>
+
+    <div id="extended euclidean algorithm gcd" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Extended Euclidean Algorithm</h3>
+        </div>
+        <div class="uk-card-body">
+            Given two integers a and b, we often need to find other two integers, s and t, such that<br>
+            s X a + t X b = gcd(a,b)<br><br>
+
+            The extended Euclidean algorithm can calculate the gcd (a, b) and at the same time calculate the value of s and t.<br>
+        </div>
+    </div>
+
+    <div id="euler’s phi function euler rules" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Euler’s Phi Function</h3>
+        </div>
+        <div class="uk-card-body">
+            Euler’s phi-function, φ (n), which is sometimes called the<br>
+            Euler’s totient function finds the number of integers that are both smaller than n and relatively prime to n.<br><br>
+
+            Rules:<br>
+            1. φ(1) = 0<br>
+            2. φ(p) = p - 1, if p is a prime<br>
+            3. φ(m X n) = φ(m) X φ(n), if m and n are relatively prime<br>
+            4. φ(p<sup>e</sup>) = p<sup>e</sup> - p<sup>e-1</sup>, if p is a prime<br>
+        </div>
+    </div>
+
+    <div id="fermat’s little theorem fermat first second third version" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Fermat’s Little Theorem</h3>
+        </div>
+        <div class="uk-card-body">
+            First Version: If p is any prime and a is an integer such that p does not divide a, then<br>
+            a<sup>p-1</sup> ≡ 1 mod p<br><br>
+
+            Second Version: If p is any prime and a is an integer, then<br>
+            a<sup>p</sup> ≡ a mod p<br><br>
+
+            Third Version: If p is a prime and a is an integer such that p does not divide a, then<br>
+            a<sup>−1</sup> mod p = a <sup>p − 2</sup> mod p<br>
+        </div>
+    </div>
+
+    <div id="euler’s theorem euler" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Euler’s Theorem</h3>
+        </div>
+        <div class="uk-card-body">
+            If a and n are co-prime, then<br>
+            a<sup>φ(n)</sup> ≡ 1 (mod n)<br>
+        </div>
+    </div>
+
+    <div id="chinese remainder theorem" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Chinese Remainder Theorem</h3>
+        </div>
+        <div class="uk-card-body">
+            The Chinese remainder theorem (CRT) is used to solve a set of congruent equations with one variable but different moduli, which are relatively prime, as shown below:<br><br>
+            x = a<sub>1</sub> (mod m<sub>1</sub>)<br>
+            x = a<sub>2</sub> (mod m<sub>2</sub>)<br>
+            ...<br>
+            x = a<sub>k</sub> (mod m<sub>k</sub>)<br>
+        </div>
+    </div>
+
+    <div id="primitive root order of the group element an" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>Primitive Root</h3>
+        </div>
+        <div class="uk-card-body">
+            In the group G = < Z<sub>n</sub>∗, ×>, when the order of an element is the same as φ(n), that element is called the primitive root of the group.<br><br>
+
+            Order of the Group.<br>
+            What is the order of group G = < Z<sub>21</sub>∗, ×>? |G| = φ(21) = φ(3) × φ(7) = 2 × 6 =12. There are 12 elements in this group: 1, 2, 4, 5, 8, 10, 11, 13, 16, 17, 19, and 20.<br><br>
+
+            Order of an Element<br>
+            The order of an element, a, is the smallest integer i such that<br>
+            a<sup>i</sup> ≡ 1 (mod n)<br>
+        </div>
+    </div>
+
+    <div id="aes parameters" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>AES Parameters</h3>
+        </div>
+        <div class="uk-card-body">
+            <pre>
+                key size                      4/16/128    6/24/192    8/32/256
+                plain text block size         4/16/128    4/16/128    4/16/128
+                number of rounds                 10          12          14
+                round key size                4/16/128    4/16/128    4/16/128
+                expanded key size              44/177      52/208      60/240
+            </pre>
         </div>
     </div>
 
