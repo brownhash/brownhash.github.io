@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Search: Distributed Systems</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+
+    <link rel="stylesheet" href="resources/main.css" />
+</head>
+<body>
+<span id="top"></span>
+
+<input id="search_bar" class="uk-input search" onkeyup="search()" type="text" name="search" placeholder="search...">
+
+<a href="" onclick="scrollToTop()" class="uk-icon-button uk-button-danger topbtn" uk-tooltip="Scroll to top" uk-icon="triangle-up"></a>
+
+<div style="text-align: center;">
+    <div class="uk-card uk-card-secondary uk-card-body content">
+        <h3> <a href="https://sharma1612harshit.github.io/exam_prep" class="uk-icon-button uk-button-default" uk-tooltip="back" uk-icon="triangle-left"></a> A Definitive Guide For Software Qality</h3>
+    </div>
+
+    <div id="what is software quality definition" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>What is Software Quality</h3>
+        </div>
+        <div class="uk-card-body">
+            Quality software is reasonably bug or defect free, delivered on time and within budget, meets requirements and/or expectations, and is maintainable.
+        </div>
+    </div>
+
+    <div id="keywords" class="content uk-card uk-card-default">
+        <div class="uk-card-header">
+            <h3>heading</h3>
+        </div>
+        <div class="uk-card-body">
+            content
+        </div>
+    </div>
+</div>
+
+<script src="resources/main.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBp6cHQCBo5iv1NSEs6nJEwuz-9ayv6yD0",
+        authDomain: "https://sharma1612harshit.github.io/exam_prep/distributed_system.html",
+        databaseURL: "https://portfolio-harrydbst.firebaseio.com",
+        projectId: "portfolio-harrydbst",
+        storageBucket: "portfolio-harrydbst.appspot.com",
+        messagingSenderId: "1366130803",
+        appId: "1:1366130803:web:1fa5bcd91263fc2d4eea06",
+        measurementId: "G-Z5Q3PFLKMH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+</body>
+</html>
