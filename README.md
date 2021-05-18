@@ -1,3 +1,3 @@
-# sharma1612harshit.github.io
+# brownhash.github.io
 
 Portfolio
