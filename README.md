@@ -1,3 +1,0 @@
-# brownhash.github.io
-
-Portfolio
