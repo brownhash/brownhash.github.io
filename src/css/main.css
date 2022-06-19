@@ -1,6 +1,16 @@
 @font-face {
-    font-family: "roboto";
+    font-family: "roboto-bold";
     src: url("Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "roboto-light";
+    src: url("Roboto-Light.ttf");
 }
 
 .profile-container {
@@ -22,5 +32,5 @@
 
 .profile-text {
     font-size: min(80px, 120px);
-    font-family: "roboto";
+    font-family: "roboto-bold";
 }
