@@ -34,3 +34,13 @@
     font-size: min(80px, 120px);
     font-family: "roboto-bold";
 }
+
+.profile-icon {
+    width: 30px;
+    padding: 5px;
+}
+
+.profile-icon:hover {
+    opacity: .5;
+    text-decoration: none;
+}
