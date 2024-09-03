@@ -33,6 +33,7 @@
 .profile-text {
     font-size: min(80px, 120px);
     font-family: "roboto-bold";
+    color: black;
 }
 
 .profile-icon {

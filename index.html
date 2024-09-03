@@ -1,27 +1,173 @@
-<!doctype html>
-  <html>
-    <head>
-      <title>Harshit Sharma</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Particles Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+    </style>
 
-      <link rel="icon" href="./static/memoji-self.PNG" type="image/x-icon">
-      <link rel="stylesheet" href="./src/css/main.css">
-      <meta name="viewport" content="initial-scale=1">
-    </head>
-    <body>
-      <div class="profile-container">
+    <link rel="icon" href="./static/memoji-self.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="profile-container">
         <div class="profile-container-child">
-          <img src="./static/memoji-self.PNG" class="profile-image" />
+            <img src="./static/memoji-self.PNG" class="profile-image" />
         </div>
         <div class="profile-container-child">
-          <span class="profile-text">Namaste</span>
+            <span class="profile-text">Namaste</span>
         </div>
         <div class="profile-container-child">
-          <a href="https://www.linkedin.com/in/brownhash" target="_blank"><img src="./static/linkedin.svg" class="profile-icon" title="LinkedIn" /></a>
-          <a href="https://www.github.com/brownhash" target="_blank"><img src="./static/github.svg" class="profile-icon" title="GitHub" /></a>
-          <a href="https://www.twitter.com/harrydbst" target="_blank"><img src="./static/twitter.svg" class="profile-icon" title="Twitter" /></a>
-          <a href="https://www.instagram.com/harrydbst" target="_blank"><img src="./static/instagram.svg" class="profile-icon" title="Instagram" /></a>
-          <a href="https://brownhash.medium.com" target="_blank"><img src="./static/medium.svg" class="profile-icon" title="Medium" /></a>
+            <a href="https://www.linkedin.com/in/brownhash" target="_blank"><img src="./static/linkedin.svg" class="profile-icon" title="LinkedIn" /></a>
+            <a href="https://www.github.com/brownhash" target="_blank"><img src="./static/github.svg" class="profile-icon" title="GitHub" /></a>
+            <a href="https://www.twitter.com/harrydbst" target="_blank"><img src="./static/twitter.svg" class="profile-icon" title="Twitter" /></a>
+            <a href="https://www.instagram.com/harrydbst" target="_blank"><img src="./static/instagram.svg" class="profile-icon" title="Instagram" /></a>
+            <a href="https://brownhash.medium.com" target="_blank"><img src="./static/medium.svg" class="profile-icon" title="Medium" /></a>
         </div>
-      </div>
-    </body>
-  </html>
+    </div>
+
+    <!-- Include the particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Configure particles.js -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#000000"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#000000",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+</body>
+</html>
